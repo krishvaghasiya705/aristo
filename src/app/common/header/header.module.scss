@@ -1,6 +1,124 @@
+@use "@/styles/mixin" as *;
+
 .header {
-    a {
-        position: relative;
-        z-index: 9999999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 76px 0 0 0;
+  mix-blend-mode: difference;
+
+  .headerflx {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .headerlogo {
+      width: 154px;
+      height: 37px;
+      transition: 0.2s ease-in-out;
+
+      svg {
+        width: 100%;
+        height: 100%;
+        transition: 0.2s ease-in-out;
+
+        path {
+          transition: 0.2s ease-in-out;
+        }
+      }
     }
+
+    .headerlinksflxmain {
+      display: flex;
+      align-items: center;
+      gap: 100px;
+
+      .headerlinksflx {
+        display: flex;
+        align-items: center;
+        gap: 43px;
+        transition: 0.2s ease-in-out;
+
+        &.headerlinksflxactive {
+          opacity: 0;
+          display: none;
+        }
+
+        .headelinkbox {
+          height: 20px;
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+          transition: 0.2s ease-in-out;
+
+          a {
+            transition: 0.2s ease-in-out;
+            @include font12;
+            color: var(--lightgrey);
+            text-transform: uppercase;
+            font-family: var(--primary-font);
+          }
+
+          &:hover {
+            a {
+              transform: translateY(-20px);
+            }
+          }
+        }
+
+        .catalogbuttonmain {
+          .catalogbutton {
+            background: var(--white);
+            padding: 14px 15px;
+            border: 1px solid var(--white);
+            transition: background 0.3s ease, color 0.3s ease;
+            font-family: var(--primary-font);
+            color: var(--black);
+            @include font12;
+            font-weight: 600;
+            line-height: 12px;
+            text-transform: uppercase;
+            cursor: pointer;
+
+            &:hover {
+              background: var(--black);
+              color: var(--white);
+            }
+          }
+        }
+      }
+
+      .menuiconmain {
+        display: flex;
+        flex-direction: column;
+        height: 39px;
+        width: 54px;
+        overflow: hidden;
+        transition: 0.2s ease-in-out;
+
+        .menuicon {
+          width: 54px;
+          min-height: 39px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          transition: 0.2s ease-in-out;
+          svg {
+            rect {
+              fill: var(--white);
+            }
+          }
+        }
+
+        &:hover {
+          .menuicon {
+            transform: translateY(-39px);
+          }
+        }
+      }
+    }
+  }
 }

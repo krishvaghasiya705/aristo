@@ -1,31 +1,43 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
+
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import styles from "./cursor.module.scss";
+import styles from './cursor.module.scss';
 
 const Cursor = () => {
   const cursorRef = useRef(null);
   const mouse = useRef({ x: -100, y: -100 });
-  const [isMoving, setIsMoving] = useState(false);
+  const pos = useRef({ x: -100, y: -100 });
 
   useEffect(() => {
     const cursorEl = cursorRef.current;
+    if (!cursorEl) return;
+
     gsap.set(cursorEl, { xPercent: -50, yPercent: -50 });
 
     const handleMouseMove = (e) => {
-      mouse.current = { x: e.clientX, y: e.clientY };
-      setIsMoving(true);
+      mouse.current.x = e.clientX;
+      mouse.current.y = e.clientY;
     };
 
-    const handleMouseEnter = () => {
-      cursorEl.classList.add(styles.change);
+    const updatePosition = () => {
+      pos.current.x += (mouse.current.x - pos.current.x) * 0.1;
+      pos.current.y += (mouse.current.y - pos.current.y) * 0.1;
+
+      gsap.to(cursorEl, {
+        duration: 0.3,
+        x: pos.current.x,
+        y: pos.current.y,
+        ease: 'cubic-bezier(0.52, 0.02, 0, 0.99)',
+        overwrite: true,
+      });
+
+      requestAnimationFrame(updatePosition);
     };
 
-    const handleMouseLeave = () => {
-      cursorEl.classList.remove(styles.change);
-    };
+    const handleMouseEnter = () => cursorEl.classList.add(styles.change);
+    const handleMouseLeave = () => cursorEl.classList.remove(styles.change);
 
-    // Add hover listeners to interactive elements
     const addHoverListeners = () => {
       const elements = document.querySelectorAll('a, button, [data-cursor-hover]');
       elements.forEach((el) => {
@@ -34,33 +46,25 @@ const Cursor = () => {
       });
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    addHoverListeners();
-
-    const animate = () => {
-      if (isMoving) {
-        gsap.to(cursorEl, {
-          duration: 0.5,
-          x: mouse.current.x,
-          y: mouse.current.y,
-          ease: 'power2.out',
-        });
-      }
-      requestAnimationFrame(animate);
-    };
-
-    animate();
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      document.querySelectorAll('a, button, [data-cursor-hover]').forEach((el) => {
+    const removeHoverListeners = () => {
+      const elements = document.querySelectorAll('a, button, [data-cursor-hover]');
+      elements.forEach((el) => {
         el.removeEventListener('mouseenter', handleMouseEnter);
         el.removeEventListener('mouseleave', handleMouseLeave);
       });
     };
-  }, [isMoving]);
 
-  return <div id="cursor" ref={cursorRef} className={styles.customcursor} />;
+    window.addEventListener('mousemove', handleMouseMove);
+    addHoverListeners();
+    requestAnimationFrame(updatePosition);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      removeHoverListeners();
+    };
+  }, []);
+
+  return <div ref={cursorRef} className={styles.customcursor} />;
 };
 
 export default Cursor;
