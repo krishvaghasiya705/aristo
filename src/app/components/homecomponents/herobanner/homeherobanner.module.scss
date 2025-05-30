@@ -1,6 +1,8 @@
 @use "@/styles/mixin" as *;
 
 .homeherobannermain {
+  height: 100vh;
+  overflow: hidden;
   .homeherobanner {
     height: 100vh;
     display: flex;

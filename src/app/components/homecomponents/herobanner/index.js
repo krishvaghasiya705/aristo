@@ -8,20 +8,72 @@ import homeherobannerimages4 from "@/assets/images/homeherobannerimages4.png";
 import homeherobannerimages5 from "@/assets/images/homeherobannerimages5.png";
 import Image from "next/image";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function Homeherobanner() {
+  const sectionRef = useRef(null);
+  const bannerRef = useRef(null);
   const imagesRef = useRef([]);
 
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Initialize ScrollTrigger with Lenis
+    ScrollTrigger.scrollerProxy(document.body, {
+      scrollTop(value) {
+        if (arguments.length) {
+          window.lenis?.scrollTo(value);
+        }
+        return window.lenis?.scroll || window.scrollY;
+      },
+      getBoundingClientRect() {
+        return {
+          top: 0,
+          left: 0,
+          width: window.innerWidth,
+          height: window.innerHeight
+        };
+      }
+    });
+
+    // Update ScrollTrigger on Lenis scroll
+    window.lenis?.on('scroll', ScrollTrigger.update);
+
+    // Simple scale animation
+    gsap.set(bannerRef.current, {
+      scale: 1,
+      opacity: 1,
+      transformOrigin: "center center",
+      force3D: true
+    });
+
+    ScrollTrigger.create({
+      trigger: bannerRef.current,
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 1,
+      onUpdate: (self) => {
+        gsap.to(bannerRef.current, {
+          scale: 1 + (self.progress * 0.2),
+          duration: 0.1,
+          force3D: true,
+          overwrite: true
+        });
+      }
+    });
+
+    // Image animations
     const images = imagesRef.current;
     gsap.set(images, {
       y: "100vh",
       rotation: 0,
       opacity: 0
     });
+
     const masterTl = gsap.timeline({
       repeat: -1
     });
+
     images.forEach((image, index) => {
       masterTl
         .to(image, {
@@ -49,14 +101,16 @@ export default function Homeherobanner() {
 
     return () => {
       gsap.killTweensOf(images);
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      window.lenis?.off('scroll', ScrollTrigger.update);
     };
   }, []);
 
   return (
     <>
-      <div className={styles.homeherobannermain}>
+      <div className={styles.homeherobannermain} ref={sectionRef}>
         <div className="container">
-          <div className={styles.homeherobanner}>
+          <div className={styles.homeherobanner} ref={bannerRef}>
             <div className={styles.homeherobannerimagesmain}>
               <div className={styles.homeherobannerimages}>
                 <Image 

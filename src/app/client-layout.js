@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
 
   useEffect(() => {
     const handleMenuState = (e) => {
-      if (e.detail) {
+      if (e.detail !== undefined) {
         setIsMenuOpen(e.detail);
       }
     };
@@ -25,16 +25,32 @@ export default function RootLayout({ children }) {
 
   useEffect(() => {
     if (isMenuOpen) {
-      gsap.to('main', {
+      // Lock scroll
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+      document.body.style.top = `-${window.scrollY}px`;
+
+      gsap.to('.blankspace', {
         duration: 0.6,
         ease: "power2.inOut",
-        paddingTop: '100vh'
+        height: '100vh',
+        overwrite: true
       });
     } else {
-      gsap.to('main', {
+      // Unlock scroll
+      const scrollY = document.body.style.top;
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.top = '';
+      window.scrollTo(0, parseInt(scrollY || '0') * -1);
+
+      gsap.to('.blankspace', {
         duration: 0.6,
         ease: "power2.inOut",
-        paddingTop: '0'
+        height: '0',
+        overwrite: true
       });
     }
   }, [isMenuOpen]);
@@ -52,7 +68,8 @@ export default function RootLayout({ children }) {
         <Cursor />
         <LenisScroll />
         <Header />
-        <main>{children}</main>
+          <div className="blankspace"></div>
+          {children}
         <Footer />
       </body>
     </html>

@@ -52,7 +52,6 @@ export default function Header() {
 
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
       gsap.to(`.${styles.headerlogo}`, {
         duration: 0.3,
         ease: "power2.inOut",
@@ -83,7 +82,6 @@ export default function Header() {
         opacity: 1
       });
     } else {
-      document.body.style.overflow = '';
       gsap.to(`.${styles.headerlogo}`, {
         duration: 0.3,
         ease: "power2.inOut",
@@ -117,7 +115,10 @@ export default function Header() {
   }, [isMenuOpen]);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    const newMenuState = !isMenuOpen;
+    setIsMenuOpen(newMenuState);
+    // Dispatch custom event with the new menu state
+    window.dispatchEvent(new CustomEvent('menuStateChange', { detail: newMenuState }));
   };
 
   return (

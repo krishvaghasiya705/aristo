@@ -3,6 +3,7 @@
 // import gsap from "gsap";
 
 import Homeherobanner from "./components/homecomponents/herobanner";
+import Homeslidersection from "./components/homecomponents/homeslidersection";
 
 export default function Home() {
   // useEffect(() => {
@@ -16,6 +17,7 @@ export default function Home() {
   return (
     <>
       <Homeherobanner />
+      <Homeslidersection />
     </>
   );
 }
