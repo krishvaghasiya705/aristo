@@ -2,6 +2,8 @@
 // import { useEffect } from "react";
 // import gsap from "gsap";
 
+import Homeherobanner from "./components/homecomponents/herobanner";
+
 export default function Home() {
   // useEffect(() => {
   //   gsap.from(`.${styles.container}`, {
@@ -13,6 +15,7 @@ export default function Home() {
 
   return (
     <>
+      <Homeherobanner />
     </>
   );
 }

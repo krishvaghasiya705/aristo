@@ -1,0 +1,101 @@
+"use client"
+import React, { useEffect, useRef } from "react";
+import styles from "./homeherobanner.module.scss";
+import homeherobannerimages1 from "@/assets/images/homeherobannerimages1.png";
+import homeherobannerimages2 from "@/assets/images/homeherobannerimages2.png";
+import homeherobannerimages3 from "@/assets/images/homeherobannerimages3.png";
+import homeherobannerimages4 from "@/assets/images/homeherobannerimages4.png";
+import homeherobannerimages5 from "@/assets/images/homeherobannerimages5.png";
+import Image from "next/image";
+import gsap from "gsap";
+
+export default function Homeherobanner() {
+  const imagesRef = useRef([]);
+
+  useEffect(() => {
+    const images = imagesRef.current;
+    gsap.set(images, {
+      y: "100vh",
+      rotation: 0,
+      opacity: 0
+    });
+    const masterTl = gsap.timeline({
+      repeat: -1
+    });
+    images.forEach((image, index) => {
+      masterTl
+        .to(image, {
+          y: "0",
+          rotation: 360,
+          opacity: 1,
+          duration: 1.8,
+          ease: "cubic-bezier(0.77, 0, 0.175, 1)",
+          onUpdate: function() {
+            if (this.progress() === 1) gsap.set(image, { rotation: 0 });
+          }
+        })
+        .to({}, { duration: 0.5 })
+        .to(image, {
+          y: "-100vh",
+          rotation: "+=360",
+          opacity: 0,
+          duration: 1.8,
+          ease: "cubic-bezier(0.77, 0, 0.175, 1)",
+          onUpdate: function() {
+            if (this.progress() === 1) gsap.set(image, { rotation: 0 });
+          }
+        }, "+=0.5");
+    });
+
+    return () => {
+      gsap.killTweensOf(images);
+    };
+  }, []);
+
+  return (
+    <>
+      <div className={styles.homeherobannermain}>
+        <div className="container">
+          <div className={styles.homeherobanner}>
+            <div className={styles.homeherobannerimagesmain}>
+              <div className={styles.homeherobannerimages}>
+                <Image 
+                  ref={el => imagesRef.current[0] = el}
+                  src={homeherobannerimages1} 
+                  alt="homeherobannerimages1" 
+                />
+                <Image 
+                  ref={el => imagesRef.current[1] = el}
+                  src={homeherobannerimages2} 
+                  alt="homeherobannerimages2" 
+                />
+                <Image 
+                  ref={el => imagesRef.current[2] = el}
+                  src={homeherobannerimages3} 
+                  alt="homeherobannerimages3" 
+                />
+                <Image 
+                  ref={el => imagesRef.current[3] = el}
+                  src={homeherobannerimages4} 
+                  alt="homeherobannerimages4" 
+                />
+                <Image 
+                  ref={el => imagesRef.current[4] = el}
+                  src={homeherobannerimages5} 
+                  alt="homeherobannerimages5" 
+                />
+              </div>
+            </div>
+            <div></div>
+            <div className={styles.homeherobannertitle}>
+              <h1>living experience</h1>
+            </div>
+            <div className={styles.scrolldown}>
+              <p>scroll down</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}

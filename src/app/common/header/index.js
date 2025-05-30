@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from "react";
 import styles from "./header.module.scss";
 import Link from "next/link";
-import Logo from "@/app/assets/icon/logo";
-import Menuicon from "@/app/assets/icon/menuicon";
+import Logo from "@/assets/icon/logo";
+import Menuicon from "@/assets/icon/menuicon";
 import Sidebar from "../sidebar";
 import gsap from "gsap";
 

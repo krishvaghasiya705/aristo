@@ -15,3 +15,9 @@
     font-weight: 600;
     line-height: 90px;
 }
+
+@mixin font144 {
+    font-size: 144px;
+    font-weight: 600;
+    line-height: 146px;
+}
