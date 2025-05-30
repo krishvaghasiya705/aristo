@@ -35,34 +35,13 @@ export default function Homeherobanner() {
         };
       }
     });
-
-    // Update ScrollTrigger on Lenis scroll
     window.lenis?.on('scroll', ScrollTrigger.update);
-
-    // Simple scale animation
     gsap.set(bannerRef.current, {
-      scale: 1,
       opacity: 1,
       transformOrigin: "center center",
       force3D: true
     });
 
-    ScrollTrigger.create({
-      trigger: bannerRef.current,
-      start: "top bottom",
-      end: "bottom top",
-      scrub: 1,
-      onUpdate: (self) => {
-        gsap.to(bannerRef.current, {
-          scale: 1 + (self.progress * 0.2),
-          duration: 0.1,
-          force3D: true,
-          overwrite: true
-        });
-      }
-    });
-
-    // Image animations
     const images = imagesRef.current;
     gsap.set(images, {
       y: "100vh",
@@ -145,7 +124,10 @@ export default function Homeherobanner() {
               <h1>living experience</h1>
             </div>
             <div className={styles.scrolldown}>
-              <p>scroll down</p>
+              <p data-cursor-hover onClick={() => window.scrollTo({
+                top: window.innerHeight,
+                behavior: 'smooth'
+              })}>scroll down</p>
             </div>
           </div>
         </div>
