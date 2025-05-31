@@ -3,6 +3,7 @@
 .homeherobannermain {
   height: 100vh;
   overflow: hidden;
+  mix-blend-mode: difference;
   .homeherobanner {
     height: 100vh;
     display: flex;
@@ -20,12 +21,12 @@
       width: 425px;
       height: 425px;
       perspective: 1000px;
-      
+
       .homeherobannerimages {
         position: relative;
         width: 100%;
         height: 100%;
-        
+
         img {
           width: 22.158vw;
           height: 22.158vw;

@@ -8,19 +8,84 @@ export default function Homebuttonsection() {
         <div className="container">
             <div className={styles.homebuttonsection}>
                 <div className={styles.homebuttonsectionflx}>
-                    <button type='button' className={styles.homebutton}>Kitchens</button>
-                    <button type='button' className={styles.homebutton}>Furniture</button>
-                    <button type='button' className={styles.homebutton}>Appliances</button>
-                    <button type='button' className={styles.homebutton}>Closets</button>
-                    <button type='button' className={styles.homebutton}>Bathrooms</button>
-                    <button type='button' className={styles.homebutton}>Sound</button>
-                    <button type='button' className={styles.homebutton}>Surfaces</button>
-                    <button type='button' className={styles.homebutton}>Decoration</button>
-                    <button type='button' className={styles.homebutton}>Art</button>
-                    <button type='button' className={styles.homebutton}>Lighting</button>
-                    <button type='button' className={styles.homebutton}>Carpets</button>
-                    <button type='button' className={styles.homebutton}>Faucets</button>
-                    <button type='button' className={styles.homebutton}>Outdoor</button>
+                    <button type='button' className={styles.homebutton}>
+                      <div className={styles.homebuttontext}>
+                        <span>Kitchens</span>
+                        <span>Kitchens</span>
+                      </div>
+                    </button>
+                    <button type='button' className={styles.homebutton}>
+                      <div className={styles.homebuttontext}>
+                        <span>Furniture</span>
+                        <span>Furniture</span>
+                      </div>
+                    </button>
+                    <button type='button' className={styles.homebutton}>
+                      <div className={styles.homebuttontext}>
+                        <span>Appliances</span>
+                        <span>Appliances</span>
+                      </div>
+                    </button>
+                    <button type='button' className={styles.homebutton}>
+                      <div className={styles.homebuttontext}>
+                        <span>Closets</span>
+                        <span>Closets</span>
+                      </div>
+                    </button>
+                    <button type='button' className={styles.homebutton}>
+                      <div className={styles.homebuttontext}>
+                        <span>Bathrooms</span>
+                        <span>Bathrooms</span>
+                      </div>
+                    </button>
+                    <button type='button' className={styles.homebutton}>
+                      <div className={styles.homebuttontext}>
+                        <span>Sound</span>
+                        <span>Sound</span>
+                      </div>
+                    </button>
+                    <button type='button' className={styles.homebutton}>
+                      <div className={styles.homebuttontext}>
+                        <span>Surfaces</span>
+                        <span>Surfaces</span>
+                      </div>
+                    </button>
+                    <button type='button' className={styles.homebutton}>
+                      <div className={styles.homebuttontext}>
+                        <span>Decoration</span>
+                        <span>Decoration</span>
+                      </div>
+                    </button>
+                    <button type='button' className={styles.homebutton}>
+                      <div className={styles.homebuttontext}>
+                        <span>Art</span>
+                        <span>Art</span>
+                      </div>
+                    </button>
+                    <button type='button' className={styles.homebutton}>
+                      <div className={styles.homebuttontext}>
+                        <span>Lighting</span>
+                        <span>Lighting</span>
+                      </div>
+                    </button>
+                    <button type='button' className={styles.homebutton}>
+                      <div className={styles.homebuttontext}>
+                        <span>Carpets</span>
+                        <span>Carpets</span>
+                      </div>
+                    </button>
+                    <button type='button' className={styles.homebutton}>
+                      <div className={styles.homebuttontext}>
+                        <span>Faucets</span>
+                        <span>Faucets</span>
+                      </div>
+                    </button>
+                    <button type='button' className={styles.homebutton}>
+                      <div className={styles.homebuttontext}>
+                        <span>Outdoor</span>
+                        <span>Outdoor</span>
+                      </div>
+                    </button>
                 </div>
             </div>
         </div>
