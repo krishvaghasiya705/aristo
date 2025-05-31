@@ -61,6 +61,7 @@ export default function Homeherobanner() {
           opacity: 1,
           duration: 1.8,
           ease: "cubic-bezier(0.77, 0, 0.175, 1)",
+          display: "block",
           onUpdate: function() {
             if (this.progress() === 1) gsap.set(image, { rotation: 0 });
           }
@@ -72,6 +73,7 @@ export default function Homeherobanner() {
           opacity: 0,
           duration: 1.8,
           ease: "cubic-bezier(0.77, 0, 0.175, 1)",
+          display: "block",
           onUpdate: function() {
             if (this.progress() === 1) gsap.set(image, { rotation: 0 });
           }

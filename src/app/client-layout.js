@@ -47,9 +47,9 @@ export default function RootLayout({ children }) {
       window.scrollTo(0, parseInt(scrollY || '0') * -1);
 
       gsap.to('.blankspace', {
-        duration: 0.6,
+        duration: 1.6,
         ease: "power2.inOut",
-        height: '0',
+        height: '0vh',
         overwrite: true
       });
     }

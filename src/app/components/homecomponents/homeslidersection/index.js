@@ -12,12 +12,12 @@ export default function Homeslidersection() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [sliderimages1, sliderimages2, sliderimages3, sliderimages4];
   const slideRefs = useRef([]);
+  const imageContainerRefs = useRef([]);
   const containerRef = useRef(null);
   const timeline = useRef(null);
   const isAnimating = useRef(false);
 
   useEffect(() => {
-    // Initialize GSAP timeline
     timeline.current = gsap.timeline({
       paused: true,
       defaults: {
@@ -25,24 +25,41 @@ export default function Homeslidersection() {
         ease: "power3.inOut"
       }
     });
-
-    // Initial setup
+    
+    // Initial setup for all slides
     gsap.set(slideRefs.current, {
       x: "100%",
-      scale: 1.0551,
-      y: "-1.1029%",
+      y: 0,
       z: 0,
       opacity: 0.8,
-      visibility: "hidden"
+      visibility: "hidden",
+      zIndex: 1,
+      transformStyle: "preserve-3d",
+      transformPerspective: 2500,
+      // scale: 1.1
     });
 
+    // Setup image containers
+    gsap.set(imageContainerRefs.current, {
+      z: -100,
+      transformStyle: "preserve-3d",
+      // scale: 1.1,
+      // rotateY: 15,
+      width: "100%",
+      height: "100%"
+    });
+
+    // Setup first slide
     gsap.set(slideRefs.current[0], {
       x: "0%",
-      scale: 1.0551,
-      y: "-1.1029%",
+      y: 0,
       z: 0,
       opacity: 1,
-      visibility: "visible"
+      visibility: "visible",
+      zIndex: 2,
+      transformStyle: "preserve-3d",
+      transformPerspective: 2500,
+      // scale: 1.1
     });
 
     return () => {
@@ -58,39 +75,80 @@ export default function Homeslidersection() {
 
     timeline.current.clear();
     
-    // Make next slide visible before animation
-    gsap.set(slideRefs.current[next], { visibility: "visible" });
+    // Prepare next slide
+    gsap.set(slideRefs.current[next], { 
+      visibility: "visible",
+      zIndex: 2,
+      transformStyle: "preserve-3d",
+      transformPerspective: 2500
+    });
+
+    // Animate image containers
+    gsap.to(imageContainerRefs.current[current], {
+      z: -200,
+      duration: 1.5,
+      // scale: 1,
+      // rotateY: -15,
+      ease: "power3.inOut",
+      transformStyle: "preserve-3d",
+      width: "100%",
+      height: "100%"
+    });
+
+    gsap.fromTo(imageContainerRefs.current[next],
+      { 
+        z: -200,
+        // scale: 1,
+        // rotateY: -15,
+        width: "100%",
+        height: "100%"
+      },
+      {
+        z: -100,
+        duration: 1.5,
+        // scale: 1.1,
+        // rotateY: 15,
+        ease: "power3.inOut",
+        transformStyle: "preserve-3d",
+        width: "100%",
+        height: "100%"
+      }
+    );
 
     timeline.current
       .to(slideRefs.current[current], {
         x: "-100%",
-        scale: 1.0551,
-        y: "-1.1029%",
+        y: 0,
         z: 0,
         opacity: 0.8,
+        // scale: 1,
         duration: 1.5,
-        ease: "power3.inOut"
+        ease: "power3.inOut",
+        onComplete: () => {
+          gsap.set(slideRefs.current[current], { 
+            visibility: "hidden",
+            zIndex: 1
+          });
+        }
       })
       .fromTo(
         slideRefs.current[next],
         {
           x: "100%",
-          scale: 1.0551,
-          y: "-1.1029%",
+          y: 0,
           z: 0,
-          opacity: 0.8
+          opacity: 0.8,
+          // scale: 1
         },
         {
           x: "0%",
-          scale: 1.0551,
-          y: "-1.1029%",
+          y: 0,
           z: 0,
           opacity: 1,
+          // scale: 1.1,
           duration: 1.5,
           ease: "power3.inOut",
           onComplete: () => {
-            // Hide previous slide after animation
-            gsap.set(slideRefs.current[current], { visibility: "hidden" });
             setCurrentSlide(next);
             isAnimating.current = false;
           }
@@ -127,11 +185,16 @@ export default function Homeslidersection() {
                 ref={el => slideRefs.current[index] = el}
                 className={`${styles.slide} ${index === currentSlide ? styles.active : ''}`}
               >
-                <Image
-                  src={slide}
-                  alt={`slider image ${index + 1}`}
-                  priority={index === 0}
-                />
+                <div 
+                  ref={el => imageContainerRefs.current[index] = el}
+                  className={styles['imagecontainer']}
+                >
+                  <Image
+                    src={slide}
+                    alt={`slider image ${index + 1}`}
+                    priority={index === 0}
+                  />
+                </div>
               </div>
             ))}
           </div>

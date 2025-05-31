@@ -1,7 +1,8 @@
 .homeslidersectionmain {
-    padding: 0 0 100px 0;
+    padding: 100px 0;
     overflow: hidden;
     perspective: 2500px;
+    mix-blend-mode: difference;
 
     .homeslidersection {
         height: 735px;
@@ -23,10 +24,19 @@
             transform-origin: center center;
             pointer-events: none;
             font-family: var(--primary-font);
-            transform: translate(0%, -1.1029%) translate3d(0px, 0px, 0px) scale(1.0551, 1.0551);
+            z-index: 1;
 
             &.active {
                 pointer-events: auto;
+                z-index: 2;
+            }
+
+            .imagecontainer {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                transform-style: preserve-3d;
+                will-change: transform;
             }
 
             img {
@@ -36,6 +46,7 @@
                 display: block;
                 backface-visibility: hidden;
                 transform: translateZ(0);
+                will-change: transform;
             }
         }
     }

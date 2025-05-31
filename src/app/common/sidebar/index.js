@@ -23,34 +23,38 @@ export default function Sidebar({ isOpen }) {
               gsap.fromTo(
                 `.${styles.sidebarlinkmain} a`,
                 {
-                  rotation: 50,
-                  translateY: 15,
-                  opacity: 0,
+                  rotation: 8,
+                  translateY: "80%",
+                  force3D: true,
                 },
                 {
-                  duration: 0.5,
+                  duration: 0.35,
                   ease: "power3.out",
                   rotation: 0,
                   translateY: 0,
-                  opacity: 1,
+                  delay: 0.1,
+                  stagger: 0,
+                  clearProps: "all",
+                  overwrite: "auto"
                 }
               );
-            }
+            },
           });
         },
       });
     } else {
       gsap.to(`.${styles.sidebarlinkmain} a`, {
-        duration: 0.4,
+        duration: 0.2,
         ease: "power3.in",
         opacity: 0,
+        delay: 0
       });
       gsap.to(`.${styles.sidebarflx}`, {
         duration: 0.6,
         ease: "power3.in",
         y: 20,
         opacity: 0,
-        delay: 0.1,
+        delay: 0.1
       });
       gsap.to(`.${styles.sidebarmain}`, {
         duration: 0.6,
@@ -58,7 +62,7 @@ export default function Sidebar({ isOpen }) {
         y: "-100%",
         opacity: 0,
         visibility: "hidden",
-        delay: 0.2,
+        delay: 0.15
       });
     }
   }, [isOpen]);

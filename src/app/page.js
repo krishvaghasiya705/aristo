@@ -3,6 +3,7 @@
 // import gsap from "gsap";
 
 import Homeherobanner from "./components/homecomponents/herobanner";
+import Homebuttonsection from "./components/homecomponents/homebuttonsection";
 import Homeslidersection from "./components/homecomponents/homeslidersection";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
     <>
       <Homeherobanner />
       <Homeslidersection />
+      <Homebuttonsection />
     </>
   );
 }
