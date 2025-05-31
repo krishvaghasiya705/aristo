@@ -155,7 +155,7 @@ export default function Header() {
                   </Link>
                 </div>
               </div>
-              <div className={styles.menuiconmain} onClick={toggleMenu}>
+              <div className={styles.menuiconmain} onClick={toggleMenu} data-cursor-hover>
                 <div className={styles.menuicon}>
                   <Menuicon />
                 </div>

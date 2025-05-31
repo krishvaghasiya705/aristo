@@ -23,17 +23,20 @@ export default function Sidebar({ isOpen }) {
               gsap.fromTo(
                 `.${styles.sidebarlinkmain} a`,
                 {
-                  rotation: 8,
-                  translateY: "80%",
-                  force3D: true,
+                  y: 50,
+                  rotation: 5,
+                  transformOrigin: "left bottom",
+                  opacity: 0
                 },
                 {
-                  duration: 0.35,
-                  ease: "power3.out",
+                  duration: 0.4,
+                  ease: "power2.out",
+                  y: 0,
                   rotation: 0,
-                  translateY: 0,
+                  opacity: 1,
                   delay: 0.1,
-                  stagger: 0,
+                  stagger: 0.08,
+                  translateY: 0,
                   clearProps: "all",
                   overwrite: "auto"
                 }
