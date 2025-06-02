@@ -18,7 +18,8 @@
     }
   },
   "heroBanner": {
-    "title": "living experience",
+    "titlel1": "living",
+    "titlel2": "experience",
     "scrollDown": "scroll down"
   },
   "buttonSection": {

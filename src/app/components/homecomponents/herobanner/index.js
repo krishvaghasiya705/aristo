@@ -15,12 +15,11 @@ export default function Homeherobanner() {
   const sectionRef = useRef(null);
   const bannerRef = useRef(null);
   const imagesRef = useRef([]);
+  const titleRefs = useRef([]);
   const { t } = useLanguage();
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-
-    // Initialize ScrollTrigger with Lenis
     ScrollTrigger.scrollerProxy(document.body, {
       scrollTop(value) {
         if (arguments.length) {
@@ -82,8 +81,22 @@ export default function Homeherobanner() {
         }, "+=0.5");
     });
 
+    // Add title animation
+    gsap.set(titleRefs.current, {
+      y: 146,
+    });
+
+    gsap.to(titleRefs.current, {
+      y: 0,
+      duration: 1.2,
+      stagger: 0.2,
+      ease: "power3.out",
+      delay: 0.5
+    });
+
     return () => {
       gsap.killTweensOf(images);
+      gsap.killTweensOf(titleRefs.current);
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
       window.lenis?.off('scroll', ScrollTrigger.update);
     };
@@ -125,13 +138,20 @@ export default function Homeherobanner() {
             </div>
             <div></div>
             <div className={styles.homeherobannertitle}>
-              <h1>{t('heroBanner.title')}</h1>
+              <h1>
+                <p>
+                  <span ref={el => titleRefs.current[0] = el}>{t('heroBanner.titlel1')}</span>
+                </p>
+                <p>
+                  <span ref={el => titleRefs.current[1] = el}>{t('heroBanner.titlel2')}</span>
+                </p>
+              </h1>
             </div>
-            <div className={styles.scrolldown}>
-              <p data-cursor-hover onClick={() => window.scrollTo({
+            <div className={styles.scrolldown} data-cursor-hover onClick={() => window.scrollTo({
                 top: window.innerHeight,
                 behavior: 'smooth'
-              })}>{t('heroBanner.scrollDown')}</p>
+              })}>
+              <p>{t('heroBanner.scrollDown')}</p>
             </div>
           </div>
         </div>

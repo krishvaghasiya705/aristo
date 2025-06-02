@@ -1,7 +1,7 @@
 @use "@/styles/mixin" as *;
 
 .homebuttonsectionmain {
-  padding: 100px 0 200px 0;
+  padding: 96px 0;
   mix-blend-mode: difference;
 
   .homebuttonsection {
@@ -17,7 +17,7 @@
       justify-content: center;
 
       .homebuttonmain {
-        height: 60px;
+        height: 61px;
         overflow: hidden;
 
         .homebutton {

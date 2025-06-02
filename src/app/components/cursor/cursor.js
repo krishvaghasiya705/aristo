@@ -1,5 +1,4 @@
 'use client';
-
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import styles from './cursor.module.scss';

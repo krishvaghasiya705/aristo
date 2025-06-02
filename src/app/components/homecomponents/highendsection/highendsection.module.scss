@@ -1,0 +1,246 @@
+@use "@/styles/mixin" as *;
+
+.highendsectionmain {
+    padding: 96px 0;
+
+    .highendsection {
+        padding: 115px 0;
+
+        .highendsectiontitleflx {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            .highendsectiontitleflxleft {
+                margin-left: 117px;
+
+                h2 {
+                    p {
+                        height: 97px;
+                        overflow: hidden;
+                        span {
+                            @include font96;
+                            font-family: var(--primary-font);
+                            display: block;
+                            mix-blend-mode: difference;
+                        }
+                    }
+                }
+            }
+            
+            .highendsectiontitleflxright {
+                margin-top: 384px;
+                margin-right: 234px;
+                max-width: 471px;
+                width: 100%;
+
+                .aristogrouptitle {
+                    height: 23px;
+                    overflow: hidden;
+                    span {
+                        display: block;
+                        @include font23;
+                        color: var(--white);
+                        mix-blend-mode: difference;
+                    }
+                }
+                
+                p {
+                    margin: 57px 0;
+                    .aristogroupparagraph {
+                        height: 32px;
+                        overflow: hidden;
+                        span {
+                            @include font17;
+                            line-height: 32px;
+                            display: block;
+                            color: var(--textgrey);
+                            font-family: var(--paragraph-font);
+                            mix-blend-mode: difference;
+                        }
+                    }
+                }
+                
+                .moreaboutbuttonmain {
+                    border: 1px solid var(--white);
+                    background-color: var(--black);
+                    padding: 15px 36px;
+                    display: flex;
+                    align-items: center;
+                    gap: 14px;
+                    cursor: pointer;
+                    position: relative;
+                    overflow: hidden;
+                    mix-blend-mode: difference;
+                    transition: .2s ease-in-out;                  
+                    
+                    &::before {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        content: "";
+                        z-index: 1;
+                        height: 100%;
+                        width: 0;
+                        background-color: var(--white);
+                        mix-blend-mode: difference;
+                        transition: .2s ease-in-out;           
+                    }
+                    
+                    &:hover {
+                        &::before {
+                            width: 100%;
+                        }
+
+                        span {
+                            font-weight: 400;
+                        }
+                    }
+                    
+                    span {
+                        position: relative;
+                        z-index: 2;
+                        @include font13;
+                        line-height: 20px;
+                        font-weight: 500;
+                        color: var(--white);
+                        font-family: var(--primary-font);
+                        mix-blend-mode: difference;
+                        text-transform: uppercase;
+                    }
+                    
+                    
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                        path {
+                            mix-blend-mode: difference;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .highendsectionimagesflxmain {
+        display: flex;
+        align-items: center;
+        gap: 117px;
+
+        .highendsectionimagesflxleft {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 134px;
+            max-width: 942px;
+            width: 100%;
+            
+            .highendsectionimage1main {
+                max-width: 588px;
+                width: 100%;
+                position: relative;
+                mix-blend-mode: difference;
+                overflow: hidden;
+                
+                .highendsectionimage1effect {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    background-color: var(--black);
+                    z-index: 1;
+                }
+
+                .highendsectionimage1 {
+                    transition: .4s ease-in-out;
+                }
+            }
+            .highendsectionimage2main {
+                position: relative;
+                mix-blend-mode: difference;
+                overflow: hidden;
+                
+                .highendsectionimage2effect {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    background-color: var(--black);
+                    z-index: 1;
+                }
+                
+                .highendsectionimage2 {
+                    transition: .4s ease-in-out;
+                }
+            }
+            .highendsectionimage3main {
+                max-width: 588px;
+                width: 100%;
+                position: relative;
+                mix-blend-mode: difference;
+                overflow: hidden;
+                
+                .highendsectionimage3effect {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    background-color: var(--black);
+                    z-index: 1;
+                }
+
+                .highendsectionimage3 {
+                    transition: .4s ease-in-out;
+                }
+            }
+        }
+
+        .highendsectionimagesflxright {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 134px;
+            max-width: 706px;
+            width: 100%;
+
+            .highendsectionimage4main {
+                max-width: 588px;
+                width: 100%;
+                position: relative;
+                mix-blend-mode: difference;
+                overflow: hidden;
+                
+                .highendsectionimage4effect {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    background-color: var(--black);
+                    z-index: 1;
+                }
+
+                .highendsectionimage4 {
+                    transition: .4s ease-in-out;
+                }
+            }
+            .highendsectionimage5main {
+                position: relative;
+                mix-blend-mode: difference;
+                overflow: hidden;
+                
+                .highendsectionimage5effect {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    background-color: var(--black);
+                    z-index: 1;
+                }
+
+                .highendsectionimage5 {
+                    transition: .4s ease-in-out;
+                }
+            }
+        }
+    }
+}

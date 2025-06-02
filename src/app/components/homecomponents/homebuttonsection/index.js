@@ -30,7 +30,9 @@ export default function Homebuttonsection() {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 80%",
-          toggleActions: "play none none reverse",
+          end: "top 20%",
+          scrub: 1,
+          toggleActions: "play none none reverse"
         },
       }
     );
@@ -52,7 +54,9 @@ export default function Homebuttonsection() {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 80%",
-          toggleActions: "play none none reverse",
+          end: "top 20%",
+          scrub: 1,
+          toggleActions: "play none none reverse"
         },
       }
     );
@@ -82,7 +86,7 @@ export default function Homebuttonsection() {
             <div className={styles.homebuttonsectionflx}>
               {categories.map((category, index) => (
                 <div key={category} className={styles.homebuttonmain} ref={el => buttonsRef.current[index] = el}>
-                  <button type="button" className={styles.homebutton}>
+                  <button type="button" className={styles.homebutton} data-cursor-hover>
                     <div className={styles.homebuttontext} ref={el => buttonTextsRef.current[index] = el}>
                       <span>{t(`buttonSection.categories.${category}`)}</span>
                       <span>{t(`buttonSection.categories.${category}`)}</span>

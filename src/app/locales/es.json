@@ -18,7 +18,8 @@
     }
   },
   "heroBanner": {
-    "title": "experiencia de vida",
+    "titlel1": "experiencia",
+    "titlel2": "de vida",
     "scrollDown": "desplazarse hacia abajo"
   },
   "buttonSection": {

@@ -1,4 +1,5 @@
 import Homeherobanner from "./components/homecomponents/herobanner";
+import Highendsection from "./components/homecomponents/highendsection";
 import Homebuttonsection from "./components/homecomponents/homebuttonsection";
 import Homeslidersection from "./components/homecomponents/homeslidersection";
 
@@ -16,6 +17,7 @@ export default function Home() {
       <Homeherobanner />
       <Homeslidersection />
       <Homebuttonsection />
+      <Highendsection />
     </>
   );
 }

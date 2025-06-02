@@ -16,6 +16,12 @@
     line-height: 20px;
 }
 
+@mixin font23 {
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 23px;
+}
+
 @mixin font24 {
     font-size: 24px;
     font-weight: 400;
@@ -26,6 +32,12 @@
     font-size: 90px;
     font-weight: 600;
     line-height: 90px;
+}
+
+@mixin font96 {
+    font-size: 96px;
+    font-weight: 600;
+    line-height: 97px;
 }
 
 @mixin font144 {

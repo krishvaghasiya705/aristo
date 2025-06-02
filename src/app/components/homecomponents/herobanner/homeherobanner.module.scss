@@ -48,20 +48,27 @@
       position: relative;
       z-index: 2;
       h1 {
-        color: var(--whitepure);
-        text-transform: uppercase;
-        font-family: var(--primary-font);
-        @include font144;
+        p {
+          height: 146px;
+          overflow: hidden;
+          span {
+            color: var(--whitepure);
+            text-transform: uppercase;
+            font-family: var(--primary-font);
+            @include font144;
+            display: block;
+          }
+        }
       }
     }
 
     .scrolldown {
       margin-bottom: 50px;
+      padding: 30px;
       position: relative;
       z-index: 2;
+      cursor: pointer;
       p {
-        padding: 30px;
-        cursor: pointer;
         @include font12;
         color: var(--whitepure);
         text-transform: uppercase;
