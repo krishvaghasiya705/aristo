@@ -1,7 +1,6 @@
 // "use client";
 // import { useEffect } from "react";
 // import gsap from "gsap";
-
 import Homeherobanner from "./components/homecomponents/herobanner";
 import Homebuttonsection from "./components/homecomponents/homebuttonsection";
 import Homeslidersection from "./components/homecomponents/homeslidersection";

@@ -6,10 +6,13 @@ import Logo from "@/assets/icon/logo";
 import Menuicon from "@/assets/icon/menuicon";
 import Sidebar from "../sidebar";
 import gsap from "gsap";
+import { useLanguage } from "@/app/context/LanguageContext";
+import LanguageSwitcher from "@/app/components/LanguageSwitcher";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -134,24 +137,24 @@ export default function Header() {
             <div className={styles.headerlinksflxmain}>
               <div className={styles.headerlinksflx}>
                 <div className={styles.headelinkbox}>
-                  <Link href={"/"}>home</Link>
-                  <Link href={"/"}>home</Link>
+                  <Link href={"/"}>{t('header.navigation.home')}</Link>
+                  <Link href={"/"}>{t('header.navigation.home')}</Link>
                 </div>
                 <div className={styles.headelinkbox}>
-                  <Link href={"/"}>about</Link>
-                  <Link href={"/"}>about</Link>
+                  <Link href={"/"}>{t('header.navigation.about')}</Link>
+                  <Link href={"/"}>{t('header.navigation.about')}</Link>
                 </div>
                 <div className={styles.headelinkbox}>
-                  <Link href={"/"}>brands</Link>
-                  <Link href={"/"}>brands</Link>
+                  <Link href={"/"}>{t('header.navigation.brands')}</Link>
+                  <Link href={"/"}>{t('header.navigation.brands')}</Link>
                 </div>
                 <div className={styles.headelinkbox}>
-                  <Link href={"/"}>contact</Link>
-                  <Link href={"/"}>contact</Link>
+                  <Link href={"/"}>{t('header.navigation.contact')}</Link>
+                  <Link href={"/"}>{t('header.navigation.contact')}</Link>
                 </div>
                 <div className={styles.catalogbuttonmain}>
                   <Link href={"/"}>
-                    <button type="button" className={styles.catalogbutton}>catalog</button>
+                    <button type="button" className={styles.catalogbutton}>{t('header.navigation.catalog')}</button>
                   </Link>
                 </div>
               </div>
@@ -168,6 +171,7 @@ export default function Header() {
         </div>
       </header>
       <Sidebar isOpen={isMenuOpen} />
+      <LanguageSwitcher />
     </>
   );
 }

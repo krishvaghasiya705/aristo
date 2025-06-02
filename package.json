@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@barba/core": "^2.10.3",
     "@studio-freight/lenis": "^1.0.42",
     "gsap": "^3.13.0",
     "next": "15.3.3",

@@ -1,0 +1,52 @@
+@use "@/styles/mixin" as *;
+
+.languageSwitcher {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  .languageButton {
+    background-color: var(--black);
+    border: 1px solid var(--white);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s ease-in-out;
+    opacity: 0;
+
+    span {
+      font-family: var(--primary-font);
+      @include font13;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    &.active {
+      z-index: 3 !important;
+      opacity: 1 !important;
+    }
+    &:first-child {
+      z-index: 2;
+    }
+
+    &:last-child {
+      z-index: 1;
+      transform: translateX(-40px);
+    }
+  }
+
+  &:hover {
+    .languageButton {
+      &:last-child {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+}

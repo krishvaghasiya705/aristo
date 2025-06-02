@@ -3,8 +3,11 @@ import React, { useEffect } from "react";
 import styles from "./sidebar.module.scss";
 import Link from "next/link";
 import gsap from "gsap";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function Sidebar({ isOpen }) {
+  const { t } = useLanguage();
+
   useEffect(() => {
     if (isOpen) {
       gsap.to(`.${styles.sidebarmain}`, {
@@ -76,25 +79,25 @@ export default function Sidebar({ isOpen }) {
         <div className="container">
           <div className={styles.sidebarflx}>
             <div className={styles.sidebarlinkmain}>
-              <Link href={"/"}>home</Link>
-              <Link href={"/"}>home</Link>
+              <Link href={"/"}>{t('sidebar.navigation.home')}</Link>
+              <Link href={"/"}>{t('sidebar.navigation.home')}</Link>
             </div>
             <div className={styles.sidebarlinkmain}>
-              <Link href={"/"}>about</Link>
-              <Link href={"/"}>about</Link>
+              <Link href={"/"}>{t('sidebar.navigation.about')}</Link>
+              <Link href={"/"}>{t('sidebar.navigation.about')}</Link>
             </div>
             <div className={styles.sidebarlinkmain}>
-              <Link href={"/"}>brands</Link>
-              <Link href={"/"}>brands</Link>
+              <Link href={"/"}>{t('sidebar.navigation.brands')}</Link>
+              <Link href={"/"}>{t('sidebar.navigation.brands')}</Link>
             </div>
             <div className={styles.sidebarlinkmain}>
-              <Link href={"/"}>contact</Link>
-              <Link href={"/"}>contact</Link>
+              <Link href={"/"}>{t('sidebar.navigation.contact')}</Link>
+              <Link href={"/"}>{t('sidebar.navigation.contact')}</Link>
             </div>
             <div className={styles.catalogbuttonmain}>
               <Link href={"/"}>
                 <button type="button" className={styles.catalogbutton}>
-                  catalog
+                  {t('sidebar.navigation.catalog')}
                 </button>
               </Link>
             </div>

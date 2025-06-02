@@ -1,0 +1,47 @@
+{
+  "header": {
+    "navigation": {
+      "home": "home",
+      "about": "about",
+      "brands": "brands",
+      "contact": "contact",
+      "catalog": "catalog"
+    }
+  },
+  "sidebar": {
+    "navigation": {
+      "home": "home",
+      "about": "about",
+      "brands": "brands",
+      "contact": "contact",
+      "catalog": "catalog"
+    }
+  },
+  "heroBanner": {
+    "title": "living experience",
+    "scrollDown": "scroll down"
+  },
+  "buttonSection": {
+    "categories": {
+      "kitchens": "Kitchens",
+      "furniture": "Furniture",
+      "appliances": "Appliances",
+      "closets": "Closets",
+      "bathrooms": "Bathrooms",
+      "sound": "Sound",
+      "surfaces": "Surfaces",
+      "decoration": "Decoration",
+      "art": "Art",
+      "lighting": "Lighting",
+      "carpets": "Carpets",
+      "faucets": "Faucets",
+      "outdoor": "Outdoor"
+    }
+  },
+  "metadata": {
+    "title": "Aristo Group",
+    "description": "Aristo Group - Your trusted partner in business solutions",
+    "keywords": ["Aristo Group", "business solutions", "consulting"],
+    "authors": [{ "name": "Aristo Group" }]
+  }
+} 

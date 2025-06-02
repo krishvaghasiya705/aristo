@@ -1,0 +1,47 @@
+{
+  "header": {
+    "navigation": {
+      "home": "inicio",
+      "about": "acerca de",
+      "brands": "marcas",
+      "contact": "contacto",
+      "catalog": "catálogo"
+    }
+  },
+  "sidebar": {
+    "navigation": {
+      "home": "inicio",
+      "about": "acerca de",
+      "brands": "marcas",
+      "contact": "contacto",
+      "catalog": "catálogo"
+    }
+  },
+  "heroBanner": {
+    "title": "experiencia de vida",
+    "scrollDown": "desplazarse hacia abajo"
+  },
+  "buttonSection": {
+    "categories": {
+      "kitchens": "Cocinas",
+      "furniture": "Muebles",
+      "appliances": "Electrodomésticos",
+      "closets": "Armarios",
+      "bathrooms": "Baños",
+      "sound": "Sonido",
+      "surfaces": "Superficies",
+      "decoration": "Decoración",
+      "art": "Arte",
+      "lighting": "Iluminación",
+      "carpets": "Alfombras",
+      "faucets": "Grifos",
+      "outdoor": "Exterior"
+    }
+  },
+  "metadata": {
+    "title": "Grupo Aristo",
+    "description": "Grupo Aristo - Su socio de confianza en soluciones empresariales",
+    "keywords": ["Grupo Aristo", "soluciones empresariales", "consultoría"],
+    "authors": [{ "name": "Grupo Aristo" }]
+  }
+} 

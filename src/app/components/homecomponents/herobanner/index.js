@@ -9,11 +9,13 @@ import homeherobannerimages5 from "@/assets/images/homeherobannerimages5.png";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function Homeherobanner() {
   const sectionRef = useRef(null);
   const bannerRef = useRef(null);
   const imagesRef = useRef([]);
+  const { t } = useLanguage();
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -123,13 +125,13 @@ export default function Homeherobanner() {
             </div>
             <div></div>
             <div className={styles.homeherobannertitle}>
-              <h1>living experience</h1>
+              <h1>{t('heroBanner.title')}</h1>
             </div>
             <div className={styles.scrolldown}>
               <p data-cursor-hover onClick={() => window.scrollTo({
                 top: window.innerHeight,
                 behavior: 'smooth'
-              })}>scroll down</p>
+              })}>{t('heroBanner.scrollDown')}</p>
             </div>
           </div>
         </div>
