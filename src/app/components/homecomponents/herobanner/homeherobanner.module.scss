@@ -56,10 +56,11 @@
     }
 
     .scrolldown {
-      margin-bottom: 80px;
+      margin-bottom: 50px;
       position: relative;
       z-index: 2;
       p {
+        padding: 30px;
         cursor: pointer;
         @include font12;
         color: var(--whitepure);

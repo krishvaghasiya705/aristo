@@ -1,4 +1,5 @@
 "use client";
+import { usePathname } from "next/navigation";
 import Footer from "./common/footer";
 import Header from "./common/header";
 import Cursor from "./components/cursor/cursor";
@@ -9,9 +10,23 @@ import "../styles/styles.scss";
 import { useState, useEffect } from "react";
 import gsap from "gsap";
 import LanguageSwitcher from "./components/LanguageSwitcher";
+import Loading from "./loading";
 
 export default function RootLayout({ children }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const [loading, setLoading] = useState(true);
+
+  // Always call hooks no matter what
+  useEffect(() => {
+    setLoading(true);
+
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, [pathname]);
 
   useEffect(() => {
     const handleMenuState = (e) => {
@@ -66,13 +81,19 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <Cursor />
-        <LenisScroll />
-        <Header />
-        <div className="blankspace"></div>
-        {children}
-        <LanguageSwitcher />
-        <Footer />
+        {loading ? (
+          <Loading />
+        ) : (
+          <>
+            <Cursor />
+            <LenisScroll />
+            <Header />
+            <div className="blankspace"></div>
+            {children}
+            <LanguageSwitcher />
+            <Footer />
+          </>
+        )}
       </body>
     </html>
   );
