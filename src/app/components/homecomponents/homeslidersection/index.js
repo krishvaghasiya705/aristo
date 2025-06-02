@@ -10,14 +10,27 @@ import sliderimages4 from "@/assets/images/sliderimages4.webp";
 
 export default function Homeslidersection() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slides = [sliderimages1, sliderimages2, sliderimages3, sliderimages4];
+  const [isClient, setIsClient] = useState(false);
+  const slides = [
+    sliderimages1,
+    sliderimages2,
+    sliderimages3,
+    sliderimages4
+  ];
   const slideRefs = useRef([]);
   const imageContainerRefs = useRef([]);
   const containerRef = useRef(null);
   const timeline = useRef(null);
   const isAnimating = useRef(false);
 
+  // Set isClient to true after component mounts
   useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isClient) return;
+
     timeline.current = gsap.timeline({
       paused: true,
       defaults: {
@@ -36,15 +49,12 @@ export default function Homeslidersection() {
       zIndex: 1,
       transformStyle: "preserve-3d",
       transformPerspective: 2500,
-      // scale: 1.1
     });
 
     // Setup image containers
     gsap.set(imageContainerRefs.current, {
       z: -100,
       transformStyle: "preserve-3d",
-      // scale: 1.1,
-      // rotateY: 15,
       width: "100%",
       height: "100%"
     });
@@ -59,7 +69,6 @@ export default function Homeslidersection() {
       zIndex: 2,
       transformStyle: "preserve-3d",
       transformPerspective: 2500,
-      // scale: 1.1
     });
 
     return () => {
@@ -67,10 +76,10 @@ export default function Homeslidersection() {
         timeline.current.kill();
       }
     };
-  }, []);
+  }, [isClient]);
 
   const animateSlides = (current, next) => {
-    if (isAnimating.current) return;
+    if (!isClient || isAnimating.current) return;
     isAnimating.current = true;
 
     timeline.current.clear();
@@ -87,8 +96,6 @@ export default function Homeslidersection() {
     gsap.to(imageContainerRefs.current[current], {
       z: -200,
       duration: 1.5,
-      // scale: 1,
-      // rotateY: -15,
       ease: "power3.inOut",
       transformStyle: "preserve-3d",
       width: "100%",
@@ -98,16 +105,12 @@ export default function Homeslidersection() {
     gsap.fromTo(imageContainerRefs.current[next],
       { 
         z: -200,
-        // scale: 1,
-        // rotateY: -15,
         width: "100%",
         height: "100%"
       },
       {
         z: -100,
         duration: 1.5,
-        // scale: 1.1,
-        // rotateY: 15,
         ease: "power3.inOut",
         transformStyle: "preserve-3d",
         width: "100%",
@@ -121,7 +124,6 @@ export default function Homeslidersection() {
         y: 0,
         z: 0,
         opacity: 0.8,
-        // scale: 1,
         duration: 1.5,
         ease: "power3.inOut",
         onComplete: () => {
@@ -138,14 +140,12 @@ export default function Homeslidersection() {
           y: 0,
           z: 0,
           opacity: 0.8,
-          // scale: 1
         },
         {
           x: "0%",
           y: 0,
           z: 0,
           opacity: 1,
-          // scale: 1.1,
           duration: 1.5,
           ease: "power3.inOut",
           onComplete: () => {
@@ -160,11 +160,13 @@ export default function Homeslidersection() {
   };
 
   useEffect(() => {
+    if (!isClient) return;
     const nextSlide = (currentSlide + 1) % slides.length;
     animateSlides(currentSlide, nextSlide);
-  }, [currentSlide, slides.length]);
+  }, [currentSlide, slides.length, isClient]);
 
   useEffect(() => {
+    if (!isClient) return;
     const interval = setInterval(() => {
       if (!isAnimating.current) {
         setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -172,34 +174,56 @@ export default function Homeslidersection() {
     }, 4000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isClient]);
 
-  return (
-    <>
+  if (!isClient) {
+    return (
       <div className={styles.homeslidersectionmain}>
         <div className="container">
-          <div className={styles.homeslidersection} ref={containerRef}>
-            {slides.map((slide, index) => (
-              <div
-                key={index}
-                ref={el => slideRefs.current[index] = el}
-                className={`${styles.slide} ${index === currentSlide ? styles.active : ''}`}
-              >
-                <div 
-                  ref={el => imageContainerRefs.current[index] = el}
-                  className={styles['imagecontainer']}
-                >
-                  <Image
-                    src={slide}
-                    alt={`slider image ${index + 1}`}
-                    priority={index === 0}
-                  />
-                </div>
+          <div className={styles.homeslidersection}>
+            <div className={styles.slide}>
+              <div className={styles.imagecontainer}>
+                <Image
+                  src={slides[0]}
+                  alt="slider image 1"
+                  priority
+                  width={1920}
+                  height={1080}
+                />
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>
-    </>
+    );
+  }
+
+  return (
+    <div className={styles.homeslidersectionmain}>
+      <div className="container">
+        <div className={styles.homeslidersection} ref={containerRef}>
+          {slides.map((slide, index) => (
+            <div
+              key={index}
+              ref={el => slideRefs.current[index] = el}
+              className={`${styles.slide} ${index === currentSlide ? styles.active : ''}`}
+            >
+              <div 
+                ref={el => imageContainerRefs.current[index] = el}
+                className={styles['imagecontainer']}
+              >
+                <Image
+                  src={slide}
+                  alt={`slider image ${index + 1}`}
+                  priority={index === 0}
+                  width={1920}
+                  height={1080}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }

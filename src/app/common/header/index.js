@@ -171,7 +171,6 @@ export default function Header() {
         </div>
       </header>
       <Sidebar isOpen={isMenuOpen} />
-      <LanguageSwitcher />
     </>
   );
 }

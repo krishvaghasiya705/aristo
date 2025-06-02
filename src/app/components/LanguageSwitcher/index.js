@@ -13,14 +13,14 @@ export default function LanguageSwitcher() {
         onClick={() => changeLanguage('en')}
         data-cursor-hover
       >
-        <span>EN</span>
+        <span lang='en'>EN</span>
       </button>
       <button
         className={`${styles.languageButton} ${currentLanguage === 'es' ? styles.active : ''}`}
         onClick={() => changeLanguage('es')}
         data-cursor-hover
         >
-        <span>ES</span>
+        <span lang='es'>ES</span>
       </button>
     </div>
   );
