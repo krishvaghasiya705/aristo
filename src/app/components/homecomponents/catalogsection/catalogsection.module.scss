@@ -1,0 +1,29 @@
+@use "@/styles/mixin" as *;
+
+.catalogsectionmain {
+    padding: 96px 0;
+
+    .catalogsection {
+        padding: 192px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 76px;
+        align-items: center;
+        justify-content: center;
+
+        h5 {
+            text-align: center;
+            p {
+              height: 146px;
+              overflow: hidden;
+              span {
+                @include font144;
+                font-family: var(--primary-font);
+                display: block;
+                text-transform: uppercase;
+                mix-blend-mode: difference;
+              }
+            }
+        }
+    }
+}

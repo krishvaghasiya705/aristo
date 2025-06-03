@@ -23,7 +23,6 @@ export default function Homeslidersection() {
   const timeline = useRef(null);
   const isAnimating = useRef(false);
 
-  // Set isClient to true after component mounts
   useEffect(() => {
     setIsClient(true);
   }, []);
@@ -38,8 +37,6 @@ export default function Homeslidersection() {
         ease: "power3.inOut"
       }
     });
-    
-    // Initial setup for all slides
     gsap.set(slideRefs.current, {
       x: "100%",
       y: 0,

@@ -24,7 +24,7 @@ export default function Header() {
           gsap.to(`.${styles.header}`, {
             duration: 0.2,
             ease: "cubic-bezier(0.4, 0, 0.2, 1)",
-            y: "-100%",
+            y: "-105%",
             overwrite: true
           });
         } else {

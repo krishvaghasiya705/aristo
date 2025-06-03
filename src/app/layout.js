@@ -76,15 +76,26 @@ export default function RooLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
           rel="stylesheet"
         />
-        <title>Aristo Group</title>
-        <meta charset="UTF-8" />
+        <meta charSet="utf-8" />
+        <title>Aristo® - Living Experience</title>
         <meta
+          content="Aristo group was established in 1992 with the inspiration of offering better products for homeowners in Israel. The group&#x27;s basic philosophical concept is a holistic approach, which produces quality solutions, with an exceptional design statement, which differentiates each and every project, and produces individual solutions, which are different from each other."
           name="description"
-          content="Aristo Group - Your trusted partner in business solutions"
         />
-        <meta name="keywords" content="Aristo Group " />
-        <meta name="author" content="Aristo Group" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta content="Aristo® - Living Experience" property="og:title" />
+        <meta
+          content="Aristo group was established in 1992 with the inspiration of offering better products for homeowners in Israel. The group&#x27;s basic philosophical concept is a holistic approach, which produces quality solutions, with an exceptional design statement, which differentiates each and every project, and produces individual solutions, which are different from each other."
+          property="og:description"
+        />
+        <meta
+          content="https://cdn.prod.website-files.com/66b9ff332e5bba96a4fd7fea/675832526aa272ab7d9516ef_1200x630%20(1).png"
+          property="og:image"
+        />
+        <meta content="Aristo® - Living Experience" property="twitter:title" />
+        <meta
+          content="Aristo group was established in 1992 with the inspiration of offering better products for homeowners in Israel. The group&#x27;s basic philosophical concept is a holistic approach, which produces quality solutions, with an exceptional design statement, which differentiates each and every project, and produces individual solutions, which are different from each other."
+          property="twitter:description"
+        />
       </head>
       <body>
         {loading ? (

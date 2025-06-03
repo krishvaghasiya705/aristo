@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./highendsection.module.scss";
 import Arrowicon from "@/assets/icon/arrowicon";
+import Commonbutton from "../../commonbutton/button";
 import Link from "next/link";
 import highendsectionimage1 from "@/assets/images/highendsectionimage1.png"
 import highendsectionimage2 from "@/assets/images/highendsectionimage2.png"
@@ -180,39 +181,34 @@ export default function Highendsection() {
                 </span>
               </h3>
               <p>
-                <div className={styles.aristogroupparagraph}>
+                <span className={styles.aristogroupparagraph}>
                   <span ref={(el) => (paragraphspansRef.current[1] = el)}>
                     Aristo Group, founded in 1992, was inspired by a vision to
                   </span>
-                </div>
-                <div className={styles.aristogroupparagraph}>
+                </span>
+                <span className={styles.aristogroupparagraph}>
                   <span ref={(el) => (paragraphspansRef.current[2] = el)}>bring superior products and unmatched quality to</span>
-                </div>
-                <div className={styles.aristogroupparagraph}>
+                </span>
+                <span className={styles.aristogroupparagraph}>
                   <span ref={(el) => (paragraphspansRef.current[3] = el)}>
                     homeowners in Israel. At its core, the group embodies a
                   </span>
-                </div>
-                <div className={styles.aristogroupparagraph}>
+                </span>
+                <span className={styles.aristogroupparagraph}>
                   <span ref={(el) => (paragraphspansRef.current[4] = el)}>
                     holistic philosophy, delivering exceptional solutions with a
                   </span>
-                </div>
-                <div className={styles.aristogroupparagraph}>
+                </span>
+                <span className={styles.aristogroupparagraph}>
                   <span ref={(el) => (paragraphspansRef.current[5] = el)}>
                     distinctive design signature, ensuring every project stands
                   </span>
-                </div>
-                <div className={styles.aristogroupparagraph}>
+                </span>
+                <span className={styles.aristogroupparagraph}>
                   <span ref={(el) => (paragraphspansRef.current[6] = el)}>out and is uniquely tailored to each client.</span>
-                </div>
+                </span>
               </p>
-              <Link href={"/"}>
-                <button type="button" className={styles.moreaboutbuttonmain} data-cursor-hover>
-                  <span>more about us</span>
-                  <Arrowicon />
-                </button>
-              </Link>
+              <Commonbutton Buttonlink="/" Buttontext="more about us" ButtonIcon={<Arrowicon />} />
             </div>
           </div>
         </div>

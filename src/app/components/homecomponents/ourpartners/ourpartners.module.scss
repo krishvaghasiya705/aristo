@@ -1,0 +1,43 @@
+@use "@/styles/mixin" as *;
+
+.ourpartnersmain {
+  padding: 96px 0;
+  mix-blend-mode: difference;
+
+  .ourpartnerstitle {
+    padding: 115px 0;
+
+    h4 {
+      margin: 0 auto;
+      max-width: 591px;
+      text-align: center;
+      p {
+        height: 97px;
+        overflow: hidden;
+        span {
+          @include font71;
+          font-family: var(--primary-font);
+          display: block;
+          text-transform: uppercase;
+          mix-blend-mode: difference;
+        }
+      }
+    }
+  }
+
+  .ourpartnersmarqueeflx {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+    margin-right: 38px;
+      
+    .ourpartnersmarqueebox {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 426px;
+          height: 277px;
+          border: 1px solid var(--lighgrey);
+        }
+    }
+}

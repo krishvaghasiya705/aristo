@@ -57,9 +57,20 @@ const Cursor = () => {
     addHoverListeners();
     requestAnimationFrame(updatePosition);
 
+    const observer = new MutationObserver(() => {
+      removeHoverListeners();
+      addHoverListeners();
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       removeHoverListeners();
+      observer.disconnect();
     };
   }, []);
 

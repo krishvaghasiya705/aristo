@@ -1,0 +1,57 @@
+@use "@/styles/mixin" as *;
+
+.exclusivebrandsmain {
+    padding: 96px 0;
+    mix-blend-mode: difference;
+
+    .exclusivebrands {
+        padding: 115px 0;
+        margin-left:  351px;
+
+        .exclusivebrandstitle {
+            h3 {
+                p {
+                    height: 97px;
+                    overflow: hidden;
+                    span {
+                        @include font71;
+                        font-family: var(--primary-font);
+                        display: block;
+                        text-transform: uppercase;
+                        mix-blend-mode: difference;
+                    }
+                }
+            }
+        }
+
+        .exclusivebrandcardsmainflx {
+            margin-top: 96px;
+            display: flex;
+            flex-direction: column;
+            gap: 63px;
+            perspective: 1000px;
+            margin-bottom: 63px;
+
+            .exclusivebrandcardsmain {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 63px;
+                position: relative;
+                width: 100%;
+                will-change: transform, opacity;
+                transform-style: preserve-3d;
+
+                .exclusivebrandcard {
+                    background-color: var(--blackgrey);
+                    height: 315px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+                    z-index: 1;
+                    transition: transform 0.3s ease-out;
+                }
+            }
+        }
+    }
+}
