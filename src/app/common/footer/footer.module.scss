@@ -1,0 +1,20 @@
+.footermain {
+    padding: 76px 0;
+    mix-blend-mode: difference;
+
+    .footer {
+        padding-top: 96px;
+        display: flex;
+        justify-content: space-between;
+
+
+        .footerlogo {
+            max-width: 788px;
+        }
+
+        .footercontentmain {
+            max-width: 551px;
+            width: 100%;
+        }
+    }
+}
