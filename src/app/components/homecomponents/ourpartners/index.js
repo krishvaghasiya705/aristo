@@ -22,7 +22,6 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Ourpartners() {
     const sectionRef = useRef(null);
     const spansRef = useRef([]);
-    const titleRef = useRef(null);
     const { t } = useLanguage();
 
     // Initialize GSAP animations

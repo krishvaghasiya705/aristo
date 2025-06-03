@@ -82,5 +82,26 @@
     "description": "Aristo Group - Your trusted partner in business solutions",
     "keywords": ["Aristo Group", "business solutions", "consulting"],
     "authors": [{ "name": "Aristo Group" }]
+  },
+  "showroomSection": {
+    "title": "showrooms",
+    "navigate": "navigate",
+    "contactUs": "contact us",
+    "showrooms": [
+      {
+        "name": "ARISTO MODULNOVA",
+        "location": "Herzliya",
+        "address": "Ha-Menofim St 11, Haifa",
+        "phone": "073-2366566",
+        "email": "info@aristos.co.il"
+      },
+      {
+        "name": "ARISTO MODULNOVA",
+        "location": "haifa",
+        "address": "Ha'Amelim St 34, Haifa",
+        "phone": "073-2366566",
+        "email": "info@aristos.co.il"
+      }
+    ]
   }
 } 

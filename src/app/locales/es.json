@@ -82,5 +82,26 @@
     "description": "Grupo Aristo - Su socio de confianza en soluciones empresariales",
     "keywords": ["Grupo Aristo", "soluciones empresariales", "consultoría"],
     "authors": [{ "name": "Grupo Aristo" }]
+  },
+  "showroomSection": {
+    "title": "salas de exposición",
+    "navigate": "navegar",
+    "contactUs": "contáctenos",
+    "showrooms": [
+      {
+        "name": "ARISTO MODULNOVA",
+        "location": "Herzliya",
+        "address": "Ha-Menofim St 11, Haifa",
+        "phone": "073-2366566",
+        "email": "info@aristos.co.il"
+      },
+      {
+        "name": "ARISTO MODULNOVA",
+        "location": "haifa",
+        "address": "Ha'Amelim St 34, Haifa",
+        "phone": "073-2366566",
+        "email": "info@aristos.co.il"
+      }
+    ]
   }
 } 

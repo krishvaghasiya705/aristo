@@ -25,8 +25,6 @@ export default function Exclusivebrands() {
     const cardsRef = useRef([]);
     const titleRef = useRef(null);
     const { t } = useLanguage();
-
-    // Initialize GSAP animations
     useEffect(() => {
         const refreshScrollTrigger = () => {
             ScrollTrigger.refresh();
@@ -43,7 +41,6 @@ export default function Exclusivebrands() {
 
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
-            // Title animation
             const spans = spansRef.current.filter(Boolean);
             gsap.fromTo(
                 spans,
@@ -73,8 +70,6 @@ export default function Exclusivebrands() {
                     }
                 }
             );
-
-            // Cards stacking animation
             const cards = cardsRef.current.filter(Boolean);
             cards.forEach((card, index) => {
                 gsap.fromTo(

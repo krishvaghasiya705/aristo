@@ -5,6 +5,7 @@ import Highendsection from "./components/homecomponents/highendsection";
 import Homebuttonsection from "./components/homecomponents/homebuttonsection";
 import Homeslidersection from "./components/homecomponents/homeslidersection";
 import Ourpartners from "./components/homecomponents/ourpartners";
+import Showroomsection from "./components/homecomponents/showroomsection";
 
 export default function Home() {
   // useEffect(() => {
@@ -24,6 +25,7 @@ export default function Home() {
       <Exclusivebrands />
       <Ourpartners />
       <Catalogsection />
+      <Showroomsection />
     </>
   );
 }
