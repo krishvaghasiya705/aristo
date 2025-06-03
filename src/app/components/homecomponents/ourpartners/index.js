@@ -15,6 +15,7 @@ import Vzug from "@/assets/icon/vzug";
 import Miele from "@/assets/icon/miele";
 import Gaggenau from "@/assets/icon/gaggenau";
 import Subzero from "@/assets/icon/subzero";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,6 +23,7 @@ export default function Ourpartners() {
     const sectionRef = useRef(null);
     const spansRef = useRef([]);
     const titleRef = useRef(null);
+    const { t } = useLanguage();
 
     // Initialize GSAP animations
     useEffect(() => {
@@ -119,10 +121,10 @@ export default function Ourpartners() {
           <div className={styles.ourpartnerstitle}>
             <h4>
               <p>
-                <span ref={(el) => (spansRef.current[0] = el)}>our</span>
+                <span ref={(el) => (spansRef.current[0] = el)}>{t('ourPartners.title.line1')}</span>
               </p>
               <p>
-                <span ref={(el) => (spansRef.current[1] = el)}>partners</span>
+                <span ref={(el) => (spansRef.current[1] = el)}>{t('ourPartners.title.line2')}</span>
               </p>
             </h4>
           </div>

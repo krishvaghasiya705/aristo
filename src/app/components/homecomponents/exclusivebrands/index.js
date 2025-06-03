@@ -15,6 +15,7 @@ import Laminam from "@/assets/icon/laminam";
 import Dekton from "@/assets/icon/dekton";
 import Arrowicon from "@/assets/icon/arrowicon";
 import Commonbutton from "../../commonbutton/button";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,6 +24,7 @@ export default function Exclusivebrands() {
     const spansRef = useRef([]);
     const cardsRef = useRef([]);
     const titleRef = useRef(null);
+    const { t } = useLanguage();
 
     // Initialize GSAP animations
     useEffect(() => {
@@ -121,13 +123,13 @@ export default function Exclusivebrands() {
                         <div className={styles.exclusivebrandstitle} ref={titleRef}>
                             <h3>
                                 <p>
-                                <span ref={(el) => (spansRef.current[0] = el)}>our</span>
+                                <span ref={(el) => (spansRef.current[0] = el)}>{t('exclusiveBrands.title.line1')}</span>
                                 </p>
                                 <p>
-                                <span ref={(el) => (spansRef.current[1] = el)}>exclusive</span>
+                                <span ref={(el) => (spansRef.current[1] = el)}>{t('exclusiveBrands.title.line2')}</span>
                                 </p>
                                 <p>
-                                <span ref={(el) => (spansRef.current[2] = el)}>brands</span>
+                                <span ref={(el) => (spansRef.current[2] = el)}>{t('exclusiveBrands.title.line3')}</span>
                                 </p>
                             </h3>
                         </div>
@@ -173,7 +175,7 @@ export default function Exclusivebrands() {
                                 </div>
                             </div>
                         </div>
-                        <Commonbutton Buttonlink="/" Buttontext="explore our brands" ButtonIcon={<Arrowicon />} />
+                        <Commonbutton Buttonlink="/" Buttontext={t('exclusiveBrands.button')} ButtonIcon={<Arrowicon />} />
                     </div> 
                 </div> 
             </div> 

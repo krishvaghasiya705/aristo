@@ -12,6 +12,7 @@ import highendsectionimage3 from "@/assets/images/highendsectionimage3.png"
 import highendsectionimage4 from "@/assets/images/highendsectionimage4.png"
 import highendsectionimage5 from "@/assets/images/highendsectionimage5.png"
 import Image from "next/image";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,6 +20,7 @@ export default function Highendsection() {
   const sectionRef = useRef(null);
   const spansRef = useRef([]);
   const paragraphspansRef = useRef([]);
+  const { t } = useLanguage();
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -161,54 +163,35 @@ export default function Highendsection() {
             <div className={styles.highendsectiontitleflxleft}>
               <h2>
                 <p>
-                  <span ref={(el) => (spansRef.current[0] = el)}>HIGH-END</span>
+                  <span ref={(el) => (spansRef.current[0] = el)}>{t('highEndSection.title.line1')}</span>
                 </p>
                 <p>
-                  <span ref={(el) => (spansRef.current[1] = el)}>INTERIOR</span>
+                  <span ref={(el) => (spansRef.current[1] = el)}>{t('highEndSection.title.line2')}</span>
                 </p>
                 <p>
-                  <span ref={(el) => (spansRef.current[2] = el)}>SINCE</span>
+                  <span ref={(el) => (spansRef.current[2] = el)}>{t('highEndSection.title.line3')}</span>
                 </p>
                 <p>
-                  <span ref={(el) => (spansRef.current[3] = el)}>92'</span>
+                  <span ref={(el) => (spansRef.current[3] = el)}>{t('highEndSection.title.line4')}</span>
                 </p>
               </h2>
             </div>
             <div className={styles.highendsectiontitleflxright}>
               <h3 className={styles.aristogrouptitle}>
                 <span ref={(el) => (paragraphspansRef.current[0] = el)}>
-                  ARISTO GROUP
+                  {t('highEndSection.content.title')}
                 </span>
               </h3>
               <p>
-                <span className={styles.aristogroupparagraph}>
-                  <span ref={(el) => (paragraphspansRef.current[1] = el)}>
-                    Aristo Group, founded in 1992, was inspired by a vision to
+                {t('highEndSection.content.paragraph').map((text, index) => (
+                  <span key={index} className={styles.aristogroupparagraph}>
+                    <span ref={(el) => (paragraphspansRef.current[index + 1] = el)}>
+                      {text}
+                    </span>
                   </span>
-                </span>
-                <span className={styles.aristogroupparagraph}>
-                  <span ref={(el) => (paragraphspansRef.current[2] = el)}>bring superior products and unmatched quality to</span>
-                </span>
-                <span className={styles.aristogroupparagraph}>
-                  <span ref={(el) => (paragraphspansRef.current[3] = el)}>
-                    homeowners in Israel. At its core, the group embodies a
-                  </span>
-                </span>
-                <span className={styles.aristogroupparagraph}>
-                  <span ref={(el) => (paragraphspansRef.current[4] = el)}>
-                    holistic philosophy, delivering exceptional solutions with a
-                  </span>
-                </span>
-                <span className={styles.aristogroupparagraph}>
-                  <span ref={(el) => (paragraphspansRef.current[5] = el)}>
-                    distinctive design signature, ensuring every project stands
-                  </span>
-                </span>
-                <span className={styles.aristogroupparagraph}>
-                  <span ref={(el) => (paragraphspansRef.current[6] = el)}>out and is uniquely tailored to each client.</span>
-                </span>
+                ))}
               </p>
-              <Commonbutton Buttonlink="/" Buttontext="more about us" ButtonIcon={<Arrowicon />} />
+              <Commonbutton Buttonlink="/" Buttontext={t('highEndSection.content.button')} ButtonIcon={<Arrowicon />} />
             </div>
           </div>
         </div>

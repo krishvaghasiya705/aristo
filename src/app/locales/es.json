@@ -39,6 +39,44 @@
       "outdoor": "Exterior"
     }
   },
+  "highEndSection": {
+    "title": {
+      "line1": "ALTA GAMA",
+      "line2": "INTERIOR",
+      "line3": "DESDE",
+      "line4": "92'"
+    },
+    "content": {
+      "title": "GRUPO ARISTO",
+      "paragraph": [
+        "Grupo Aristo, fundado en 1992, se inspiró en una visión para",
+        "llevar productos superiores y calidad sin igual a",
+        "propietarios en Israel. En su esencia, el grupo encarna una",
+        "filosofía holística, ofreciendo soluciones excepcionales con una",
+        "firma de diseño distintiva, asegurando que cada proyecto destaque",
+        "y esté únicamente adaptado a cada cliente."
+      ],
+      "button": "más sobre nosotros"
+    }
+  },
+  "exclusiveBrands": {
+    "title": {
+      "line1": "nuestras",
+      "line2": "marcas",
+      "line3": "exclusivas"
+    },
+    "button": "explorar nuestras marcas"
+  },
+  "ourPartners": {
+    "title": {
+      "line1": "nuestros",
+      "line2": "socios"
+    }
+  },
+  "catalogSection": {
+    "title": "catálogo",
+    "button": "ver todos los productos"
+  },
   "metadata": {
     "title": "Grupo Aristo",
     "description": "Grupo Aristo - Su socio de confianza en soluciones empresariales",

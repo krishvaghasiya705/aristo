@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./catalogsection.module.scss";
 import Arrowicon from "@/assets/icon/arrowicon";
 import Commonbutton from "../../commonbutton/button";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,6 +13,7 @@ export default function Catalogsection() {
   const sectionRef = useRef(null);
   const spansRef = useRef([]);
   const titleRef = useRef(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const refreshScrollTrigger = () => {
@@ -72,10 +74,10 @@ export default function Catalogsection() {
           <div className={styles.catalogsection}>
             <h5>
               <p>
-                <span ref={(el) => (spansRef.current[0] = el)}>catalog</span>
+                <span ref={(el) => (spansRef.current[0] = el)}>{t('catalogSection.title')}</span>
               </p>
             </h5>
-            <Commonbutton Buttonlink="/" Buttontext="see all products" ButtonIcon={<Arrowicon />} />
+            <Commonbutton Buttonlink="/" Buttontext={t('catalogSection.button')} ButtonIcon={<Arrowicon />} />
           </div>
         </div>
       </div>

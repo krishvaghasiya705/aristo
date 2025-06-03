@@ -39,6 +39,44 @@
       "outdoor": "Outdoor"
     }
   },
+  "highEndSection": {
+    "title": {
+      "line1": "HIGH-END",
+      "line2": "INTERIOR",
+      "line3": "SINCE",
+      "line4": "92'"
+    },
+    "content": {
+      "title": "ARISTO GROUP",
+      "paragraph": [
+        "Aristo Group, founded in 1992, was inspired by a vision to",
+        "bring superior products and unmatched quality to",
+        "homeowners in Israel. At its core, the group embodies a",
+        "holistic philosophy, delivering exceptional solutions with a",
+        "distinctive design signature, ensuring every project stands",
+        "out and is uniquely tailored to each client."
+      ],
+      "button": "more about us"
+    }
+  },
+  "exclusiveBrands": {
+    "title": {
+      "line1": "our",
+      "line2": "exclusive",
+      "line3": "brands"
+    },
+    "button": "explore our brands"
+  },
+  "ourPartners": {
+    "title": {
+      "line1": "our",
+      "line2": "partners"
+    }
+  },
+  "catalogSection": {
+    "title": "catalog",
+    "button": "see all products"
+  },
   "metadata": {
     "title": "Aristo Group",
     "description": "Aristo Group - Your trusted partner in business solutions",
