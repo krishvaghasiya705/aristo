@@ -7,7 +7,6 @@ import Menuicon from "@/assets/icon/menuicon";
 import Sidebar from "../sidebar";
 import gsap from "gsap";
 import { useLanguage } from "@/app/context/LanguageContext";
-import LanguageSwitcher from "@/app/components/LanguageSwitcher";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
