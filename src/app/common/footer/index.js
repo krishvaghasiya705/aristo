@@ -1,105 +1,55 @@
-import React, { useEffect, useRef } from 'react';
+"use client";
+import React from "react";
 import styles from "./footer.module.scss";
-import Footerlogo from '@/assets/icon/footerlogo';
+import Footerlogo from "@/assets/icon/footerlogo";
 import Link from "next/link";
-import Uparrowcircle from '@/assets/icon/uparrowcircle';
+import Uparrowcircle from "@/assets/icon/uparrowcircle";
 import { useLanguage } from "@/app/context/LanguageContext";
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export default function Footer() {
   const { t } = useLanguage();
-  const footerRef = useRef(null);
-  const footerElementsRef = useRef([]);
-
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-  
-    const animate = () => {
-      gsap.fromTo(
-        footerElementsRef.current,
-        {
-          y: 100,
-          rotation: 5,
-          transformOrigin: "left bottom",
-          opacity: 0,
-        },
-        {
-          y: 0,
-          rotation: 0,
-          opacity: 1,
-          duration: 1.2,
-          ease: "power2.inOut",
-          stagger: {
-            amount: 1,
-            from: "start",
-          },
-          scrollTrigger: {
-            trigger: footerRef.current,
-            start: "top 80%",
-            end: "top 20%",
-            scrub: 1,
-            toggleActions: "play none none reverse",
-            markers: false,
-          },
-        }
-      );
-  
-      ScrollTrigger.refresh();
-    };
-  
-    // Ensure DOM is ready & layout stable
-    if (document.readyState === 'complete') {
-      setTimeout(animate, 100); // slight delay for layout stabilization
-    } else {
-      window.addEventListener('load', () => {
-        setTimeout(animate, 100);
-      });
-    }
-  
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  }, []);
-  
 
   const handleClick = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <footer className={styles.footermain} ref={footerRef}>
+    <footer className={styles.footermain}>
       <div className="container">
         <div className={styles.footer}>
+          {/* Logo */}
           <div className={styles.footerlogo}>
             <Link href={"/"}>
-              <div ref={el => footerElementsRef.current[0] = el}>
+              <div>
                 <Footerlogo />
               </div>
             </Link>
           </div>
 
+          {/* Navigation Links */}
           <div className={styles.footercontentmain}>
-            {['home', 'about', 'brands', 'contact', 'catalog'].map((item, index) => (
+            {["home", "about", "brands", "contact", "catalog"].map((item) => (
               <Link href={"/"} key={item}>
-                <span ref={el => footerElementsRef.current[1 + index * 2] = el}>{t(`header.navigation.${item}`)}</span>
-                <span ref={el => footerElementsRef.current[2 + index * 2] = el}>{t(`header.navigation.${item}`)}</span>
+                <span>{t(`header.navigation.${item}`)}</span>
+                <span>{t(`header.navigation.${item}`)}</span>
               </Link>
             ))}
           </div>
 
+          {/* Up arrow and copyright */}
           <div className={styles.footerright}>
-            <div className={styles.uparrowmain} onClick={handleClick} data-cursor-hover>
-              <div
-                className={styles.uparrow}
-                ref={el => footerElementsRef.current[11] = el}
-              >
+            <div
+              className={styles.uparrowmain}
+              onClick={handleClick}
+              data-cursor-hover
+            >
+              <div className={styles.uparrow}>
                 <Uparrowcircle />
               </div>
             </div>
             <p>
               <span className={styles.copyrightline}>
-                <span ref={el => footerElementsRef.current[12] = el}>ARISTO® 2025</span>
+                <span>ARISTO® 2025</span>
               </span>
             </p>
           </div>
