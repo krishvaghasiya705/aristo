@@ -14,38 +14,54 @@ export default function Footer() {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-
-    gsap.fromTo(
-      footerElementsRef.current,
-      {
-        y: 100,
-        rotation: 5,
-        transformOrigin: "left bottom",
-        opacity: 0,
-      },
-      {
-        y: 0,
-        rotation: 0,
-        opacity: 1,
-        duration: 1.2,
-        ease: "power2.inOut",
-        stagger: {
-          amount: 1,
-          from: "start",
+  
+    const animate = () => {
+      gsap.fromTo(
+        footerElementsRef.current,
+        {
+          y: 100,
+          rotation: 5,
+          transformOrigin: "left bottom",
+          opacity: 0,
         },
-        scrollTrigger: {
-          trigger: footerRef.current,
-          start: "top 80%",
-          end: "top 20%",
-          scrub: 1,
-          toggleActions: "play none none reverse",
-          markers: false,
-        },
-      }
-    );
-
-    return () => ScrollTrigger.getAll().forEach(t => t.kill());
+        {
+          y: 0,
+          rotation: 0,
+          opacity: 1,
+          duration: 1.2,
+          ease: "power2.inOut",
+          stagger: {
+            amount: 1,
+            from: "start",
+          },
+          scrollTrigger: {
+            trigger: footerRef.current,
+            start: "top 80%",
+            end: "top 20%",
+            scrub: 1,
+            toggleActions: "play none none reverse",
+            markers: false,
+          },
+        }
+      );
+  
+      ScrollTrigger.refresh();
+    };
+  
+    // Ensure DOM is ready & layout stable
+    if (document.readyState === 'complete') {
+      setTimeout(animate, 100); // slight delay for layout stabilization
+    } else {
+      window.addEventListener('load', () => {
+        setTimeout(animate, 100);
+      });
+    }
+  
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
   }, []);
+  
 
   const handleClick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
