@@ -140,12 +140,12 @@ export default function Header() {
                   <Link href={"/"}>{t('header.navigation.home')}</Link>
                 </div>
                 <div className={styles.headelinkbox}>
-                  <Link href={"/"}>{t('header.navigation.about')}</Link>
-                  <Link href={"/"}>{t('header.navigation.about')}</Link>
+                  <Link href={"/about"}>{t('header.navigation.about')}</Link>
+                  <Link href={"/about"}>{t('header.navigation.about')}</Link>
                 </div>
                 <div className={styles.headelinkbox}>
-                  <Link href={"/"}>{t('header.navigation.brands')}</Link>
-                  <Link href={"/"}>{t('header.navigation.brands')}</Link>
+                  <Link href={"/brands"}>{t('header.navigation.brands')}</Link>
+                  <Link href={"/brands"}>{t('header.navigation.brands')}</Link>
                 </div>
                 <div className={styles.headelinkbox}>
                   <Link href={"/"}>{t('header.navigation.contact')}</Link>

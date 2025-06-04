@@ -29,6 +29,18 @@ export default function RooLayout({ children }) {
   }, [pathname]);
 
   useEffect(() => {
+    if (pathname === '/') {
+      document.body.style.backgroundColor = 'var(--black)';
+    } else if (pathname === '/about') {
+      document.body.style.backgroundColor = 'var(--black)';
+    } else if (pathname === '/brands') {
+      document.body.style.backgroundColor = 'var(--white)';
+    } else {
+      document.body.style.backgroundColor = 'var(--black)';
+    }
+  }, [pathname]);
+
+  useEffect(() => {
     const handleMenuState = (e) => {
       if (e.detail !== undefined) {
         setIsMenuOpen(e.detail);
