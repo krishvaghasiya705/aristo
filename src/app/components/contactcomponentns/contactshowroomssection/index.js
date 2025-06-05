@@ -174,12 +174,12 @@ export default function Contactshowroomssection() {
                 <div key={index} className={styles.showroomsectioncard}>
                   <div className={styles.showroomsectioncardimgmain}>
                     <div className={styles.arrowleftmain}>
-                      <div className={styles.arrowleft} onClick={() => handleSlide('prev', index)}>
+                      <div className={styles.arrowleft} onClick={() => handleSlide('prev', index)} data-cursor-hover>
                         <Sliderarrowicon />
                       </div>
                     </div>
                     <div className={styles.arrowrightmain}>
-                      <div className={styles.arrowright} onClick={() => handleSlide('next', index)}>
+                      <div className={styles.arrowright} onClick={() => handleSlide('next', index)} data-cursor-hover>
                         <Sliderarrowicon />
                       </div>
                     </div>
