@@ -1,8 +1,8 @@
 "use client";
-import React, { useLayoutEffect, useRef, useEffect } from "react";
+import React, { useLayoutEffect, useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import styles from "./showroomsection.module.scss";
+import styles from "./contactshowroomssection.module.scss"
 import { useLanguage } from "@/app/context/LanguageContext";
 import Arrowicon from "@/assets/icon/arrowicon";
 import Commonbutton from "../../commonbutton/button";
@@ -11,13 +11,35 @@ import showroomimage2 from "@/assets/images/showroomimage2.png";
 import Image from "next/image";
 import Googlemap from "@/assets/icon/googlemap";
 import Waze from "@/assets/icon/waze";
+import Sliderarrowicon from "@/assets/icon/sliderarrowicon";
 
-export default function Showroomsection() {
+export default function Contactshowroomssection() {
   const sectionRef = useRef(null);
   const cardRef = useRef(null);
   const spansRef = useRef([]);
   const detailRef = useRef([]);
+  const sliderRef = useRef([]);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const { t } = useLanguage();
+
+  const handleSlide = (direction, index) => {
+    const slider = sliderRef.current[index];
+    const slides = slider.querySelectorAll(`.${styles.showroomsectioncardimg}`);
+    const totalSlides = slides.length;
+    
+    let newSlide = direction === 'next' 
+      ? (currentSlide + 1) % totalSlides 
+      : (currentSlide - 1 + totalSlides) % totalSlides;
+    
+    setCurrentSlide(newSlide);
+    
+    gsap.to(slider, {
+      x: `-${newSlide * 100}%`,
+      duration: 0.5,
+      ease: "power2.inOut"
+    });
+  };
+
   useEffect(() => {
     const effectClass = styles.showroomsectioncardlayer;
     const effects = document.querySelectorAll(`.${effectClass}`);
@@ -133,34 +155,70 @@ export default function Showroomsection() {
   }, []);
 
   const showrooms = t("showroomSection.showrooms");
-
   return (
     <>
       <div className={styles.showroomsectionmain} ref={sectionRef}>
         <div className="container">
           <div className={styles.showroomsection}>
             <div className={styles.showroomsectiontitle}>
-              <h4>
+              <h2>
                 <p>
                   <span ref={(el) => (spansRef.current[0] = el)}>
                     {t("showroomSection.title")}
                   </span>
                 </p>
-              </h4>
+              </h2>
             </div>
             <div className={styles.showroomsectioncardgrdmain} ref={cardRef}>
               {showrooms.map((showroom, index) => (
                 <div key={index} className={styles.showroomsectioncard}>
-                  <div className={styles.showroomsectioncardimg}>
-                    <div className={styles.showroomsectioncardlayer}></div>
-                    <Image 
-                      src={index === 0 ? showroomimage1 : showroomimage2} 
-                      alt={`showroomimage${index + 1}`} 
-                    />
+                  <div className={styles.showroomsectioncardimgmain}>
+                    <div className={styles.arrowleftmain}>
+                      <div className={styles.arrowleft} onClick={() => handleSlide('prev', index)}>
+                        <Sliderarrowicon />
+                      </div>
+                    </div>
+                    <div className={styles.arrowrightmain}>
+                      <div className={styles.arrowright} onClick={() => handleSlide('next', index)}>
+                        <Sliderarrowicon />
+                      </div>
+                    </div>
+                    <div className={styles.showroomsectioncardimgslidermain}>
+                      <div className={styles.showroomsectioncardimgslider} ref={(el) => (sliderRef.current[index] = el)}>
+                        <div className={styles.showroomsectioncardimg}>
+                          <div className={styles.showroomsectioncardlayer}></div>
+                          <Image 
+                            src={index === 0 ? showroomimage1 : showroomimage2} 
+                            alt={`showroomimage${index + 1}`} 
+                          />
+                        </div>
+                        <div className={styles.showroomsectioncardimg}>
+                          <div className={styles.showroomsectioncardlayer}></div>
+                          <Image 
+                            src={index === 0 ? showroomimage1 : showroomimage2} 
+                            alt={`showroomimage${index + 1}`} 
+                          />
+                        </div>
+                        <div className={styles.showroomsectioncardimg}>
+                          <div className={styles.showroomsectioncardlayer}></div>
+                          <Image 
+                            src={index === 0 ? showroomimage1 : showroomimage2} 
+                            alt={`showroomimage${index + 1}`} 
+                          />
+                        </div>
+                        <div className={styles.showroomsectioncardimg}>
+                          <div className={styles.showroomsectioncardlayer}></div>
+                          <Image 
+                            src={index === 0 ? showroomimage1 : showroomimage2} 
+                            alt={`showroomimage${index + 1}`} 
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <div className={styles.showroomsectioncarddetails}>
                     <div className={styles.showroomsectioncarddetailsleft}>
-                      <h5>
+                      <h3>
                         <p>
                           <span ref={(el) => (detailRef.current[index * 8] = el)}>
                             {showroom.name}
@@ -171,7 +229,7 @@ export default function Showroomsection() {
                             {showroom.location}
                           </span>
                         </p>
-                      </h5>
+                      </h3>
                       <div>
                         <p className={styles.showroomcarddetaillinemain}>
                           <span className={styles.showroomcarddetilline}>
@@ -236,5 +294,5 @@ export default function Showroomsection() {
         </div>
       </div>
     </>
-  );
+  )
 }

@@ -28,10 +28,16 @@ export default function Footer() {
 
           {/* Navigation Links */}
           <div className={styles.footercontentmain}>
-            {["home", "about", "brands", "contact", "catalog"].map((item) => (
-              <Link href={"/"} key={item}>
-                <span>{t(`header.navigation.${item}`)}</span>
-                <span>{t(`header.navigation.${item}`)}</span>
+            {[
+              { path: "/", label: "home" },
+              { path: "/about", label: "about" },
+              { path: "/brands", label: "brands" },
+              { path: "/contact", label: "contact" },
+              { path: "/", label: "catalog" }
+            ].map((item) => (
+              <Link href={item.path} key={item.label}>
+                <span>{t(`header.navigation.${item.label}`)}</span>
+                <span>{t(`header.navigation.${item.label}`)}</span>
               </Link>
             ))}
           </div>

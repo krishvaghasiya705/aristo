@@ -148,8 +148,8 @@ export default function Header() {
                   <Link href={"/brands"}>{t('header.navigation.brands')}</Link>
                 </div>
                 <div className={styles.headelinkbox}>
-                  <Link href={"/"}>{t('header.navigation.contact')}</Link>
-                  <Link href={"/"}>{t('header.navigation.contact')}</Link>
+                  <Link href={"/contact"}>{t('header.navigation.contact')}</Link>
+                  <Link href={"/contact"}>{t('header.navigation.contact')}</Link>
                 </div>
                 <div className={styles.catalogbuttonmain}>
                   <Link href={"/"}>

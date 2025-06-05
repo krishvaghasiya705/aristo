@@ -27,11 +27,14 @@ export default function Brandslider({ category = 'all' }) {
     const sectionRef = useRef(null);
     const titleRefs = useRef([]);
     const sliderRef = useRef(null);
-    const [isDragging, setIsDragging] = useState(false);
-    const [startX, setStartX] = useState(0);
-    const [scrollLeft, setScrollLeft] = useState(0);
     const [sliderWidth, setSliderWidth] = useState(0);
     const [viewportWidth, setViewportWidth] = useState(0);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [currentCategory, setCurrentCategory] = useState(category);
+
+    useEffect(() => {
+        setCurrentCategory(category);
+    }, [category]);
 
     const Brandsliderdata = [
       {
@@ -61,13 +64,25 @@ export default function Brandslider({ category = 'all' }) {
       },
     ];
 
-    const filteredData = category === 'all' 
+    const filteredData = currentCategory === 'all' 
       ? Brandsliderdata 
-      : Brandsliderdata.filter(item => item.id === category);
+      : Brandsliderdata.filter(item => item.id === currentCategory);
 
     const handleCategoryChange = (newCategory) => {
+      setCurrentCategory(newCategory);
       router.push(`/brands?category=${newCategory}`);
     };
+
+    useEffect(() => {
+        const handleMenuState = (e) => {
+            if (e.detail !== undefined) {
+                setIsMenuOpen(e.detail);
+            }
+        };
+
+        window.addEventListener("menuStateChange", handleMenuState);
+        return () => window.removeEventListener("menuStateChange", handleMenuState);
+    }, []);
 
     useEffect(() => {
         const updateDimensions = () => {
@@ -93,7 +108,7 @@ export default function Brandslider({ category = 'all' }) {
         });
 
         const slider = sliderRef.current;
-        if (sliderWidth > viewportWidth) {
+        if (sliderWidth > viewportWidth && !isMenuOpen) {
             gsap.set(slider, {
                 x: 0
             });
@@ -133,30 +148,7 @@ export default function Brandslider({ category = 'all' }) {
             ScrollTrigger.getAll().forEach(trigger => trigger.kill());
             window.removeEventListener('resize', updateDimensions);
         };
-    }, [sliderWidth, viewportWidth, filteredData]);
-
-    const handleMouseDown = (e) => {
-        if (sliderWidth <= viewportWidth) return; // Don't allow dragging if all items fit
-        setIsDragging(true);
-        setStartX(e.pageX - sliderRef.current.offsetLeft);
-        setScrollLeft(sliderRef.current.scrollLeft);
-    };
-
-    const handleMouseUp = () => {
-        setIsDragging(false);
-    };
-
-    const handleMouseMove = (e) => {
-        if (!isDragging) return;
-        e.preventDefault();
-        const x = e.pageX - sliderRef.current.offsetLeft;
-        const walk = (x - startX) * 2;
-        sliderRef.current.scrollLeft = scrollLeft - walk;
-    };
-
-    const handleMouseLeave = () => {
-        setIsDragging(false);
-    };
+    }, [sliderWidth, viewportWidth, filteredData, isMenuOpen]);
 
     return (
       <>
@@ -172,12 +164,8 @@ export default function Brandslider({ category = 'all' }) {
           </div>
           <div className={styles.brandslideralignment}>
             <div 
-              className={`${styles.brandslider} ${isDragging ? styles.grabbing : styles.grab}`}
+              className={styles.brandslider}
               ref={sliderRef}
-              onMouseDown={handleMouseDown}
-              onMouseUp={handleMouseUp}
-              onMouseMove={handleMouseMove}
-              onMouseLeave={handleMouseLeave}
             >
               {filteredData.map((i, index) => (
                 <div className={styles.brandsliderboxmain} key={index}>
@@ -202,14 +190,14 @@ export default function Brandslider({ category = 'all' }) {
             <div className={styles.brandsliderbuttonmain}>
               <button 
                 type="button" 
-                className={`${styles.brandsliderbutton} ${category === 'all' ? styles.active : ''}`}
+                className={`${styles.brandsliderbutton} ${currentCategory === 'all'}`}
                 onClick={() => handleCategoryChange('all')}
               >
                 <span>all</span>
               </button>
               <button 
                 type="button" 
-                className={`${styles.brandsliderbutton} ${category === 'wardrobes' ? styles.active : ''}`}
+                className={`${styles.brandsliderbutton} ${currentCategory === 'wardrobes' ? styles.active : ''}`}
                 onClick={() => handleCategoryChange('wardrobes')}
               >
                 <Wardrobes />
@@ -217,7 +205,7 @@ export default function Brandslider({ category = 'all' }) {
               </button>
               <button 
                 type="button" 
-                className={`${styles.brandsliderbutton} ${category === 'furniture' ? styles.active : ''}`}
+                className={`${styles.brandsliderbutton} ${currentCategory === 'furniture' ? styles.active : ''}`}
                 onClick={() => handleCategoryChange('furniture')}
               >
                 <Furniture />
@@ -225,7 +213,7 @@ export default function Brandslider({ category = 'all' }) {
               </button>
               <button 
                 type="button" 
-                className={`${styles.brandsliderbutton} ${category === 'appliences' ? styles.active : ''}`}
+                className={`${styles.brandsliderbutton} ${currentCategory === 'appliences' ? styles.active : ''}`}
                 onClick={() => handleCategoryChange('appliences')}
               >
                 <Appliences />
@@ -233,7 +221,7 @@ export default function Brandslider({ category = 'all' }) {
               </button>
               <button 
                 type="button" 
-                className={`${styles.brandsliderbutton} ${category === 'kitchen' ? styles.active : ''}`}
+                className={`${styles.brandsliderbutton} ${currentCategory === 'kitchen' ? styles.active : ''}`}
                 onClick={() => handleCategoryChange('kitchen')}
               >
                 <Kitchensystems />
