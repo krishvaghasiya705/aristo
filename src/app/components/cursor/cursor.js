@@ -38,7 +38,7 @@ const Cursor = () => {
     const handleMouseLeave = () => cursorEl.classList.remove(styles.change);
 
     const addHoverListeners = () => {
-      const elements = document.querySelectorAll('a, button, [data-cursor-hover]');
+      const elements = document.querySelectorAll('a, button, input, textarea, select, option, label, [data-cursor-hover]');
       elements.forEach((el) => {
         el.addEventListener('mouseenter', handleMouseEnter);
         el.addEventListener('mouseleave', handleMouseLeave);
@@ -46,7 +46,7 @@ const Cursor = () => {
     };
 
     const removeHoverListeners = () => {
-      const elements = document.querySelectorAll('a, button, [data-cursor-hover]');
+      const elements = document.querySelectorAll('a, button, input, textarea, select, option, label, [data-cursor-hover]');
       elements.forEach((el) => {
         el.removeEventListener('mouseenter', handleMouseEnter);
         el.removeEventListener('mouseleave', handleMouseLeave);

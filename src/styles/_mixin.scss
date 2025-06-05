@@ -40,6 +40,18 @@
     line-height: 31px;
 }
 
+@mixin font19 {
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 19px;
+}
+
+@mixin font22 {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 22px;
+}
+
 @mixin font23 {
     font-size: 23px;
     font-weight: 400;
