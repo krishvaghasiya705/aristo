@@ -7,8 +7,9 @@
   z-index: 9;
   display: flex;
   align-items: center;
+  mix-blend-mode: difference;
   .languageButton {
-    background-color: var(--black);
+    background-color: var(--transparent);
     border: 1px solid var(--white);
     width: 40px;
     height: 40px;
