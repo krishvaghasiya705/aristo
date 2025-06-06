@@ -13,36 +13,25 @@ import Header from "./common/header";
 import Footer from "./common/footer";
 import LanguageSwitcher from "./components/LanguageSwitcher";
 
-export default function RooLayout({ children }) {
+export default function RootLayout({ children }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true);
-
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-
+    const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
   }, [pathname]);
 
   useEffect(() => {
-    const handleRouteChange = () => {
-      setLoading(true);
-    };
-
+    const handleRouteChange = () => setLoading(true);
     window.addEventListener('popstate', handleRouteChange);
     return () => window.removeEventListener('popstate', handleRouteChange);
   }, []);
 
   useEffect(() => {
-    if (pathname === '/') {
-      document.body.style.backgroundColor = 'var(--black)';
-    } else if (pathname === '/about') {
-      document.body.style.backgroundColor = 'var(--black)';
-    } else if (pathname === '/brands') {
+    if (pathname === '/brands') {
       document.body.style.backgroundColor = 'var(--white)';
     } else {
       document.body.style.backgroundColor = 'var(--black)';
@@ -51,11 +40,8 @@ export default function RooLayout({ children }) {
 
   useEffect(() => {
     const handleMenuState = (e) => {
-      if (e.detail !== undefined) {
-        setIsMenuOpen(e.detail);
-      }
+      if (e.detail !== undefined) setIsMenuOpen(e.detail);
     };
-
     window.addEventListener("menuStateChange", handleMenuState);
     return () => window.removeEventListener("menuStateChange", handleMenuState);
   }, []);
@@ -89,6 +75,7 @@ export default function RooLayout({ children }) {
       });
     }
   }, [isMenuOpen]);
+
   return (
     <html lang="en">
       <head>
@@ -100,29 +87,29 @@ export default function RooLayout({ children }) {
         <meta charSet="utf-8" />
         <title>Aristo® - Living Experience</title>
         <meta
-          content="Aristo group was established in 1992 with the inspiration of offering better products for homeowners in Israel. The group&#x27;s basic philosophical concept is a holistic approach, which produces quality solutions, with an exceptional design statement, which differentiates each and every project, and produces individual solutions, which are different from each other."
           name="description"
+          content="Aristo group was established in 1992..."
         />
-        <meta content="Aristo® - Living Experience" property="og:title" />
+        <meta property="og:title" content="Aristo® - Living Experience" />
         <meta
-          content="Aristo group was established in 1992 with the inspiration of offering better products for homeowners in Israel. The group&#x27;s basic philosophical concept is a holistic approach, which produces quality solutions, with an exceptional design statement, which differentiates each and every project, and produces individual solutions, which are different from each other."
           property="og:description"
+          content="Aristo group was established in 1992..."
         />
         <meta
-          content="https://cdn.prod.website-files.com/66b9ff332e5bba96a4fd7fea/675832526aa272ab7d9516ef_1200x630%20(1).png"
           property="og:image"
+          content="https://cdn.prod.website-files.com/66b9ff332e5bba96a4fd7fea/675832526aa272ab7d9516ef_1200x630%20(1).png"
         />
-        <meta content="Aristo® - Living Experience" property="twitter:title" />
+        <meta property="twitter:title" content="Aristo® - Living Experience" />
         <meta
-          content="Aristo group was established in 1992 with the inspiration of offering better products for homeowners in Israel. The group&#x27;s basic philosophical concept is a holistic approach, which produces quality solutions, with an exceptional design statement, which differentiates each and every project, and produces individual solutions, which are different from each other."
           property="twitter:description"
+          content="Aristo group was established in 1992..."
         />
       </head>
       <body>
         {loading ? (
           <Loading />
         ) : (
-          <>
+          <main>
             <LanguageProvider>
               <Cursor />
               <LenisScroll />
@@ -132,7 +119,7 @@ export default function RooLayout({ children }) {
               <LanguageSwitcher />
               <Footer />
             </LanguageProvider>
-          </>
+          </main>
         )}
       </body>
     </html>

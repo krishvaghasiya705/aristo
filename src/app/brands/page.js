@@ -5,8 +5,8 @@ export default async function Brands({ searchParams }) {
   const params = await searchParams
   const category = params?.category || 'all'
   return (
-    <>
+    <div>
       <Brandslider category={category} />
-    </>
+    </div>
   )
 }
