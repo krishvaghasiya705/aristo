@@ -83,16 +83,16 @@ export default function Sidebar({ isOpen }) {
               <Link href={"/"}>{t('sidebar.navigation.home')}</Link>
             </div>
             <div className={styles.sidebarlinkmain}>
-              <Link href={"/"}>{t('sidebar.navigation.about')}</Link>
-              <Link href={"/"}>{t('sidebar.navigation.about')}</Link>
+              <Link href={"/about"}>{t('sidebar.navigation.about')}</Link>
+              <Link href={"/about"}>{t('sidebar.navigation.about')}</Link>
             </div>
             <div className={styles.sidebarlinkmain}>
-              <Link href={"/"}>{t('sidebar.navigation.brands')}</Link>
-              <Link href={"/"}>{t('sidebar.navigation.brands')}</Link>
+              <Link href={"/brands"}>{t('sidebar.navigation.brands')}</Link>
+              <Link href={"/brands"}>{t('sidebar.navigation.brands')}</Link>
             </div>
             <div className={styles.sidebarlinkmain}>
-              <Link href={"/"}>{t('sidebar.navigation.contact')}</Link>
-              <Link href={"/"}>{t('sidebar.navigation.contact')}</Link>
+              <Link href={"/contact"}>{t('sidebar.navigation.contact')}</Link>
+              <Link href={"/contact"}>{t('sidebar.navigation.contact')}</Link>
             </div>
             <div className={styles.catalogbuttonmain}>
               <Link href={"/"}>
