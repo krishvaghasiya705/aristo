@@ -33,7 +33,7 @@ export default function Footer() {
               { path: "/about", label: "about" },
               { path: "/brands", label: "brands" },
               { path: "/contact", label: "contact" },
-              { path: "/", label: "catalog" }
+              { path: "/catalog", label: "catalog" }
             ].map((item) => (
               <Link href={item.path} key={item.label}>
                 <span>{t(`header.navigation.${item.label}`)}</span>

@@ -95,7 +95,7 @@ export default function Sidebar({ isOpen }) {
               <Link href={"/contact"}>{t('sidebar.navigation.contact')}</Link>
             </div>
             <div className={styles.catalogbuttonmain}>
-              <Link href={"/"}>
+              <Link href={"/catalog"}>
                 <button type="button" className={styles.catalogbutton}>
                   {t('sidebar.navigation.catalog')}
                 </button>

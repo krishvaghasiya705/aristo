@@ -152,7 +152,7 @@ export default function Header() {
                   <Link href={"/contact"}>{t('header.navigation.contact')}</Link>
                 </div>
                 <div className={styles.catalogbuttonmain}>
-                  <Link href={"/"}>
+                  <Link href={"/catalog"}>
                     <button type="button" className={styles.catalogbutton}>{t('header.navigation.catalog')}</button>
                   </Link>
                 </div>

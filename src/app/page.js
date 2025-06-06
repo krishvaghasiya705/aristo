@@ -1,4 +1,4 @@
-import Catalogsection from "./components/homecomponents/catalogsection";
+import Catalogsection from "./components/homecomponents/catalogcardsection";
 import Exclusivebrands from "./components/homecomponents/exclusivebrands";
 import Homeherobanner from "./components/homecomponents/herobanner";
 import Highendsection from "./components/homecomponents/highendsection";

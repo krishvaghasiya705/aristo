@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
   }, []);
 
   useEffect(() => {
-    if (pathname === '/brands') {
+    if (pathname === '/brands', '/catalog') {
       document.body.style.backgroundColor = 'var(--white)';
     } else {
       document.body.style.backgroundColor = 'var(--black)';
