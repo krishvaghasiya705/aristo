@@ -29,6 +29,15 @@ export default function RooLayout({ children }) {
   }, [pathname]);
 
   useEffect(() => {
+    const handleRouteChange = () => {
+      setLoading(true);
+    };
+
+    window.addEventListener('popstate', handleRouteChange);
+    return () => window.removeEventListener('popstate', handleRouteChange);
+  }, []);
+
+  useEffect(() => {
     if (pathname === '/') {
       document.body.style.backgroundColor = 'var(--black)';
     } else if (pathname === '/about') {
