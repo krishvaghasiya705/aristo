@@ -1,0 +1,259 @@
+@use "@/styles/mixin" as *;
+
+.catalogcardsection {
+    margin: 200px 0 0 0;
+    .catalogcardsectiontitle {
+        mix-blend-mode: difference;
+        h1 {
+            margin-bottom: 57px;
+            text-align: center;
+            height: 72px;
+            overflow: hidden;
+
+            span {
+                @include font71;
+                color: var(--white);
+                text-transform: uppercase;
+                font-family: var(--primary-font);
+                display: block;
+            }
+        }
+    }
+
+    .branddropdownmain {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        mix-blend-mode: difference;
+        
+        .branddrodpowntitlemain {
+            height: 22px;
+            overflow: hidden;
+            .branddrodpowntitle {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                cursor: pointer;
+                
+                h2 {
+                    @include font22;
+                    color: var(--white);
+                    text-transform: uppercase;
+                    font-family: var(--primary-font);
+                }
+                
+                svg {
+                    width: 8px;
+                    height: 8px;
+                    
+                    path {
+                        fill: var(--white);
+                    }
+                }
+            }
+        }
+        
+        .dropdownlistmain {
+            overflow: hidden;
+            height: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: .4s ease-in-out;
+
+            &.dropdownlistmainactive {
+                height: auto;
+            }
+            
+            .dropdownlistallmain {
+                position: relative;
+                padding: 28px 0;
+                cursor: pointer;
+                transition: .2s ease-in-out;
+                
+                span {
+                    @include font23;
+                    color: var(--white);
+                    font-family: var(--primary-font);
+                    text-transform: uppercase;
+                    transition: .2s ease-in-out;
+                }
+                
+                &::before {
+                    position: absolute;
+                    bottom: 18px;
+                    width: 0;
+                    height: 1px;
+                    background-color: var(--white);
+                    content: "";
+                    transition: .2s ease-in-out;
+                }
+
+                &.dropdownlistallmainactive {
+
+                    &::before {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .dropdownlist {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 28px;
+
+                .dropdownlisttext {
+                    @include font23;
+                    color: var(--white);
+                    font-family: var(--primary-font);
+                    text-transform: uppercase;
+                    transition: .2s ease-in-out;
+                    display: block;
+                    cursor: pointer;
+                    position: relative;
+
+                    &::before {
+                        position: absolute;
+                        bottom: -10px;
+                        width: 0;
+                        height: 1px;
+                        background-color: var(--white);
+                        content: "";
+                        transition: .2s ease-in-out;
+                    }
+
+                    &.dropdownlisttextactive {
+                        &::before {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .cardfiltercategorymain {
+        margin-top: 28px;
+        mix-blend-mode: difference;
+        overflow-y: hidden;
+        .cardfiltercategory {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+
+            .categorybutton {
+                cursor: pointer;
+                background: var(--black);
+                border: 1px solid var(--white);
+                border-radius: 50px;
+                padding: 6px 20px;
+                transition: .2s ease-in-out;
+                span {
+                    @include font11;
+                    line-height: 11px;
+                    font-weight: 400;
+                    text-wrap: nowrap;
+                    text-transform: uppercase;
+                    color: var(--white);
+                    transition: .2s ease-in-out;
+                }
+                
+                &.categorybuttonactive {
+                    background: var(--white);
+                    border: 1px solid var(--black);
+
+                    span {
+                        color: var(--black);
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+
+    .cardfiltersubcategorymain {
+        margin-top: 28px;
+        mix-blend-mode: difference;
+        overflow-y: hidden;
+
+        .cardfiltersubcategory {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+
+            .subcategorybutton {
+                background-color: var(--transparent);
+                border: none;
+                padding-bottom: 4px;
+                cursor: pointer;
+                border-bottom: 0px solid var(--white);
+
+                span {
+                    @include font11;
+                    font-weight: 400;
+                    color: var(--grey);
+                    text-wrap: nowrap;
+                    text-transform: uppercase;
+                }
+
+                &.subcategorybuttonactive {
+                    border-bottom: 1px solid var(--white);
+                }
+            }
+        }
+    }
+
+    .catalogcardsgrdmain {
+        margin-top: 57px;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 48px;
+
+        .catalogcardsmain {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            cursor: pointer;
+
+            .catalogcardsimage {
+                height: 345px;
+                overflow: hidden;
+                transition: .3s ease-in-out;
+
+                img {
+                    transition: .3s ease-in-out;
+                }
+
+            }
+            
+            h3 {
+                mix-blend-mode: difference;
+                @include font22;
+                color: var(--white);
+                font-family: var(--primary-font);
+            }
+            
+            p {
+                @include font17;
+                font-weight: 600;
+                line-height: 33px;
+                color: var(--textgrey);
+                font-family: var(--primary-font);
+            }
+
+            &:hover {
+                .catalogcardsimage {
+                    img {
+                        scale: 1.2;
+                    }
+                }
+            }
+        }
+    }
+}
