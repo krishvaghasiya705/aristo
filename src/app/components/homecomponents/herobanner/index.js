@@ -20,85 +20,62 @@ export default function Homeherobanner() {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    ScrollTrigger.scrollerProxy(document.body, {
-      scrollTop(value) {
-        if (arguments.length) {
-          window.lenis?.scrollTo(value);
-        }
-        return window.lenis?.scroll || window.scrollY;
-      },
-      getBoundingClientRect() {
-        return {
-          top: 0,
-          left: 0,
-          width: window.innerWidth,
-          height: window.innerHeight
-        };
-      }
-    });
-    window.lenis?.on('scroll', ScrollTrigger.update);
-    gsap.set(bannerRef.current, {
-      opacity: 1,
-      transformOrigin: "center center",
-      force3D: true
-    });
+    const ctx = gsap.context(() => {
+      gsap.set(bannerRef.current, {
+        opacity: 1,
+        transformOrigin: "center center",
+        force3D: true,
+      });
 
-    const images = imagesRef.current;
-    gsap.set(images, {
-      y: "100vh",
-      rotation: 0,
-      opacity: 0
-    });
+      const images = imagesRef.current;
+      gsap.set(images, {
+        y: "100vh",
+        rotation: 0,
+        opacity: 0,
+      });
 
-    const masterTl = gsap.timeline({
-      repeat: -1
-    });
+      const masterTl = gsap.timeline({ repeat: -1 });
 
-    images.forEach((image, index) => {
-      masterTl
-        .to(image, {
-          y: "0",
-          rotation: 360,
-          opacity: 1,
-          duration: 1.8,
-          ease: "cubic-bezier(0.77, 0, 0.175, 1)",
-          display: "block",
-          onUpdate: function() {
-            if (this.progress() === 1) gsap.set(image, { rotation: 0 });
-          }
-        })
-        .to({}, { duration: 0.5 })
-        .to(image, {
-          y: "-100vh",
-          rotation: "+=360",
-          opacity: 0,
-          duration: 1.8,
-          ease: "cubic-bezier(0.77, 0, 0.175, 1)",
-          display: "block",
-          onUpdate: function() {
-            if (this.progress() === 1) gsap.set(image, { rotation: 0 });
-          }
-        }, "+=0.5");
-    });
+      images.forEach((image) => {
+        masterTl
+          .to(image, {
+            y: "0",
+            rotation: 360,
+            opacity: 1,
+            duration: 1.8,
+            ease: "cubic-bezier(0.77, 0, 0.175, 1)",
+            onUpdate: function () {
+              if (this.progress() === 1) gsap.set(image, { rotation: 0 });
+            },
+          })
+          .to({}, { duration: 0.5 })
+          .to(image, {
+            y: "-100vh",
+            rotation: "+=360",
+            opacity: 0,
+            duration: 1.8,
+            ease: "cubic-bezier(0.77, 0, 0.175, 1)",
+            onUpdate: function () {
+              if (this.progress() === 1) gsap.set(image, { rotation: 0 });
+            },
+          }, "+=0.5");
+      });
 
-    // Add title animation
-    gsap.set(titleRefs.current, {
-      y: 146,
-    });
+      gsap.set(titleRefs.current, {
+        y: 146,
+      });
 
-    gsap.to(titleRefs.current, {
-      y: 0,
-      duration: 1.2,
-      stagger: 0.2,
-      ease: "power3.out",
-      delay: 0.5
-    });
+      gsap.to(titleRefs.current, {
+        y: 0,
+        duration: 1.2,
+        stagger: 0.2,
+        ease: "power3.out",
+        delay: 0.5,
+      });
+    }, sectionRef.current);
 
     return () => {
-      gsap.killTweensOf(images);
-      gsap.killTweensOf(titleRefs.current);
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-      window.lenis?.off('scroll', ScrollTrigger.update);
+      ctx.revert();
     };
   }, []);
 
