@@ -17,6 +17,7 @@ export default function RootLayout({ children }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
   const [loading, setLoading] = useState(true);
+  const isCatalogCardPage = pathname.startsWith('/catalog/') && pathname !== '/catalog';
 
   useEffect(() => {
     setLoading(true);
@@ -31,7 +32,7 @@ export default function RootLayout({ children }) {
   }, []);
 
   useEffect(() => {
-    if (pathname === '/brands' || pathname === '/catalog') {
+    if (pathname === '/brands' || pathname === '/catalog' || pathname.startsWith('/catalog/')) {
       document.body.style.backgroundColor = 'var(--white)';
     } else {
       document.body.style.backgroundColor = 'var(--black)';
@@ -113,11 +114,11 @@ export default function RootLayout({ children }) {
             <LanguageProvider>
               <Cursor />
               <LenisScroll />
-              <Header />
+              <Header hideLogo={isCatalogCardPage} />
               <div className="blankspace"></div>
               {children}
               <LanguageSwitcher />
-              <Footer />
+              {!isCatalogCardPage && <Footer />}
             </LanguageProvider>
           </main>
         )}

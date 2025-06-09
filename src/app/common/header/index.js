@@ -8,7 +8,7 @@ import Sidebar from "../sidebar";
 import gsap from "gsap";
 import { useLanguage } from "@/app/context/LanguageContext";
 
-export default function Header() {
+export default function Header({ hideLogo }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const { t } = useLanguage();
@@ -129,9 +129,11 @@ export default function Header() {
         <div className="container">
           <div className={styles.headerflx}>
             <Link href={"/"}>
-              <div className={styles.headerlogo}>
-                <Logo />
-              </div>
+              {!hideLogo && (
+                <div className={styles.headerlogo}>
+                  <Logo />
+                </div>
+              )}
             </Link>
             <div className={styles.headerlinksflxmain}>
               <div className={styles.headerlinksflx}>

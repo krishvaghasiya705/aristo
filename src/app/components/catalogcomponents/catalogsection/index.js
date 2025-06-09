@@ -171,19 +171,24 @@ export default function Catalogcardsection() {
 
                     <div className={styles.catalogcardsgrdmain}>
                         {filteredItems && filteredItems.map((item, index) => (
-                            <div key={index} className={styles.catalogcardsmain}>
-                                <div className={styles.catalogcardsimage}>
-                                    <Image 
-                                        src={item.CardImage} 
-                                        alt={item.CardName} 
-                                        width={1000} 
-                                        height={1000}
-                                        style={{ objectFit: 'cover' }}
-                                    />
+                            <Link 
+                                key={index}
+                                href={`/catalog/${item.CardName.toLowerCase().replace(/\s+/g, '-')}`}
+                            >
+                                <div className={styles.catalogcardsmain}>
+                                    <div className={styles.catalogcardsimage}>
+                                        <Image 
+                                            src={item.CardImage} 
+                                            alt={item.CardName} 
+                                            width={1000} 
+                                            height={1000}
+                                            style={{ objectFit: 'cover' }}
+                                            />
+                                    </div>
+                                    <h3>{item.CardName}</h3>
+                                    <p>{item.CardTitle}</p>
                                 </div>
-                                <h3>{item.CardName}</h3>
-                                <p>{item.CardTitle}</p>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
