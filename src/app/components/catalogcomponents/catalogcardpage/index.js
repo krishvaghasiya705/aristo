@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react'
-import styles from "./catalogcardpage.module.scss"
-import Image from 'next/image'
+import React, { useEffect, useRef, useState } from 'react';
+import styles from "./catalogcardpage.module.scss";
+import Image from 'next/image';
 import Commonbutton from '../../commonbutton/button';
 import Arrowicon from "@/assets/icon/arrowicon";
 import gsap from 'gsap';
@@ -10,37 +10,68 @@ export default function Catalogcardpage({ catalogItem }) {
   const sliderRef = useRef(null);
   const imagesRef = useRef([]);
   const containerRef = useRef(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // Listen for custom menu state events
+  useEffect(() => {
+    const handleMenuState = (e) => {
+      if (e.detail !== undefined) {
+        setIsMenuOpen(e.detail);
+      }
+    };
+
+    window.addEventListener("menuStateChange", handleMenuState);
+    return () => window.removeEventListener("menuStateChange", handleMenuState);
+  }, []);
+
+  // GSAP ScrollTrigger logic with stability improvements
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-  
-    if (sliderRef.current && containerRef.current) {
-      const totalHeight =
-        sliderRef.current.scrollHeight - containerRef.current.offsetHeight;
-  
-      gsap.to(sliderRef.current, {
-        y: -totalHeight,
-        ease: "none",
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top top",
-          end: `+=${totalHeight}`,
-          scrub: 1,
-          pin: true,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
-      });
+
+    let ctx;
+
+    if (!isMenuOpen) {
+      const timeout = setTimeout(() => {
+        ctx = gsap.context(() => {
+          const totalHeight =
+            sliderRef.current.scrollHeight - containerRef.current.offsetHeight;
+
+          gsap.to(sliderRef.current, {
+            y: -totalHeight,
+            ease: "none",
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: "top top",
+              end: `+=${totalHeight}`,
+              scrub: 1,
+              pin: true,
+              anticipatePin: 1,
+              invalidateOnRefresh: true,
+            },
+          });
+        }, containerRef);
+      }, 150); // Adjust delay if your menu animation is longer
+
+      return () => {
+        clearTimeout(timeout);
+        if (ctx) ctx.revert();
+        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      };
+    } else {
+      // If menu is open, kill animations and reset position
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      if (sliderRef.current) {
+        gsap.set(sliderRef.current, { y: 0 });
+      }
     }
-  
+
     return () => {
+      if (ctx) ctx.revert();
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
-  }, [catalogItem]);
-  
-   
-  
+  }, [catalogItem, isMenuOpen]);
 
+  // Guard: no catalog item
   if (!catalogItem) {
     return <div>Item not found</div>;
   }
@@ -74,9 +105,22 @@ export default function Catalogcardpage({ catalogItem }) {
               <span className={styles.cardhexcode}>{catalogItem.CardPageData.Hexcode}</span>
               <p>{catalogItem.CardPageData.Paragraph}</p>
               <div className={styles.cardbuttonsalignment}>
-                <Commonbutton Buttonlink="/" Buttontext="contact us" ButtonIcon={<Arrowicon />} />
-                <a href={catalogItem.CardPageData.InfoLink} target="_blank" rel="noopener noreferrer" className={styles.moreinfolink}>
-                  <Commonbutton Buttonlink="no" Buttontext="more info" ButtonIcon={<Arrowicon />} />
+                <Commonbutton
+                  Buttonlink="/"
+                  Buttontext="contact us"
+                  ButtonIcon={<Arrowicon />}
+                />
+                <a
+                  href={catalogItem.CardPageData.InfoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.moreinfolink}
+                >
+                  <Commonbutton
+                    Buttonlink="no"
+                    Buttontext="more info"
+                    ButtonIcon={<Arrowicon />}
+                  />
                 </a>
               </div>
             </div>
@@ -84,5 +128,5 @@ export default function Catalogcardpage({ catalogItem }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
