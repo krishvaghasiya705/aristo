@@ -3,39 +3,79 @@ import styles from "./catalogcardpage.module.scss"
 import Image from 'next/image'
 import Commonbutton from '../../commonbutton/button';
 import Arrowicon from "@/assets/icon/arrowicon";
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export default function Catalogcardpage({ catalogItem }) {
+  const sliderRef = useRef(null);
+  const imagesRef = useRef([]);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+  
+    if (sliderRef.current && containerRef.current) {
+      const totalHeight =
+        sliderRef.current.scrollHeight - containerRef.current.offsetHeight;
+  
+      gsap.to(sliderRef.current, {
+        y: -totalHeight,
+        ease: "none",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: `+=${totalHeight}`,
+          scrub: 1,
+          pin: true,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+        },
+      });
+    }
+  
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, [catalogItem]);
+  
+   
+  
 
   if (!catalogItem) {
     return <div>Item not found</div>;
   }
 
   return (
-    <>
-    <div className={styles.catalogcardpagemain}>
+    <div className={styles.catalogcardpagemain} ref={containerRef}>
       <div className="container">
         <div className={styles.catalogcardpage}>
           <div className={styles.catalogcardpageleft}>
-            <div className={styles.catalogcardpagecolumnslider}>
-            {catalogItem.CardPageData.Sliderimages && catalogItem.CardPageData.Sliderimages.map((image, index) => (
-                <Image
+            <div className={styles.catalogcardpagecolumnslider} ref={sliderRef}>
+              {catalogItem.CardPageData.Sliderimages.map((image, index) => (
+                <div
                   key={index}
-                  src={image}
-                  alt={`${catalogItem.CardName} image ${index + 1}`}
-                  priority={index === 0}
-                />
+                  className={styles.sliderImageWrapper}
+                  ref={el => (imagesRef.current[index] = el)}
+                >
+                  <Image
+                    src={image}
+                    alt={`${catalogItem.CardName} image ${index + 1}`}
+                    priority={index === 0}
+                    width={768}
+                    height={1024}
+                  />
+                </div>
               ))}
             </div>
           </div>
-          <div></div>
           <div className={styles.catalogcardpageright}>
             <div className={styles.catalogcardpagerightcontent}>
               <h1>{catalogItem.CardPageData.Title}</h1>
-              <span>{catalogItem.CardPageData.Hexcode}</span>
+              <span className={styles.cardhexcode}>{catalogItem.CardPageData.Hexcode}</span>
               <p>{catalogItem.CardPageData.Paragraph}</p>
               <div className={styles.cardbuttonsalignment}>
                 <Commonbutton Buttonlink="/" Buttontext="contact us" ButtonIcon={<Arrowicon />} />
-                <a href={catalogItem.CardPageData.InfoLink} target="_blank" rel="noopener noreferrer">
+                <a href={catalogItem.CardPageData.InfoLink} target="_blank" rel="noopener noreferrer" className={styles.moreinfolink}>
                   <Commonbutton Buttonlink="no" Buttontext="more info" ButtonIcon={<Arrowicon />} />
                 </a>
               </div>
@@ -44,6 +84,5 @@ export default function Catalogcardpage({ catalogItem }) {
         </div>
       </div>
     </div>
-    </>
   )
 }

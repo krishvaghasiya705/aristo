@@ -8,13 +8,15 @@ import Sidebar from "../sidebar";
 import gsap from "gsap";
 import { useLanguage } from "@/app/context/LanguageContext";
 
-export default function Header({ hideLogo }) {
+export default function Header({ hideLogo, scrollstop }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
+      if (scrollstop) return; // Don't handle scroll if scrollstop is true
+      
       const currentScrollY = window.scrollY;
       
       if (currentScrollY > 100) {
@@ -50,7 +52,7 @@ export default function Header({ hideLogo }) {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, [lastScrollY, scrollstop]);
 
   useEffect(() => {
     if (isMenuOpen) {

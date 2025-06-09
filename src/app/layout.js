@@ -114,7 +114,7 @@ export default function RootLayout({ children }) {
             <LanguageProvider>
               <Cursor />
               <LenisScroll />
-              <Header hideLogo={isCatalogCardPage} />
+              <Header hideLogo={isCatalogCardPage} scrollstop={isCatalogCardPage} />
               <div className="blankspace"></div>
               {children}
               <LanguageSwitcher />
