@@ -11,8 +11,6 @@ export default function Catalogcardpage({ catalogItem }) {
   const imagesRef = useRef([]);
   const containerRef = useRef(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  // Listen for custom menu state events
   useEffect(() => {
     const handleMenuState = (e) => {
       if (e.detail !== undefined) {
@@ -23,8 +21,6 @@ export default function Catalogcardpage({ catalogItem }) {
     window.addEventListener("menuStateChange", handleMenuState);
     return () => window.removeEventListener("menuStateChange", handleMenuState);
   }, []);
-
-  // GSAP ScrollTrigger logic with stability improvements
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 

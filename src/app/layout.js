@@ -36,6 +36,8 @@ export default function RootLayout({ children }) {
       document.body.style.backgroundColor = 'var(--white)';
     } else {
       document.body.style.backgroundColor = 'var(--black)';
+    } if (pathname === '/about') {
+      document.body.style.backgroundColor = 'var(--darkgrey)';
     }
   }, [pathname]);
 

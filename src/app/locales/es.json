@@ -84,7 +84,7 @@
     "authors": [{ "name": "Grupo Aristo" }]
   },
   "showroomSection": {
-    "title": "salas de exposición",
+    "title": "showrooms",
     "navigate": "navegar",
     "contactUs": "contáctenos",
     "showrooms": [
@@ -103,5 +103,19 @@
         "email": "info@aristos.co.il"
       }
     ]
+  },
+  "contactFormSection": {
+    "title": "contacto",
+    "form": {
+      "fullName": "nombre completo:",
+      "emailAddress": "correo electrónico:",
+      "phoneNumber": "número de teléfono:",
+      "interestedIn": "estoy interesado en",
+      "options": {
+        "businessCollaboration": "colaboración empresarial",
+        "buyingProducts": "comprar productos"
+      },
+      "send": "enviar"
+    }
   }
 } 

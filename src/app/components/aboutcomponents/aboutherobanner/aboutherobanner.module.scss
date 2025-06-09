@@ -1,0 +1,36 @@
+@use "@/styles/mixin" as *;
+
+.aboutherobannermain {
+    mix-blend-mode: difference;
+    .aboutherobanner {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .aboutherobannertitle {
+            h1 {
+                text-align: center;
+                p {
+                    @include font144;
+                    color: var(--white);
+                }
+            }
+        }
+
+        .scrolldown {
+            margin-bottom: 50px;
+            padding: 30px;
+            position: relative;
+            z-index: 2;
+            cursor: pointer;
+            p {
+              @include font12;
+              color: var(--whitepure);
+              text-transform: uppercase;
+              font-family: var(--primary-font);
+            }
+          }
+    }
+}

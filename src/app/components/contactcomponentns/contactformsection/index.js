@@ -5,10 +5,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./contactformsection.module.scss"
 import Image from "next/image";
 import contactimage from "@/assets/images/contactimage.webp"
+import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function Contactformsection() {
     const sectionRef = useRef(null);
     const spansRef = useRef([]);
+    const { t } = useLanguage();
 
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
@@ -114,7 +116,7 @@ export default function Contactformsection() {
             <div className={styles.contactformsectiontitle}>
                 <h1>
                     <p>
-                        <span ref={(el) => (spansRef.current[0] = el)}>contact</span>
+                        <span ref={(el) => (spansRef.current[0] = el)}>{t("contactFormSection.title")}</span>
                     </p>
                 </h1>
             </div>
@@ -127,32 +129,32 @@ export default function Contactformsection() {
                     <form>
                         <div className={styles.forminputsmain}>
                             <label htmlFor="input-name">
-                                <span ref={(el) => (spansRef.current[1] = el)}>full name:</span>
+                                <span ref={(el) => (spansRef.current[1] = el)}>{t("contactFormSection.form.fullName")}</span>
                             </label>
                             <input type="text" id="input-name" />
                         </div>
                         <div className={styles.forminputsmain}>
                             <label htmlFor="input-email">
-                                <span ref={(el) => (spansRef.current[2] = el)}>email address:</span>
+                                <span ref={(el) => (spansRef.current[2] = el)}>{t("contactFormSection.form.emailAddress")}</span>
                             </label>
                             <input type="email" id="input-email" />
                         </div>
                         <div className={styles.forminputsmain}>
                             <label htmlFor="input-number">
-                                <span ref={(el) => (spansRef.current[3] = el)}>Phone number:</span>
+                                <span ref={(el) => (spansRef.current[3] = el)}>{t("contactFormSection.form.phoneNumber")}</span>
                             </label>
                             <input type="tel" id="input-number" />
                         </div>
                         <div className={styles.forminputsmain}>
                             <label htmlFor="input-option" >
-                                <span ref={(el) => (spansRef.current[4] = el)}>i'm interested in</span>
+                                <span ref={(el) => (spansRef.current[4] = el)}>{t("contactFormSection.form.interestedIn")}</span>
                             </label>
                             <select id="input-option" >
-                                <option value="business collaboration">business collaboration</option>
-                                <option value="buying products">buying products</option>
+                                <option value="business collaboration">{t("contactFormSection.form.options.businessCollaboration")}</option>
+                                <option value="buying products">{t("contactFormSection.form.options.buyingProducts")}</option>
                             </select>
                         </div>
-                        <button type="submit" className={styles.submitbutton}>send</button>
+                        <button type="submit" className={styles.submitbutton}>{t("contactFormSection.form.send")}</button>
                     </form>
                 </div>
             </div>

@@ -103,5 +103,19 @@
         "email": "info@aristos.co.il"
       }
     ]
+  },
+  "contactFormSection": {
+    "title": "contact",
+    "form": {
+      "fullName": "full name:",
+      "emailAddress": "email address:",
+      "phoneNumber": "Phone number:",
+      "interestedIn": "i'm interested in",
+      "options": {
+        "businessCollaboration": "business collaboration",
+        "buyingProducts": "buying products"
+      },
+      "send": "send"
+    }
   }
 } 
