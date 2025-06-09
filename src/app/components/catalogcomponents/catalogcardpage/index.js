@@ -27,6 +27,7 @@ export default function Catalogcardpage({ catalogItem }) {
               ))}
             </div>
           </div>
+          <div></div>
           <div className={styles.catalogcardpageright}>
             <div className={styles.catalogcardpagerightcontent}>
               <h1>{catalogItem.CardPageData.Title}</h1>

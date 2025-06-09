@@ -3,7 +3,6 @@
 .catalogcardpagemain {
     position: relative;
     height: 100vh;
-    overflow: hidden;
     
     .catalogcardpage {
         height: 100vh;
@@ -11,21 +10,21 @@
         align-items: center;
         justify-content: space-between;
         position: relative;
-        overflow: hidden;
 
         .catalogcardpageleft {
+            position: absolute;
+            top: 0;
+            left: 0;
             max-width: 768px;
             width: 100%;
-            height: 100vh;
-            overflow: hidden;
-            position: relative;
+            height: 100%;
+            overflow-y: auto;
 
             .catalogcardpagecolumnslider {
                 display: flex;
                 flex-direction: column;
                 gap: 38px;
                 align-items: center;
-                height: 100%;
             }
         }
         
