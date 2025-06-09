@@ -302,15 +302,27 @@ import renéhomeimage25 from "@/assets/images/renéhomeimage25.jpg"
 export const Catalogdat = [
     {
         CardImage: catalogimage1,
-        CardName: "Christine",
-        CardTitle: "Wall mirror with fused glass, silver backing, and versatile hanging options.",
+        CardName: {
+            en: "Christine",
+            es: "Christine"
+        },
+        CardTitle: {
+            en: "Wall mirror with fused glass, silver backing, and versatile hanging options.",
+            es: "Espejo de pared con vidrio fusionado, respaldo plateado y opciones de colgado versátiles."
+        },
         brand: ["all"],
         CardCategory: ["all","furniture","furnitures"],
         CardSubcategory: ["all", "mirror"],
         CardPageData: {
-            Title: "Christine",
+            Title: {
+                en: "Christine",
+                es: "Christine"
+            },
             Hexcode: "#cs-707",
-            Paragraph: "Wall mirror in 6 mm high temperature fused glass, back-silvered. 5 mm flat mirror. Rear frame in painted metal. Can be hung in various positions.",
+            Paragraph: {
+                en: "Wall mirror in 6 mm high temperature fused glass, back-silvered. 5 mm flat mirror. Rear frame in painted metal. Can be hung in various positions.",
+                es: "Espejo de pared en vidrio fusionado de alta temperatura de 6 mm, plateado por detrás. Espejo plano de 5 mm. Marco trasero en metal pintado. Se puede colgar en varias posiciones."
+            },
             InfoLink: "https://www.fiamitalia.it/en/prodotti/christine/",
             Sliderimages: [
                 christineimage1,
@@ -329,15 +341,27 @@ export const Catalogdat = [
     },
     {
         CardImage: catalogimage2,
-        CardName: "Carrara",
-        CardTitle: "Modular sofa with memory foam cushions, leather or fabric upholstery, and Silky leather details.",
+        CardName: {
+            en: "Carrara",
+            es: "Carrara"
+        },
+        CardTitle: {
+            en: "Modular sofa with memory foam cushions, leather or fabric upholstery, and Silky leather details.",
+            es: "Sofá modular con cojines de espuma viscoelástica, tapicería de cuero o tela, y detalles en cuero Silky."
+        },
         brand: ["all"],
         CardCategory: ["all","furniture","furnitures"],
         CardSubcategory: ["all","sofa"],
         CardPageData: {
-            Title: "Carrara",
+            Title: {
+                en: "Carrara",
+                es: "Carrara"
+            },
             Hexcode: "#cr-248",
-            Paragraph: "Fixed or modular sofa with a multilayer structure, elastic strap seat suspension, and memory foam cushions. The back cushions are padded with sterilized goose and duck down. Elevated on black multilayer linear elements, it comes in leather or fabric, with removable covers in fabric versions. Decorative elements are always in Silky leather.",
+            Paragraph: {
+                en: "Fixed or modular sofa with a multilayer structure, elastic strap seat suspension, and memory foam cushions. The back cushions are padded with sterilized goose and duck down. Elevated on black multilayer linear elements, it comes in leather or fabric, with removable covers in fabric versions. Decorative elements are always in Silky leather.",
+                es: "Sofá fijo o modular con estructura multicapa, suspensión de asiento con correas elásticas y cojines de espuma viscoelástica. Los cojines del respaldo están acolchados con plumón esterilizado de ganso y pato. Elevado sobre elementos lineales multicapa negros, está disponible en cuero o tela, con fundas extraíbles en versiones de tela. Los elementos decorativos siempre son de cuero Silky."
+            },
             InfoLink: "https://www.fiamitalia.it/en/prodotti/carrara/",
             Sliderimages: [
                 carraraimage1,
@@ -359,15 +383,27 @@ export const Catalogdat = [
     },
     {
         CardImage: catalogimage3,
-        CardName: "Callas",
-        CardTitle: "Leather chair with tubular metal frame, available in various colors.",
+        CardName: {
+            en: "Callas",
+            es: "Callas"
+        },
+        CardTitle: {
+            en: "Leather chair with tubular metal frame, available in various colors.",
+            es: "Silla de cuero con estructura tubular de metal, disponible en varios colores."
+        },
         brand: ["all"],
         CardCategory: ["all","furniture","furnitures"],
         CardSubcategory: ["all", "chairs"],
         CardPageData: {
-            Title: "Callas",
+            Title: {
+                en: "Callas",
+                es: "Callas"
+            },
             Hexcode: "#CL-177",
-            Paragraph: "Leather-upholstered chair with internal structure in tubular metal. Available in white, black, brown, grey dust-colour or ash-colour.",
+            Paragraph: {
+                en: "Leather-upholstered chair with internal structure in tubular metal. Available in white, black, brown, grey dust-colour or ash-colour.",
+                es: "Silla tapizada en cuero con estructura interna en metal tubular. Disponible en blanco, negro, marrón, gris polvo o color ceniza."
+            },
             InfoLink: "https://www.fiamitalia.it/en/prodotti/callas/",
             Sliderimages: [
                 callasimage1,
@@ -384,15 +420,27 @@ export const Catalogdat = [
     },
     {
         CardImage: catalogimage4,
-        CardName: "Caadre",
-        CardTitle: "Curved glass mirror with customizable finishes, modular options, and optional LED lighting.",
+        CardName: {
+            en: "Caadre",
+            es: "Caadre"
+        },
+        CardTitle: {
+            en: "Curved glass mirror with customizable finishes, modular options, and optional LED lighting.",
+            es: "Espejo de vidrio curvo con acabados personalizables, opciones modulares e iluminación LED opcional."
+        },
         brand: ["all"],
         CardCategory: ["all","furniture","furnitures"],
         CardSubcategory: ["all","sofa"],
         CardPageData: {
-            Title: "Caadre",
+            Title: {
+                en: "Caadre",
+                es: "Caadre"
+            },
             Hexcode: "#ca-193",
-            Paragraph: "Hanging or leaning mirror in 6 mm-thick curved glass, made of four separate curved elements, back-silvered or back-painted with special metallic paints. Also available in semi-reflective titanium glass or in back-silvered bronze glass. It can be hung horizontally or vertically. Also available custom-sized and in modular configurations. LED lighting kit with a dimmer switch and temperature regulation (optional).",
+            Paragraph: {
+                en: "Hanging or leaning mirror in 6 mm-thick curved glass, made of four separate curved elements, back-silvered or back-painted with special metallic paints. Also available in semi-reflective titanium glass or in back-silvered bronze glass. It can be hung horizontally or vertically. Also available custom-sized and in modular configurations. LED lighting kit with a dimmer switch and temperature regulation (optional).",
+                es: "Espejo colgante o inclinado en vidrio curvo de 6 mm de espesor, fabricado con cuatro elementos curvos separados, plateado por detrás o pintado con pinturas metálicas especiales. También disponible en vidrio de titanio semirreflectante o en vidrio de bronce plateado por detrás. Se puede colgar horizontal o verticalmente. También disponible en tamaños personalizados y en configuraciones modulares. Kit de iluminación LED con regulador de intensidad y regulación de temperatura (opcional)."
+            },
             InfoLink: "https://www.fiamitalia.it/en/prodotti/carrara/",
             Sliderimages: [
                 caadreimage1,
@@ -413,15 +461,27 @@ export const Catalogdat = [
     },
     {
         CardImage: catalogimage5,
-        CardName: "Big Wave",
-        CardTitle: "Table with striped glass base and customizable tempered glass or wood top finishes.",
+        CardName: {
+            en: "Big Wave",
+            es: "Big Wave"
+        },
+        CardTitle: {
+            en: "Table with striped glass base and customizable tempered glass or wood top finishes.",
+            es: "Mesa con base de vidrio rayado y acabados personalizables en vidrio templado o madera."
+        },
         brand: ["all"],
         CardCategory: ["all","furniture","furnitures"],
         CardSubcategory: ["all", "tables"],
         CardPageData: {
-            Title: "Big Wave",
+            Title: {
+                en: "Big Wave",
+                es: "Big Wave"
+            },
             Hexcode: "#bw-107",
-            Paragraph: "Table with base made of four or six separate 30 mm DV Glass elements with colored stripes. Tempered top made of 15 mm transparent glass, back-lacquered with monochrome colors or hand-finished with Ecomalta, finergrained texture finish, or in Canaletto walnut veneered wood, Tobacco finish.",
+            Paragraph: {
+                en: "Table with base made of four or six separate 30 mm DV Glass elements with colored stripes. Tempered top made of 15 mm transparent glass, back-lacquered with monochrome colors or hand-finished with Ecomalta, finergrained texture finish, or in Canaletto walnut veneered wood, Tobacco finish.",
+                es: "Mesa con base de cuatro o seis elementos separados de vidrio DV de 30 mm con rayas de colores. Tapa templada de vidrio transparente de 15 mm, lacada por detrás con colores monocromos o acabada a mano con Ecomalta, acabado texturizado fino, o en madera chapada de nogal Canaletto, acabado Tabaco."
+            },
             InfoLink: "https://www.fiamitalia.it/en/prodotti/big-wave/",
             Sliderimages: [
                 bigwaveimage1,
@@ -446,15 +506,27 @@ export const Catalogdat = [
     },
     {
         CardImage: catalogimage6,
-        CardName: "Kevin Comodino",
-        CardTitle: "Kevin night table blends vintage elegance with wood, metal, and contrasting details.",
+        CardName: {
+            en: "Kevin Comodino",
+            es: "Kevin Comodino"
+        },
+        CardTitle: {
+            en: "Kevin night table blends vintage elegance with wood, metal, and contrasting details.",
+            es: "Mesa de noche Kevin combina elegancia vintage con madera, metal y detalles contrastantes."
+        },
         brand: ["all", "frigerio"],
         CardCategory: ["all","furniture","furnitures"],
         CardSubcategory: ["all", "tables"],
         CardPageData: {
-            Title: "Kevin Comodino",
+            Title: {
+                en: "Kevin Comodino",
+                es: "Kevin Comodino"
+            },
             Hexcode: "#kc-103",
-            Paragraph: "Elegance with a vintage allure for the Kevin night table: a sophisticated mix of materials that combines the cubic volume in wood with a light metal structure, enriched by details in contrast. A precious object for the night area for tasteful furnishing.",
+            Paragraph: {
+                en: "Elegance with a vintage allure for the Kevin night table: a sophisticated mix of materials that combines the cubic volume in wood with a light metal structure, enriched by details in contrast. A precious object for the night area for tasteful furnishing.",
+                es: "Elegancia con un encanto vintage para la mesa de noche Kevin: una sofisticada mezcla de materiales que combina el volumen cúbico en madera con una estructura ligera de metal, enriquecida por detalles en contraste. Un objeto precioso para el área nocturna para un amueblamiento con gusto."
+            },
             InfoLink: "https://www.frigerio.com/en/products/complements/kevin+comodino/103",
             Sliderimages: [
                 kevincomodinoimage1,
@@ -465,15 +537,27 @@ export const Catalogdat = [
     },
     {
         CardImage: catalogimage7,
-        CardName: "Liv",
-        CardTitle: "Liv night table features an irregular top, metal base, and refined wood and leather accents.",
+        CardName: {
+            en: "Liv",
+            es: "Liv"
+        },
+        CardTitle: {
+            en: "Liv night table features an irregular top, metal base, and refined wood and leather accents.",
+            es: "Mesa de noche Liv presenta una parte superior irregular, base de metal y refinados acentos de madera y cuero."
+        },
         brand: ["all", "frigerio"],
         CardCategory: ["all","furniture","furnitures"],
         CardSubcategory: ["all", "low table"],
         CardPageData: {
-            Title: "Liv",
+            Title: {
+                en: "Liv",
+                es: "Liv"
+            },
             Hexcode: "#lv-132",
-            Paragraph: "The irregular shape of the top of the night table Liv eludes the classical rectangular shape for an elegant match between the metal base and the top, enriched with elements in solid wood and hide-leather o leather. Available also in the version with drawer, the latter also in an irregular shape, for its peculiarity is the swivelling concealed opening.",
+            Paragraph: {
+                en: "The irregular shape of the top of the night table Liv eludes the classical rectangular shape for an elegant match between the metal base and the top, enriched with elements in solid wood and hide-leather o leather. Available also in the version with drawer, the latter also in an irregular shape, for its peculiarity is the swivelling concealed opening.",
+                es: "La forma irregular de la parte superior de la mesa de noche Liv elude la forma rectangular clásica para una elegante combinación entre la base de metal y la parte superior, enriquecida con elementos en madera maciza y cuero o piel. También disponible en la versión con cajón, este último también de forma irregular, ya que su peculiaridad es la apertura oculta giratoria."
+            },
             InfoLink: "https://www.frigerio.com/en/products/complements/liv/132",
             Sliderimages: [
                 livimage1,
@@ -489,15 +573,27 @@ export const Catalogdat = [
     },
     {
         CardImage: catalogimage8,
-        CardName: "Santamonica",
-        CardTitle: "Santamonica pouf combines a metal base, soft cushion, and tailored piping for a sophisticated look.",
+        CardName: {
+            en: "Santamonica",
+            es: "Santamonica"
+        },
+        CardTitle: {
+            en: "Santamonica pouf combines a metal base, soft cushion, and tailored piping for a sophisticated look.",
+            es: "Pouf Santamonica combina una base de metal, cojín suave y ribete a medida para un aspecto sofisticado."
+        },
         brand: ["all", "frigerio"],
         CardCategory: ["all","furniture","furnitures"],
         CardSubcategory: ["all", "bench"],
         CardPageData: {
-            Title: "Santamonica",
+            Title: {
+                en: "Santamonica",
+                es: "Santamonica"
+            },
             Hexcode: "#sm-144",
-            Paragraph: "The Santamonica pouf takes over from the name-sake collection of small tables from which it inherits the peculiar metal structure onto which a soft cushion is placed covered in fabric or leather. Tailoring detail of the collection of pouf Santamonica is the piping which is available in the same colour and material of the cover or in contrast. It is a sophisticated furnishing element which enriches and widens the Frigerio collection for the day area.",
+            Paragraph: {
+                en: "The Santamonica pouf takes over from the name-sake collection of small tables from which it inherits the peculiar metal structure onto which a soft cushion is placed covered in fabric or leather. Tailoring detail of the collection of pouf Santamonica is the piping which is available in the same colour and material of the cover or in contrast. It is a sophisticated furnishing element which enriches and widens the Frigerio collection for the day area.",
+                es: "El pouf Santamonica toma el relevo de la colección homónima de mesas pequeñas de la que hereda la peculiar estructura metálica sobre la que se coloca un cojín suave cubierto de tela o cuero. El detalle de sastrería de la colección de pouf Santamonica es el ribete que está disponible en el mismo color y material de la cubierta o en contraste. Es un elemento de amueblamiento sofisticado que enriquece y amplía la colección Frigerio para el área diurna."
+            },
             InfoLink: "https://www.frigerio.com/en/products/pouf/santamonica/144",
             Sliderimages: [
                 santamonicaimage1,
@@ -511,15 +607,27 @@ export const Catalogdat = [
     },
     {
         CardImage: catalogimage9,
-        CardName: "Amanda",
-        CardTitle: "Amanda armchair combines modern design, versatile finishes, and Frigerio's tailoring expertise.",
+        CardName: {
+            en: "Amanda",
+            es: "Amanda"
+        },
+        CardTitle: {
+            en: "Amanda armchair combines modern design, versatile finishes, and Frigerio's tailoring expertise.",
+            es: "Sillón Amanda combina diseño moderno, acabados versátiles y la experiencia en sastrería de Frigerio."
+        },
         brand: ["all", "frigerio"],
         CardCategory: ["all","furniture","furnitures"],
         CardSubcategory: ["all", "armchair"],
         CardPageData: {
-            Title: "Amanda",
+            Title: {
+                en: "Amanda",
+                es: "Amanda"
+            },
             Hexcode: "#am-127",
-            Paragraph: "The Amanda armchair, with a solid wood base and fabric or leather upholstery, offers high versatility by allowing mixed-material finishes. Its unique design features a suspended armrest flowing from the back, creating a dynamic, modern look. The mid-height stitching on the back highlights Frigerio's tailoring expertise, especially in the leather version. The collection also includes a coordinated stool and a bergère version for added comfort.",
+            Paragraph: {
+                en: "The Amanda armchair, with a solid wood base and fabric or leather upholstery, offers high versatility by allowing mixed-material finishes. Its unique design features a suspended armrest flowing from the back, creating a dynamic, modern look. The mid-height stitching on the back highlights Frigerio's tailoring expertise, especially in the leather version. The collection also includes a coordinated stool and a bergère version for added comfort.",
+                es: "El sillón Amanda, con base de madera maciza y tapicería de tela o cuero, ofrece alta versatilidad al permitir acabados de materiales mixtos. Su diseño único presenta un reposabrazos suspendido que fluye desde el respaldo, creando un aspecto dinámico y moderno. El cosido a media altura en el respaldo destaca la experiencia en sastrería de Frigerio, especialmente en la versión de cuero. La colección también incluye un taburete coordinado y una versión bergère para mayor comodidad."
+            },
             InfoLink: "https://www.frigerio.com/en/products/armchairs/amanda/127",
             Sliderimages: [
                 amandaimage1,
@@ -536,15 +644,27 @@ export const Catalogdat = [
     },
     {
         CardImage: catalogimage10,
-        CardName: "Huli",
-        CardTitle: "Huli lounge chair combines Nordic-inspired design with braided craftsmanship and elegant wooden curves.",
+        CardName: {
+            en: "Huli",
+            es: "Huli"
+        },
+        CardTitle: {
+            en: "Huli lounge chair combines Nordic-inspired design with braided craftsmanship and elegant wooden curves.",
+            es: "Sillón Huli combina diseño inspirado en lo nórdico con artesanía trenzada y elegantes curvas de madera."
+        },
         brand: ["all", "frigerio"],
         CardCategory: ["all","furniture","furnitures"],
         CardSubcategory: ["all", "armchair"],
         CardPageData: {
-            Title: "Huli",
+            Title: {
+                en: "Huli",
+                es: "Huli"
+            },
             Hexcode: "#hu-133",
-            Paragraph: "Designed by Federica Biasi, the Huli lounge chair blends Nordic-inspired elegance with meticulous craftsmanship. Its solid wood structure features soft, flowing lines, with front legs arching into the backrest and crossing the braided rope seat and back. This traditional technique gives the chair a modern, refined appeal.",
+            Paragraph: {
+                en: "Designed by Federica Biasi, the Huli lounge chair blends Nordic-inspired elegance with meticulous craftsmanship. Its solid wood structure features soft, flowing lines, with front legs arching into the backrest and crossing the braided rope seat and back. This traditional technique gives the chair a modern, refined appeal.",
+                es: "Diseñado por Federica Biasi, el sillón Huli combina la elegancia inspirada en lo nórdico con una meticulosa artesanía. Su estructura de madera maciza presenta líneas suaves y fluidas, con las patas delanteras arqueándose hacia el respaldo y cruzando el asiento y respaldo de cuerda trenzada. Esta técnica tradicional da a la silla un aspecto moderno y refinado."
+            },
             InfoLink: "https://www.frigerio.com/en/products/armchairs/huli/133",
             Sliderimages: [
                 huliimage01,
@@ -572,15 +692,27 @@ export const Catalogdat = [
     },
     {
         CardImage: catalogimage11,
-        CardName: "Davis",
-        CardTitle: "Davis is a customizable sofa system with adjustable back cushions and versatile configurations.",
+        CardName: {
+            en: "Davis",
+            es: "Davis"
+        },
+        CardTitle: {
+            en: "Davis is a customizable sofa system with adjustable back cushions and versatile configurations.",
+            es: "Davis es un sistema de sofá personalizable con cojines de respaldo ajustables y configuraciones versátiles."
+        },
         brand: ["all", "frigerio"],
         CardCategory: ["all","furniture","furnitures"],
         CardSubcategory: ["all","sofa"],
         CardPageData: {
-            Title: "Davis",
+            Title: {
+                en: "Davis",
+                es: "Davis"
+            },
             Hexcode: "#dv-179",
-            Paragraph: "Davis is a versatile sofa system designed as the centerpiece of modern living. It offers customization with various armrests, five foot styles, and three seat comforts. The collection includes sectional elements with patented adjustable back cushions and a range of accessories, enabling unique configurations from linear to more complex layouts to suit contemporary lifestyles.",
+            Paragraph: {
+                en: "Davis is a versatile sofa system designed as the centerpiece of modern living. It offers customization with various armrests, five foot styles, and three seat comforts. The collection includes sectional elements with patented adjustable back cushions and a range of accessories, enabling unique configurations from linear to more complex layouts to suit contemporary lifestyles.",
+                es: "Davis es un sistema de sofá versátil diseñado como pieza central de la vida moderna. Ofrece personalización con varios reposabrazos, cinco estilos de patas y tres niveles de comodidad del asiento. La colección incluye elementos seccionales con cojines de respaldo ajustables patentados y una gama de accesorios, permitiendo configuraciones únicas desde lineales hasta diseños más complejos para adaptarse a los estilos de vida contemporáneos."
+            },
             InfoLink: "https://www.frigerio.com/en/products/sofas/davis/179",
             Sliderimages: [
                 davisimage1,
@@ -596,15 +728,27 @@ export const Catalogdat = [
     },
     {
         CardImage: catalogimage12,
-        CardName: "Horizon",
-        CardTitle: "Horizon sofa blends modularity, elegance, versatility, and premium material finishes.",
+        CardName: {
+            en: "Horizon",
+            es: "Horizon"
+        },
+        CardTitle: {
+            en: "Horizon sofa blends modularity, elegance, versatility, and premium material finishes.",
+            es: "Sofá Horizon combina modularidad, elegancia, versatilidad y acabados de materiales premium."
+        },
         brand: ["all", "frigerio"],
         CardCategory: ["all","furniture","furnitures"],
         CardSubcategory: ["all","sofa"],
         CardPageData: {
-            Title: "Horizon",
+            Title: {
+                en: "Horizon",
+                es: "Horizon"
+            },
             Hexcode: "#hr-123",
-            Paragraph: "Horizon is a modular sectional sofa designed by Frigerio with Pillet's casual elegance. It embodies contemporary living, serving as a versatile relax sofa and multifunctional space for socializing, working, or dining. Available in various configurations—linear, corner, asymmetrical, or curved—it offers two seat depths to meet diverse needs in both residential and contract settings. The platform, covered in fabric or leather, enhances its refined style, while customizable armrests and accessories add functionality, offering support surfaces or additional padding.",
+            Paragraph: {
+                en: "Horizon is a modular sectional sofa designed by Frigerio with Pillet's casual elegance. It embodies contemporary living, serving as a versatile relax sofa and multifunctional space for socializing, working, or dining. Available in various configurations—linear, corner, asymmetrical, or curved—it offers two seat depths to meet diverse needs in both residential and contract settings. The platform, covered in fabric or leather, enhances its refined style, while customizable armrests and accessories add functionality, offering support surfaces or additional padding.",
+                es: "Horizon es un sofá seccional modular diseñado por Frigerio con la elegancia casual de Pillet. Encarna la vida contemporánea, sirviendo como un sofá de relax versátil y espacio multifuncional para socializar, trabajar o cenar. Disponible en varias configuraciones—lineal, esquina, asimétrica o curva—ofrece dos profundidades de asiento para satisfacer diversas necesidades tanto en entornos residenciales como contractuales. La plataforma, cubierta en tela o cuero, realza su estilo refinado, mientras que los reposabrazos y accesorios personalizables añaden funcionalidad, ofreciendo superficies de apoyo o acolchado adicional."
+            },
             InfoLink: "https://www.frigerio.com/en/products/sofas/horizon/123",
             Sliderimages: [
                 horizonimage01,
@@ -629,15 +773,27 @@ export const Catalogdat = [
     },
     {
         CardImage: catalogimage13,
-        CardName: "Timothy",
-        CardTitle: "Free-standing sofas with geometric shapes, metal details, and saddle leather frame.",
+        CardName: {
+            en: "Timothy",
+            es: "Timothy"
+        },
+        CardTitle: {
+            en: "Free-standing sofas with geometric shapes, metal details, and saddle leather frame.",
+            es: "Sofás independientes con formas geométricas, detalles metálicos y estructura de cuero de montar."
+        },
         brand: ["all"],
         CardCategory: ["all","furniture","furnitures"],
         CardSubcategory: ["all","sofa"],
         CardPageData: {
-            Title: "Timothy",
+            Title: {
+                en: "Timothy",
+                es: "Timothy"
+            },
             Hexcode: "#rh957",
-            Paragraph: "Free-standing sofas and modular elements characterized by geometric shapes and elegant proportions, enriched by sophisticated metal details. Timothy is also available in the version with saddle leather frame for a more urban look. A flexible and complete collection, its multiple elements allow the utmost versatility of configurations. Further to the seating system, the range also includes a low table and a storage item.",
+            Paragraph: {
+                en: "Free-standing sofas and modular elements characterized by geometric shapes and elegant proportions, enriched by sophisticated metal details. Timothy is also available in the version with saddle leather frame for a more urban look. A flexible and complete collection, its multiple elements allow the utmost versatility of configurations. Further to the seating system, the range also includes a low table and a storage item.",
+                es: "Sofás independientes y elementos modulares caracterizados por formas geométricas y proporciones elegantes, enriquecidos por sofisticados detalles metálicos. Timothy también está disponible en la versión con estructura de cuero de montar para un aspecto más urbano. Una colección flexible y completa, sus múltiples elementos permiten la máxima versatilidad de configuraciones. Además del sistema de asientos, la gama también incluye una mesa baja y un elemento de almacenamiento."
+            },
             InfoLink: "https://meridiani.it/en/products/sofas/timothy-p734",
             Sliderimages: [
                 timothyimage01,
@@ -657,15 +813,27 @@ export const Catalogdat = [
     },
     {
         CardImage: catalogimage14,
-        CardName: "Eddie",
-        CardTitle: "Eddie modular sofas feature leather bases, monovolume cushions, and concealed feet.",
+        CardName: {
+            en: "Eddie",
+            es: "Eddie"
+        },
+        CardTitle: {
+            en: "Eddie modular sofas feature leather bases, monovolume cushions, and concealed feet.",
+            es: "Los sofás modulares Eddie presentan bases de cuero, cojines monovolumen y pies ocultos."
+        },
         brand: ["all", "frigerio"],
         CardCategory: ["all","furniture","furnitures"],
         CardSubcategory: ["all","sofa"],
         CardPageData: {
-            Title: "Eddie",
+            Title: {
+                en: "Eddie",
+                es: "Eddie"
+            },
             Hexcode: "#mlf506",
-            Paragraph: "Eddie is a collection of modular floor-standing sofas with a wooden base covered in leather or fabric and concealed feet. The slim base supports the monovolume seat cushion, which can be covered with fabric or leather with plain pattern or worked with a special horizontal quilting running along the seat. The Eddie sofa, an elegant and contemporary modular sofa, is available in classic linear and corner solutions, but also in unexpected double-sided furnishing solutions to create unique forms with balanced proportions. The detail of the slim base on which it rests, enhances the company's attention to detail. Eddie is a sofa with essential lines that fits easily into different home environments.",
+            Paragraph: {
+                en: "Eddie is a collection of modular floor-standing sofas with a wooden base covered in leather or fabric and concealed feet. The slim base supports the monovolume seat cushion, which can be covered with fabric or leather with plain pattern or worked with a special horizontal quilting running along the seat. The Eddie sofa, an elegant and contemporary modular sofa, is available in classic linear and corner solutions, but also in unexpected double-sided furnishing solutions to create unique forms with balanced proportions. The detail of the slim base on which it rests, enhances the company's attention to detail. Eddie is a sofa with essential lines that fits easily into different home environments.",
+                es: "Eddie es una colección de sofás modulares de pie con base de madera cubierta en cuero o tela y pies ocultos. La base delgada soporta el cojín de asiento monovolumen, que puede estar cubierto con tela o cuero con patrón liso o trabajado con un acolchado horizontal especial que recorre el asiento. El sofá Eddie, un sofá modular elegante y contemporáneo, está disponible en soluciones lineales y de esquina clásicas, pero también en soluciones de amueblamiento de doble cara inesperadas para crear formas únicas con proporciones equilibradas. El detalle de la base delgada sobre la que descansa, realza la atención al detalle de la empresa. Eddie es un sofá con líneas esenciales que se adapta fácilmente a diferentes entornos domésticos."
+            },
             InfoLink: "https://www.frigerio.com/en/products/sofas/eddie/177",
             Sliderimages: [
                 eddieimage01,
@@ -687,15 +855,27 @@ export const Catalogdat = [
     },
     {
         CardImage: catalogimage15,
-        CardName: "Bongo Kuoio",
-        CardTitle: "Bongo low tables blend leather craftsmanship with geometric shapes and unique details.",
+        CardName: {
+            en: "Bongo Kuoio",
+            es: "Bongo Kuoio"
+        },
+        CardTitle: {
+            en: "Bongo low tables blend leather craftsmanship with geometric shapes and unique details.",
+            es: "Mesas bajas Bongo combinan artesanía en cuero con formas geométricas y detalles únicos."
+        },
         brand: ["all"],
         CardCategory: ["all","furniture","furnitures"],
         CardSubcategory: ["all", "low table"],
         CardPageData: {
-            Title: "Bongo Kuoio",
+            Title: {
+                en: "Bongo Kuoio",
+                es: "Bongo Kuoio"
+            },
             Hexcode: "#dr105",
-            Paragraph: "Bongo's low table collection shows a new finish: the softness and strength of leather together with the skilful hand-woven manufacturing perfectly embrace the geometric shapes of this collection. The attention to details and the aesthetic value make the product unique. Bongo Kuoio attracts those who are searching for an exclusive furniture element.",
+            Paragraph: {
+                en: "Bongo's low table collection shows a new finish: the softness and strength of leather together with the skilful hand-woven manufacturing perfectly embrace the geometric shapes of this collection. The attention to details and the aesthetic value make the product unique. Bongo Kuoio attracts those who are searching for an exclusive furniture element.",
+                es: "La colección de mesas bajas Bongo muestra un nuevo acabado: la suavidad y resistencia del cuero junto con la hábil fabricación tejida a mano abrazan perfectamente las formas geométricas de esta colección. La atención a los detalles y el valor estético hacen que el producto sea único. Bongo Kuoio atrae a quienes buscan un elemento de mobiliario exclusivo."
+            },
             InfoLink: "https://meridiani.it/en/products/low-tables/bongo-kuoio-p24130",
             Sliderimages: [
                 bongokuoioimage01,
@@ -713,15 +893,27 @@ export const Catalogdat = [
     },
     {
         CardImage: catalogimage16,
-        CardName: "ralf",
-        CardTitle: "Low tables feature round tops, marble bases, and bronzed brass frames.",
+        CardName: {
+            en: "ralf",
+            es: "ralf"
+        },
+        CardTitle: {
+            en: "Low tables feature round tops, marble bases, and bronzed brass frames.",
+            es: "Mesas bajas con tapas redondas, bases de mármol y marcos de latón bronceado."
+        },
         brand: ["all"],
         CardCategory: ["all","furniture","furnitures"],
         CardSubcategory: ["all", "low table"],
         CardPageData: {
-            Title: "ralf",
+            Title: {
+                en: "ralf",
+                es: "ralf"
+            },
             Hexcode: "#cb903",
-            Paragraph: "A precious play of balances and geometrical recalls determines the look of these low tables: two round disks - one defines the top, the other one the base - connected by a light frame composed by two straight lines in varnished metal colour bronzed brass, platinum steel or matt black. The base is in marble, tops in lacquered wood, mirror or marble.",
+            Paragraph: {
+                en: "A precious play of balances and geometrical recalls determines the look of these low tables: two round disks - one defines the top, the other one the base - connected by a light frame composed by two straight lines in varnished metal colour bronzed brass, platinum steel or matt black. The base is in marble, tops in lacquered wood, mirror or marble.",
+                es: "Un precioso juego de equilibrios y evocaciones geométricas determina el aspecto de estas mesas bajas: dos discos redondos - uno define la parte superior, el otro la base - conectados por un marco ligero compuesto por dos líneas rectas en metal barnizado color latón bronceado, acero platino o negro mate. La base es de mármol, las tapas en madera lacada, espejo o mármol."
+            },
             InfoLink: "https://meridiani.it/en/products/low-tables/ralf-p994",
             Sliderimages: [
                 ralfimage1,
@@ -738,15 +930,27 @@ export const Catalogdat = [
     },
     {
         CardImage: catalogimage17,
-        CardName: "Pek",
-        CardTitle: "Low tables with round tops, metal frames, and versatile finish options.",
+        CardName: {
+            en: "Pek",
+            es: "Pek"
+        },
+        CardTitle: {
+            en: "Low tables with round tops, metal frames, and versatile finish options.",
+            es: "Mesas bajas con tapas redondas, marcos metálicos y opciones de acabado versátiles."
+        },
         brand: ["all"],
         CardCategory: ["all","furniture","furnitures"],
         CardSubcategory: ["all", "low table"],
         CardPageData: {
-            Title: "Pek",
+            Title: {
+                en: "Pek",
+                es: "Pek"
+            },
             Hexcode: "#lbf763",
-            Paragraph: "Low tables with round top and metal frame. The look of each element is defined by the selected finish of the tops, so that it may range from the casual look of lacquers to the elegance and preciousness of saddle leather and marble and to the modernity of metal.",
+            Paragraph: {
+                en: "Low tables with round top and metal frame. The look of each element is defined by the selected finish of the tops, so that it may range from the casual look of lacquers to the elegance and preciousness of saddle leather and marble and to the modernity of metal.",
+                es: "Mesas bajas con tapa redonda y marco metálico. El aspecto de cada elemento está definido por el acabado seleccionado de las tapas, por lo que puede variar desde el aspecto casual de los lacados hasta la elegancia y preciosidad del cuero de montar y el mármol y hasta la modernidad del metal."
+            },
             InfoLink: "https://meridiani.it/en/products/low-tables/pek-p991",
             Sliderimages: [
                 pekimage1,
@@ -763,15 +967,27 @@ export const Catalogdat = [
     },
     {
         CardImage: catalogimage18,
-        CardName: "Belt",
-        CardTitle: "Low tables with geometric perfection, various sizes, and handcrafted metal finishes.",
+        CardName: {
+            en: "Belt",
+            es: "Belt"
+        },
+        CardTitle: {
+            en: "Low tables with geometric perfection, various sizes, and handcrafted metal finishes.",
+            es: "Mesas bajas con perfección geométrica, varios tamaños y acabados metálicos artesanales."
+        },
         brand: ["all"],
         CardCategory: ["all","furniture","furnitures"],
         CardSubcategory: ["all", "low table"],
         CardPageData: {
-            Title: "Belt",
+            Title: {
+                en: "Belt",
+                es: "Belt"
+            },
             Hexcode: "#wct254",
-            Paragraph: "The formal key of this family of low tables is the geometrical perfection: they are available in different sizes for each form. The perimetral side panels are available in handcrafted finishes of metal, with tops in various finishes, from glass to mirrors, lacquer and marble. Very vibrant the Mirror and Metal versions, completely covered with reflecting surfaces or metal.",
+            Paragraph: {
+                en: "The formal key of this family of low tables is the geometrical perfection: they are available in different sizes for each form. The perimetral side panels are available in handcrafted finishes of metal, with tops in various finishes, from glass to mirrors, lacquer and marble. Very vibrant the Mirror and Metal versions, completely covered with reflecting surfaces or metal.",
+                es: "La clave formal de esta familia de mesas bajas es la perfección geométrica: están disponibles en diferentes tamaños para cada forma. Los paneles laterales perimetrales están disponibles en acabados artesanales de metal, con tapas en varios acabados, desde vidrio hasta espejos, lacado y mármol. Muy vibrantes las versiones Espejo y Metal, completamente cubiertas con superficies reflectantes o metal."
+            },
             InfoLink: "https://meridiani.it/en/products/low-tables/belt-p922",
             Sliderimages: [
                 beltimage1,
@@ -802,15 +1018,27 @@ export const Catalogdat = [
     },
     {
         CardImage: catalogimage19,
-        CardName: "Nina",
-        CardTitle: "Upholstered bench with tubular frame, blending classic elegance and modern versatility.",
+        CardName: {
+            en: "Nina",
+            es: "Nina"
+        },
+        CardTitle: {
+            en: "Upholstered bench with tubular frame, blending classic elegance and modern versatility.",
+            es: "Banco tapizado con marco tubular, combinando elegancia clásica y versatilidad moderna."
+        },
         brand: ["all"],
         CardCategory: ["all","furniture","furnitures"],
         CardSubcategory: ["all", "bench"],
         CardPageData: {
-            Title: "Nina",
+            Title: {
+                en: "Nina",
+                es: "Nina"
+            },
             Hexcode: "#ca854",
-            Paragraph: "Upholstered bench and day-bed, it represents a tribute to the classic taste reinterpreted with a modern twist. The varnished metal tubular frame supports the seat with leather or fabric covers; both elegant and simple, it is able to fit in every space of the home.",
+            Paragraph: {
+                en: "Upholstered bench and day-bed, it represents a tribute to the classic taste reinterpreted with a modern twist. The varnished metal tubular frame supports the seat with leather or fabric covers; both elegant and simple, it is able to fit in every space of the home.",
+                es: "Banco tapizado y cama de día, representa un homenaje al gusto clásico reinterpretado con un toque moderno. El marco tubular de metal barnizado soporta el asiento con cubiertas de cuero o tela; tanto elegante como simple, es capaz de adaptarse a cada espacio del hogar."
+            },
             InfoLink: "https://meridiani.it/en/products/benches-and-poufs/nina-p815",
             Sliderimages: [
                 ninaimage01,
@@ -828,15 +1056,27 @@ export const Catalogdat = [
     },
     {
         CardImage: catalogimage20,
-        CardName: "Keeton",
-        CardTitle: "Perfect proportions feature this collection, suitable for both the living and the night area.",
+        CardName: {
+            en: "Keeton",
+            es: "Keeton"
+        },
+        CardTitle: {
+            en: "Perfect proportions feature this collection, suitable for both the living and the night area.",
+            es: "Proporciones perfectas caracterizan esta colección, adecuada tanto para el área de estar como para la nocturna."
+        },
         brand: ["all"],
         CardCategory: ["all","furniture","furnitures"],
         CardSubcategory: ["all", "armchair"],
         CardPageData: {
-            Title: "Keeton",
+            Title: {
+                en: "Keeton",
+                es: "Keeton"
+            },
             Hexcode: "#dt245",
-            Paragraph: "Perfect proportions feature this collection, suitable for both the living and the night area. The Fit version is completely covered with textile or leather, hiding the base in favour of a mono-material total-look.",
+            Paragraph: {
+                en: "Perfect proportions feature this collection, suitable for both the living and the night area. The Fit version is completely covered with textile or leather, hiding the base in favour of a mono-material total-look.",
+                es: "Proporciones perfectas caracterizan esta colección, adecuada tanto para el área de estar como para la nocturna. La versión Fit está completamente cubierta con textil o cuero, ocultando la base a favor de un aspecto total mono-material."
+            },
             InfoLink: "https://meridiani.it/en/products/armchairs/keeton-p778",
             Sliderimages: [
                 keetonimage01,
@@ -855,15 +1095,27 @@ export const Catalogdat = [
     },
     {
         CardImage: catalogimage21,
-        CardName: "René Home",
-        CardTitle: "René sofa combines organic forms, craftsmanship, modularity, and diverse material finishes.",
+        CardName: {
+            en: "René Home",
+            es: "René Home"
+        },
+        CardTitle: {
+            en: "René sofa combines organic forms, craftsmanship, modularity, and diverse material finishes.",
+            es: "Sofá René combina formas orgánicas, artesanía, modularidad y diversos acabados de materiales."
+        },
         brand: ["all"],
         CardCategory: ["all","furniture","furnitures"],
         CardSubcategory: ["all","sofa"],
         CardPageData: {
-            Title: "René Home",
+            Title: {
+                en: "René Home",
+                es: "René Home"
+            },
             Hexcode: "#rh957",
-            Paragraph: "René, a new sofa designed by Andrea Parisio for Meridiani, showcases organic forms brought to life through exceptional craftsmanship. Cozy and bold, it offers flexibility in unit options and material combinations. Rounded seats and backs allow for free-standing or corner configurations, complemented by ottomans in various shapes—semicircular, trapezoidal, round, or rectangular. These can also support trays in finishes like wood, lacquer, back-painted glass, marble, leather, or metal, adding diversity to the design. René adapts to personal tastes, making it a uniquely customizable piece.",
+            Paragraph: {
+                en: "René, a new sofa designed by Andrea Parisio for Meridiani, showcases organic forms brought to life through exceptional craftsmanship. Cozy and bold, it offers flexibility in unit options and material combinations. Rounded seats and backs allow for free-standing or corner configurations, complemented by ottomans in various shapes—semicircular, trapezoidal, round, or rectangular. These can also support trays in finishes like wood, lacquer, back-painted glass, marble, leather, or metal, adding diversity to the design. René adapts to personal tastes, making it a uniquely customizable piece.",
+                es: "René, un nuevo sofá diseñado por Andrea Parisio para Meridiani, muestra formas orgánicas cobrando vida a través de una excepcional artesanía. Acogedor y audaz, ofrece flexibilidad en opciones de unidades y combinaciones de materiales. Asientos y respaldos redondeados permiten configuraciones independientes o de esquina, complementados por otomanas en varias formas—semicircular, trapezoidal, redonda o rectangular. Estas también pueden soportar bandejas en acabados como madera, lacado, vidrio pintado por detrás, mármol, cuero o metal, añadiendo diversidad al diseño. René se adapta a gustos personales, convirtiéndolo en una pieza únicamente personalizable."
+            },
             InfoLink: "https://meridiani.it/en/products/ren--p12350",
             Sliderimages: [
                 renéhomeimage01,

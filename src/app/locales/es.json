@@ -75,7 +75,37 @@
   },
   "catalogSection": {
     "title": "catálogo",
-    "button": "ver todos los productos"
+    "button": "ver todos los productos",
+    "brand": "marca",
+    "all": "todos",
+    "categories": {
+      "all": "todos",
+      "furnitures": "muebles",
+      "appliances": "electrodomésticos",
+      "sinkFaucet": "fregadero y grifo",
+      "bathroom": "baño",
+      "worktop": "encimera",
+      "outdoorKitchen": "cocina exterior",
+      "indoorKitchen": "cocina interior"
+    },
+    "subcategories": {
+      "all": "todos",
+      "sofa": "sofá",
+      "armchair": "sillón",
+      "bench": "banco",
+      "lowTable": "mesa baja",
+      "complements": "complementos",
+      "tables": "mesas",
+      "mirror": "espejo",
+      "chairs": "sillas",
+      "cupboard": "armario",
+      "decorative": "decorativo",
+      "induction": "inducción",
+      "refrigerator": "refrigerador",
+      "oven": "horno"
+    },
+    "contactUs": "contáctenos",
+    "moreInfo": "más información"
   },
   "metadata": {
     "title": "Grupo Aristo",

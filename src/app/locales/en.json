@@ -75,7 +75,37 @@
   },
   "catalogSection": {
     "title": "catalog",
-    "button": "see all products"
+    "button": "see all products",
+    "brand": "brand",
+    "all": "all",
+    "categories": {
+      "all": "all",
+      "furnitures": "furnitures",
+      "appliances": "appliances",
+      "sinkFaucet": "sink & faucet",
+      "bathroom": "bathroom",
+      "worktop": "worktop",
+      "outdoorKitchen": "outdoor kitchen",
+      "indoorKitchen": "indoor kitchen"
+    },
+    "subcategories": {
+      "all": "all",
+      "sofa": "sofa",
+      "armchair": "armchair",
+      "bench": "bench",
+      "lowTable": "low table",
+      "complements": "complements",
+      "tables": "tables",
+      "mirror": "mirror",
+      "chairs": "chairs",
+      "cupboard": "cupboard",
+      "decorative": "decorative",
+      "induction": "induction",
+      "refrigerator": "refrigerator",
+      "oven": "oven"
+    },
+    "contactUs": "contact us",
+    "moreInfo": "more info"
   },
   "metadata": {
     "title": "Aristo Group",

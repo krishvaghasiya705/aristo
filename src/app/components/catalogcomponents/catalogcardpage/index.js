@@ -5,8 +5,10 @@ import Commonbutton from '../../commonbutton/button';
 import Arrowicon from "@/assets/icon/arrowicon";
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function Catalogcardpage({ catalogItem }) {
+  const { t, currentLanguage } = useLanguage();
   const sliderRef = useRef(null);
   const imagesRef = useRef([]);
   const containerRef = useRef(null);
@@ -97,13 +99,13 @@ export default function Catalogcardpage({ catalogItem }) {
           </div>
           <div className={styles.catalogcardpageright}>
             <div className={styles.catalogcardpagerightcontent}>
-              <h1>{catalogItem.CardPageData.Title}</h1>
+              <h1>{catalogItem.CardPageData.Title[currentLanguage]}</h1>
               <span className={styles.cardhexcode}>{catalogItem.CardPageData.Hexcode}</span>
-              <p>{catalogItem.CardPageData.Paragraph}</p>
+              <p>{catalogItem.CardPageData.Paragraph[currentLanguage]}</p>
               <div className={styles.cardbuttonsalignment}>
                 <Commonbutton
                   Buttonlink="/"
-                  Buttontext="contact us"
+                  Buttontext={t('catalogSection.contactUs')}
                   ButtonIcon={<Arrowicon />}
                 />
                 <a
@@ -114,7 +116,7 @@ export default function Catalogcardpage({ catalogItem }) {
                 >
                   <Commonbutton
                     Buttonlink="no"
-                    Buttontext="more info"
+                    Buttontext={t('catalogSection.moreInfo')}
                     ButtonIcon={<Arrowicon />}
                   />
                 </a>

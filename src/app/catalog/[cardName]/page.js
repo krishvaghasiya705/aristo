@@ -8,7 +8,7 @@ export default function CatalogItem() {
     const params = useParams();
     const cardName = params.cardName;
     const catalogItem = Catalogdat.find(item => 
-        item.CardName.toLowerCase().replace(/\s+/g, '-') === cardName
+        item.CardName.en.toLowerCase().replace(/\s+/g, '-') === cardName
     );
 
     return (

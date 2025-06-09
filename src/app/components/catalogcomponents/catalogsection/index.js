@@ -7,10 +7,12 @@ import Link from "next/link";
 import Image from "next/image";
 import Dropdownicon from "@/assets/icon/dropdownicon";
 import { Catalogdat } from "../catalogjson/catalogdata.js";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Catalogcardsection() {
+    const { t, currentLanguage } = useLanguage();
     const sectionRef = useRef(null);
     const spansRef = useRef([]);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -107,13 +109,13 @@ export default function Catalogcardsection() {
                 <div className="container">
                     <div className={styles.catalogcardsectiontitle}>
                         <h1>
-                            <span ref={(el) => (spansRef.current[0] = el)}>catalog</span>
+                            <span ref={(el) => (spansRef.current[0] = el)}>{t('catalogSection.title')}</span>
                         </h1>
                     </div>
                     <div className={styles.branddropdownmain}>
                         <div className={styles.branddrodpowntitlemain}>
                             <div className={styles.branddrodpowntitle} onClick={toggleDropdown} ref={(el) => (spansRef.current[1] = el)} data-cursor-hover>
-                                <h2>brand</h2> <Dropdownicon />
+                                <h2>{t('catalogSection.brand')}</h2> <Dropdownicon />
                             </div>
                         </div>
                         <div className={`${styles.dropdownlistmain} ${isDropdownOpen ? styles.dropdownlistmainactive : ''}`}>
@@ -122,7 +124,7 @@ export default function Catalogcardsection() {
                                 onClick={() => handleBrandSelect("all")} 
                                 data-cursor-hover
                             >
-                                <span>all</span>
+                                <span>{t('catalogSection.all')}</span>
                             </div>
                             <div className={styles.dropdownlist}>
                                 {["sirius", "sangiacomo", "frigerio", "fiam", "meridiani", "modulnova"].map((brand) => (
@@ -140,7 +142,7 @@ export default function Catalogcardsection() {
                     </div>
                     <div className={styles.cardfiltercategorymain}>
                         <div className={styles.cardfiltercategory}>
-                            {["all", "furnitures", "appliances", "sink & faucet", "bathroom", "worktop", "outdoor kitchen", "indoor kitchen"].map((category) => (
+                            {["all", "furnitures", "appliances", "sinkFaucet", "bathroom", "worktop", "outdoorKitchen", "indoorKitchen"].map((category) => (
                                 <button 
                                     key={category}
                                     type="button" 
@@ -148,14 +150,14 @@ export default function Catalogcardsection() {
                                     onClick={() => handleCategorySelect(category)}
                                     data-cursor-hover
                                 >
-                                    <span>{category}</span>
+                                    <span>{t(`catalogSection.categories.${category}`)}</span>
                                 </button>
                             ))}
                         </div>
                     </div>
                     <div className={styles.cardfiltersubcategorymain}>
                         <div className={styles.cardfiltersubcategory}>
-                            {["all", "sofa", "armchair", "bench", "low table", "complements", "tables", "mirror", "chairs", "cupboard", "decorative", "induction", "refrigirator", "oven"].map((subcategory) => (
+                            {["all", "sofa", "armchair", "bench", "lowTable", "complements", "tables", "mirror", "chairs", "cupboard", "decorative", "induction", "refrigerator", "oven"].map((subcategory) => (
                                 <button 
                                     key={subcategory}
                                     type="button" 
@@ -163,7 +165,7 @@ export default function Catalogcardsection() {
                                     onClick={() => handleSubcategorySelect(subcategory)}
                                     data-cursor-hover
                                 >
-                                    <span>{subcategory}</span>
+                                    <span>{t(`catalogSection.subcategories.${subcategory}`)}</span>
                                 </button>
                             ))}
                         </div>
@@ -173,20 +175,20 @@ export default function Catalogcardsection() {
                         {filteredItems && filteredItems.map((item, index) => (
                             <Link 
                                 key={index}
-                                href={`/catalog/${item.CardName.toLowerCase().replace(/\s+/g, '-')}`}
+                                href={`/catalog/${item.CardName[currentLanguage].toLowerCase().replace(/\s+/g, '-')}`}
                             >
                                 <div className={styles.catalogcardsmain}>
                                     <div className={styles.catalogcardsimage}>
                                         <Image 
                                             src={item.CardImage} 
-                                            alt={item.CardName} 
+                                            alt={item.CardName[currentLanguage]} 
                                             width={1000} 
                                             height={1000}
                                             style={{ objectFit: 'cover' }}
                                             />
                                     </div>
-                                    <h3>{item.CardName}</h3>
-                                    <p>{item.CardTitle}</p>
+                                    <h3>{item.CardName[currentLanguage]}</h3>
+                                    <p>{item.CardTitle[currentLanguage]}</p>
                                 </div>
                             </Link>
                         ))}
