@@ -56,17 +56,26 @@
         gap: 38px;
 
         h1 {
-          @include font71;
-          color: var(--black);
-          text-transform: uppercase;
-          font-family: var(--primary-font);
+          overflow: hidden;
+          span {
+            @include font71;
+            color: var(--black);
+            text-transform: uppercase;
+            font-family: var(--primary-font);
+            display: block;
+          }
         }
-
+        
         .cardhexcode {
-          @include font22;
-          color: var(--black);
-          text-transform: uppercase;
-          font-family: var(--primary-font);
+          overflow: hidden;
+          
+          span {
+            @include font22;
+            color: var(--black);
+            text-transform: uppercase;
+            font-family: var(--primary-font);
+            display: block;
+          }
         }
 
         p {
@@ -80,6 +89,7 @@
           display: flex;
           align-items: center;
           gap: 20px;
+          overflow: hidden;
 
           span {
             @include font12;

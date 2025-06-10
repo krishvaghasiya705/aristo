@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useLayoutEffect, useEffect, useRef, useState } from 'react';
 import styles from "./catalogcardpage.module.scss";
 import Image from 'next/image';
 import Commonbutton from '../../commonbutton/button';
@@ -11,6 +11,7 @@ export default function Catalogcardpage({ catalogItem }) {
   const { t, currentLanguage } = useLanguage();
   const sliderRef = useRef(null);
   const imagesRef = useRef([]);
+  const spansRef = useRef([]);
   const containerRef = useRef(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   useEffect(() => {
@@ -23,6 +24,38 @@ export default function Catalogcardpage({ catalogItem }) {
     window.addEventListener("menuStateChange", handleMenuState);
     return () => window.removeEventListener("menuStateChange", handleMenuState);
   }, []);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const spans = spansRef.current.filter(Boolean);
+      gsap.fromTo(
+        spans,
+        {
+          y: 100,
+          rotation: 5,
+          transformOrigin: "left bottom",
+          opacity: 0,
+        },
+        {
+          y: 0,
+          rotation: 0,
+          opacity: 1,
+          duration: 1.2,
+          ease: "power2.inOut",
+          stagger: {
+            amount: 1,
+            from: "start",
+          }
+        }
+      );
+    }, containerRef);
+
+    return () => {
+      ctx.revert();
+    };
+  }, []);
+
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -99,27 +132,37 @@ export default function Catalogcardpage({ catalogItem }) {
           </div>
           <div className={styles.catalogcardpageright}>
             <div className={styles.catalogcardpagerightcontent}>
-              <h1>{catalogItem.CardPageData.Title[currentLanguage]}</h1>
-              <span className={styles.cardhexcode}>{catalogItem.CardPageData.Hexcode}</span>
-              <p>{catalogItem.CardPageData.Paragraph[currentLanguage]}</p>
+              <h1>
+                <span ref={(el) => (spansRef.current[0] = el)}>{catalogItem.CardPageData.Title[currentLanguage]}</span>
+              </h1>
+              <span className={styles.cardhexcode}>
+                <span ref={(el) => (spansRef.current[1] = el)}>{catalogItem.CardPageData.Hexcode}</span>
+              </span>
+              <p>
+                {catalogItem.CardPageData.Paragraph[currentLanguage]}
+              </p>
               <div className={styles.cardbuttonsalignment}>
-                <Commonbutton
-                  Buttonlink="/"
-                  Buttontext={t('catalogSection.contactUs')}
-                  ButtonIcon={<Arrowicon />}
-                />
-                <a
-                  href={catalogItem.CardPageData.InfoLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.moreinfolink}
-                >
+                <div ref={(el) => (spansRef.current[2] = el)}>
                   <Commonbutton
-                    Buttonlink="no"
-                    Buttontext={t('catalogSection.moreInfo')}
+                    Buttonlink="/"
+                    Buttontext={t('catalogSection.contactUs')}
                     ButtonIcon={<Arrowicon />}
                   />
-                </a>
+                </div>
+                <div ref={(el) => (spansRef.current[3] = el)}>
+                  <a
+                    href={catalogItem.CardPageData.InfoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.moreinfolink}
+                  >
+                    <Commonbutton
+                      Buttonlink="no"
+                      Buttontext={t('catalogSection.moreInfo')}
+                      ButtonIcon={<Arrowicon />}
+                    />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
