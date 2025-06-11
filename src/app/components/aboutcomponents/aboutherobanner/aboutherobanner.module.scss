@@ -5,7 +5,7 @@
     .aboutherobanner {
         height: 100vh;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         flex-direction: column;
 
@@ -13,8 +13,13 @@
             h1 {
                 text-align: center;
                 p {
-                    @include font144;
-                    color: var(--white);
+                    overflow: hidden;
+
+                    span {
+                        @include font144;
+                        color: var(--white);
+                        display: block;
+                    }
                 }
             }
         }
@@ -26,10 +31,15 @@
             z-index: 2;
             cursor: pointer;
             p {
-              @include font12;
-              color: var(--whitepure);
-              text-transform: uppercase;
-              font-family: var(--primary-font);
+                overflow: hidden;
+
+                span {
+                    @include font12;
+                    color: var(--whitepure);
+                    text-transform: uppercase;
+                    font-family: var(--primary-font);
+                    display: block;
+                }
             }
           }
     }

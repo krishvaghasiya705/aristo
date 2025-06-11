@@ -1,0 +1,203 @@
+@use "@/styles/mixin" as *;
+
+.experiencemodulenovamain {
+    padding-top: 96px;
+
+    .experiencemodulenovatitle {
+        padding: 115px 0;
+        mix-blend-mode: difference;
+
+        h1 {
+            margin-bottom: 57px;
+            text-align: center;
+
+            p {
+                overflow: hidden;
+
+                span {
+                    display: block;
+                    @include font66;
+                    color: var(--white);
+                    font-family: var(--primary-font);
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        .experiencetitleparagraph {
+            max-width: 663px;
+            margin: 0 auto;
+            text-align: center;
+            @include font17;
+            line-height: 31px;
+            color: var(--textgrey);
+            font-family: var(--paragraph-font);
+        }
+    }
+
+    .experiencemodulenovajourneymain {
+        padding: 115px 0;
+
+        .experiencemodulenovajourney {
+            padding: 259px 0;
+            position: relative;
+
+            .journeylineflx {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 1;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                height: 100%;
+                mix-blend-mode: difference;
+                
+                .journeycircle {
+                    width: 96px;
+                    height: 96px;
+                    border: 1px solid var(--lightgrey2);
+                    border-radius: 100%;
+                }
+                
+                .journeyline {
+                    width: 1px;
+                    height: calc(100% - 192px);
+                    background-color: var(--lightgrey2);
+                }
+            }
+            
+            .journeymarquee {
+                position: absolute;
+                top: 50%;
+                left: -50%;
+                transform: translateY(-50%);
+                width: 200%;
+                z-index: 2;
+                mix-blend-mode: difference;
+
+                .journeymarqueeflx {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+            }
+
+            .journeygrd {
+                max-width: 1362px;
+                margin: 0 auto;
+                display: grid;
+                grid-auto-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto auto;
+                gap: 16px;
+                position: relative;
+                z-index: 3;
+
+                .journeyimagedivmain {
+                    position: relative;
+                    mix-blend-mode: difference;
+                    overflow: hidden;
+                    width: 100%;
+                    height: 100%;
+                    
+                    .journeyimageeffect {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        background-color: var(--black);
+                        z-index: 1;
+                    }
+    
+                    .journeyimage {
+                        position: absolute;
+                        bottom: 0;
+                        width: 100%;
+                    }
+                }
+
+                .journeyimage1 {
+                    max-width: 673px;
+                    width: 100%;
+                    height: 452px;
+                    margin-left: auto;
+                    margin-right: -9px;
+                    grid-area: 1 / 1 / 2 / 2;
+                    display: flex;
+                    align-items: end;
+                    
+                    .journeyimage {
+                        height: 452px;
+                        min-height: 452px;
+                    }
+                }
+                
+                .journeyimage2 {
+                    max-width: 670px;
+                    width: 100%;
+                    height: 443px;
+                    margin: -134px -112px 0 auto;
+                    grid-area: 2 / 2 / 3 / 3;
+                    display: flex;
+                    align-items: end;
+
+                    .journeyimage {
+                        height: 443px;
+                        min-height: 443px;
+                    }
+                }
+                
+                .journeyimage3 {
+                    max-width: 624px;
+                    width: 100%;
+                    height: 603px;
+                    margin: 134px auto 0 -125px;
+                    grid-area: 3 / 1 / 4 / 3;
+                    display: flex;
+                    align-items: end;
+                    
+                    .journeyimage {
+                        height: 603px;
+                        min-height: 603px;
+                    }
+                }
+                
+                .journeyimage4 {
+                    max-width: 466px;
+                    width: 100%;
+                    height: 569px;
+                    margin: -278px auto 0 -9px;
+                    grid-area: 4 / 2 / 5 / 3;
+                    display: flex;
+                    align-items: end;
+                    
+                    .journeyimage {
+                        height: 569px;
+                        min-height: 569px;
+                    }
+                }
+                
+                .journeyimage5 {
+                    max-width: 456px;
+                    width: 100%;
+                    height: 424px;
+                    position: relative;
+                    left: 4.8vw;
+                    margin-top: 134px;
+                    margin-left: 6.5vw;
+                    grid-area: 5 / 1 / 6 / 3;
+                    display: flex;
+                    align-items: end;
+                    
+                    .journeyimage {
+                        height: 424px;
+                        min-height: 424px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -24,131 +24,128 @@ export default function Highendsection() {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      const spans = spansRef.current.filter(Boolean);
-      const paraspans = paragraphspansRef.current.filter(Boolean);
+    const spans = spansRef.current.filter(Boolean);
+    const paraspans = paragraphspansRef.current.filter(Boolean);
 
-      // Updated text animations with scroll trigger
-      gsap.fromTo(
-        spans,
-        {
-          y: 100,
-          rotation: 5,
-          transformOrigin: "left bottom",
-          opacity: 0
+    gsap.fromTo(
+      spans,
+      {
+        y: 100,
+        rotation: 5,
+        transformOrigin: "left bottom",
+        opacity: 0
+      },
+      {
+        y: 0,
+        rotation: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: "power2.inOut",
+        stagger: {
+          amount: 1.5,
+          from: "start"
         },
-        {
-          y: 0,
-          rotation: 0,
-          opacity: 1,
-          duration: 1.2,
-          ease: "power2.inOut",
-          stagger: {
-            amount: 1.5,
-            from: "start"
-          },
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 40%",
-            end: "top 20%",
-            scrub: 1,
-            toggleActions: "play none none reverse"
-          }
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 40%",
+          end: "top 20%",
+          scrub: 1,
+          toggleActions: "play none none reverse"
         }
-      );
+      }
+    );
 
-      gsap.fromTo(
-        paraspans,
-        {
-          y: 100,
-          rotation: 5,
-          transformOrigin: "left bottom",
-          opacity: 0
+    gsap.fromTo(
+      paraspans,
+      {
+        y: 100,
+        rotation: 5,
+        transformOrigin: "left bottom",
+        opacity: 0
+      },
+      {
+        y: 0,
+        rotation: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: "power2.inOut",
+        stagger: {
+          amount: 1.5,
+          from: "start"
         },
-        {
-          y: 0,
-          rotation: 0,
-          opacity: 1,
-          duration: 1.2,
-          ease: "power2.inOut",
-          stagger: {
-            amount: 1.5,
-            from: "start"
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 25%",
+          end: "top 30%",
+          scrub: 1,
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
+
+    const imageEffects = [
+      styles.highendsectionimage1effect,
+      styles.highendsectionimage2effect,
+      styles.highendsectionimage3effect,
+      styles.highendsectionimage4effect,
+      styles.highendsectionimage5effect
+    ];
+
+    imageEffects.forEach((effectClass, index) => {
+      const effect = document.querySelector(`.${effectClass}`);
+      if (effect) {
+        gsap.fromTo(
+          effect,
+          {
+            height: "100%"
           },
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 25%",
-            end: "top 30%",
-            scrub: 1,
-            toggleActions: "play none none reverse"
+          {
+            height: "0%",
+            duration: 1.2,
+            ease: "power2.inOut",
+            scrollTrigger: {
+              trigger: effect,
+              start: "top 80%",
+              end: "top 20%",
+              scrub: 1,
+              toggleActions: "play none none reverse"
+            }
           }
-        }
-      );
+        );
+      }
+    });
 
-      // Image effect animations
-      const imageEffects = [
-        styles.highendsectionimage1effect,
-        styles.highendsectionimage2effect,
-        styles.highendsectionimage3effect,
-        styles.highendsectionimage4effect,
-        styles.highendsectionimage5effect
-      ];
+    const images = [
+      styles.highendsectionimage1,
+      styles.highendsectionimage2,
+      styles.highendsectionimage3,
+      styles.highendsectionimage4,
+      styles.highendsectionimage5
+    ];
 
-      imageEffects.forEach((effectClass, index) => {
-        const effect = document.querySelector(`.${effectClass}`);
-        if (effect) {
-          gsap.fromTo(
-            effect,
-            {
-              height: "100%"
-            },
-            {
-              height: "0%",
-              duration: 1.2,
-              ease: "power2.inOut",
-              scrollTrigger: {
-                trigger: effect,
-                start: "top 80%",
-                end: "top 20%",
-                scrub: 1,
-                toggleActions: "play none none reverse"
-              }
+    images.forEach((imageClass, index) => {
+      const image = document.querySelector(`.${imageClass}`);
+      if (image) {
+        gsap.fromTo(
+          image,
+          {
+            scale: 1.2,
+          },
+          {
+            scale: 1,
+            duration: 1.2,
+            ease: "power2.inOut",
+            scrollTrigger: {
+              trigger: image,
+              start: "top 80%",
+              end: "top 20%",
+              scrub: 1,
+              toggleActions: "play none none reverse"
             }
-          );
-        }
-      });
-
-      // Image scale animations
-      const images = [
-        styles.highendsectionimage1,
-        styles.highendsectionimage2,
-        styles.highendsectionimage3,
-        styles.highendsectionimage4,
-        styles.highendsectionimage5
-      ];
-
-      images.forEach((imageClass, index) => {
-        const image = document.querySelector(`.${imageClass}`);
-        if (image) {
-          gsap.fromTo(
-            image,
-            {
-              scale: 1.2,
-            },
-            {
-              scale: 1,
-              duration: 1.2,
-              ease: "power2.inOut",
-              scrollTrigger: {
-                trigger: image,
-                start: "top 80%",
-                end: "top 20%",
-                scrub: 1,
-                toggleActions: "play none none reverse"
-              }
-            }
-          );
-        }
-      });
+          }
+        );
+      }
+    });
 
     }, sectionRef);
 
