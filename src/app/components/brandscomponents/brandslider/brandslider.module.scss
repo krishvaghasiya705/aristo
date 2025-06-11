@@ -50,6 +50,7 @@
     -ms-user-select: none;
     min-width: 100%;
     justify-content: flex-start;
+    padding-right: 76px;
 
     .brandsliderboxmain {
       width: 690px;
@@ -62,10 +63,6 @@
       transform: translateZ(0);
       -webkit-transform: translateZ(0);
       pointer-events: none;
-
-      &::last-child {
-        margin-right: 76px;
-      }
 
       .brandsliderimage {
         height: 428px;

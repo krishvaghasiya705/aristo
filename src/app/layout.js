@@ -18,6 +18,7 @@ export default function RootLayout({ children }) {
   const pathname = usePathname();
   const [loading, setLoading] = useState(true);
   const isCatalogCardPage = pathname.startsWith('/catalog/') && pathname !== '/catalog';
+  const isBrandsPage = pathname === '/brands' || pathname.startsWith('/brands?');
 
   useEffect(() => {
     setLoading(true);
@@ -116,11 +117,11 @@ export default function RootLayout({ children }) {
             <LanguageProvider>
               <Cursor />
               <LenisScroll />
-              <Header hideLogo={isCatalogCardPage} scrollstop={isCatalogCardPage} />
+              <Header hideLogo={isCatalogCardPage} scrollstop={isCatalogCardPage || isBrandsPage} />
               <div className="blankspace"></div>
               {children}
               <LanguageSwitcher />
-              {!isCatalogCardPage && <Footer />}
+              {!isCatalogCardPage || !isBrandsPage && <Footer />}
             </LanguageProvider>
           </main>
         )}
