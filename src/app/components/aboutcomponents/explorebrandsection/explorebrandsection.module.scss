@@ -1,0 +1,70 @@
+@use "@/styles/mixin" as *;
+
+.explorebrandsectionmain {
+  .explorebrandsection {
+    padding: 96px 0;
+    
+    &:nth-child(3n + 2) {
+        .explorebrandsectionflx {
+            padding: 115px 0 115px 126px;
+        }
+    }
+
+    .explorebrandsectionflx {
+      padding: 115px 126px 115px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+
+      .exploreimagemain {
+        max-width: 824px;
+        height: 556px;
+        width: 100%;
+        display: flex;
+        align-items: end;
+
+        .exploreimage {
+          mix-blend-mode: difference;
+          overflow: hidden;
+          width: 100%;
+          height: 100%;
+          position: relative;
+
+          img {
+            position: absolute;
+            bottom: 0;
+            height: 556px;
+            min-height: 556px;
+          }
+        }
+      }
+
+      .explorebrandscontent {
+        max-width: 588px;
+        width: 100%;
+        mix-blend-mode: difference;
+
+        h4 {
+          margin-bottom: 57px;
+          overflow: hidden;
+
+          span {
+            display: block;
+            @include font66;
+            color: var(--white);
+            font-family: var(--primary-font);
+            text-transform: uppercase;
+          }
+        }
+
+        p {
+          @include font17;
+          line-height: 31px;
+          color: var(--textgrey);
+          font-family: var(--paragraph-font);
+        }
+      }
+    }
+  }
+}

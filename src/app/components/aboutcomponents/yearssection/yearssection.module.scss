@@ -1,0 +1,77 @@
+@use "@/styles/mixin" as *;
+
+.yearssectionmain {
+    padding: 96px 0;
+
+    .yearssection {
+        padding: 115px 0;
+        mix-blend-mode: difference;
+
+        h3 {
+            margin-bottom: 76px;
+            text-align: center;
+
+            p {
+                overflow: hidden;
+
+                span {
+                    display: block;
+                    @include font144;
+                    color: var(--white);
+                    text-transform: uppercase;
+                    font-family: var(--primary-font);
+                }
+            }
+        }
+
+        .yearssectionparagraph {
+            max-width: 877px;
+            margin: 0 auto;
+            text-align: center;
+
+            span {
+                display: block;
+                overflow: hidden;
+                @include font35;
+                color: var(--white);
+                text-transform: uppercase;
+                font-family: var(--primary-font);
+            }
+        }
+    }
+
+    .yearsectionslidermain {
+        padding: 0 76px;
+        position: relative;
+
+        .yearsectionslider {
+            position: relative;
+            width: 100%;
+            overflow: visible;
+
+            .yearsectionsliderflx {
+                display: flex;
+                align-items: center;
+                gap: 76px;
+                will-change: transform;
+                position: relative;
+                padding-right: 76px;
+
+                .yearsectionsliderimage {
+                    flex-shrink: 0;
+                    img {
+                        width: 768px;
+                        min-width: 768px;
+                        height: 576px;
+                        object-fit: cover;
+                    }
+
+
+                    &:last-child {
+                        padding-right: 76px;
+                    }
+                }
+            }
+        }
+    }
+}

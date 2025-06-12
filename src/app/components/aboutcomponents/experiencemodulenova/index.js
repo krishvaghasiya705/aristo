@@ -81,7 +81,7 @@ export default function Experiencemodulenova() {
         <div className={styles.experiencemodulenovamain} ref={sectionRef}>
             <div className="container">
                 <div className={styles.experiencemodulenovatitle}>
-                    <h1>
+                    <h2>
                         <p>
                             <span ref={(el) => (spansRef.current[0] = el)}>The</span>
                         </p>
@@ -94,7 +94,7 @@ export default function Experiencemodulenova() {
                         <p>
                             <span ref={(el) => (spansRef.current[3] = el)}>Modulnova</span>
                         </p>
-                    </h1>
+                    </h2>
                     <p className={styles.experiencetitleparagraph}>
                         Aristo group was established in 1992 with the inspiration of offering better products
                         for homeowners in Israel. The group's basic philosophical concept is a holistic
