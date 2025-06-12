@@ -2,12 +2,13 @@
 
 .yearssectionmain {
     padding: 96px 0;
+    overflow: hidden;
 
     .yearssection {
         padding: 115px 0;
         mix-blend-mode: difference;
 
-        h3 {
+        h3 {    
             margin-bottom: 76px;
             text-align: center;
 
