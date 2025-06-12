@@ -144,7 +144,7 @@ export default function Catalogcardpage({ catalogItem }) {
               <div className={styles.cardbuttonsalignment}>
                 <div ref={(el) => (spansRef.current[2] = el)}>
                   <Commonbutton
-                    Buttonlink="/"
+                    Buttonlink="/contact"
                     Buttontext={t('catalogSection.contactUs')}
                     ButtonIcon={<Arrowicon />}
                   />

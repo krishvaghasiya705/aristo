@@ -188,7 +188,7 @@ export default function Highendsection() {
                   </span>
                 ))}
               </p>
-              <Commonbutton Buttonlink="/" Buttontext={t('highEndSection.content.button')} ButtonIcon={<Arrowicon />} />
+              <Commonbutton Buttonlink="/about" Buttontext={t('highEndSection.content.button')} ButtonIcon={<Arrowicon />} />
             </div>
           </div>
         </div>

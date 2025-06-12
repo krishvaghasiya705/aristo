@@ -19,14 +19,15 @@
       .homebuttonmain {
         height: 61px;
         overflow: hidden;
-
+        
         .homebutton {
           border: 0.5px solid #919191;
           border-radius: 50px;
+          cursor: pointer;
           padding: 19px 26px;
           background: var(--black);
           transition: 0.2s ease-in-out;
-
+          
           .homebuttontext {
             height: 20px;
             display: flex;

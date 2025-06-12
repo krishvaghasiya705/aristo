@@ -170,7 +170,7 @@ export default function Exclusivebrands() {
                                 </div>
                             </div>
                         </div>
-                        <Commonbutton Buttonlink="/" Buttontext={t('exclusiveBrands.button')} ButtonIcon={<Arrowicon />} />
+                        <Commonbutton Buttonlink="/brands" Buttontext={t('exclusiveBrands.button')} ButtonIcon={<Arrowicon />} />
                     </div> 
                 </div> 
             </div> 

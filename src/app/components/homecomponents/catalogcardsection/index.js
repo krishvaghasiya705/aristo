@@ -77,7 +77,7 @@ export default function Catalogsection() {
                 <span ref={(el) => (spansRef.current[0] = el)}>{t('catalogSection.title')}</span>
               </p>
             </h5>
-            <Commonbutton Buttonlink="/" Buttontext={t('catalogSection.button')} ButtonIcon={<Arrowicon />} />
+            <Commonbutton Buttonlink="/catalog" Buttontext={t('catalogSection.button')} ButtonIcon={<Arrowicon />} />
           </div>
         </div>
       </div>

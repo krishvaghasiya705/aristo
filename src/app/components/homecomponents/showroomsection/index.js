@@ -227,7 +227,7 @@ export default function Showroomsection() {
             </div>
             <div className={styles.showroomsectionbutton}>
               <Commonbutton
-                Buttonlink="/"
+                Buttonlink="/contact"
                 Buttontext={t("showroomSection.contactUs")}
                 ButtonIcon={<Arrowicon />}
               />

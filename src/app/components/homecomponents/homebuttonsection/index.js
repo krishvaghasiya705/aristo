@@ -4,6 +4,7 @@ import styles from "./homebuttonsection.module.scss";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLanguage } from "@/app/context/LanguageContext";
+import Link from "next/link";
 
 export default function Homebuttonsection() {
   const sectionRef = useRef(null);
@@ -85,7 +86,8 @@ export default function Homebuttonsection() {
           <div className={styles.homebuttonsection}>
             <div className={styles.homebuttonsectionflx}>
               {categories.map((category, index) => (
-                <div key={category} className={styles.homebuttonmain} ref={el => buttonsRef.current[index] = el}>
+                <Link href={"/catalog"} key={category} ref={el => buttonsRef.current[index] = el}>
+                <div className={styles.homebuttonmain}>
                   <button type="button" className={styles.homebutton} data-cursor-hover>
                     <div className={styles.homebuttontext} ref={el => buttonTextsRef.current[index] = el}>
                       <span>{t(`buttonSection.categories.${category}`)}</span>
@@ -93,6 +95,7 @@ export default function Homebuttonsection() {
                     </div>
                   </button>
                 </div>
+                </Link>
               ))}
             </div>
           </div>
