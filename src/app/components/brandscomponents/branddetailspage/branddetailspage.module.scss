@@ -1,0 +1,40 @@
+@use "@/styles/mixin" as *;
+
+.branddetailspagemain {
+    padding: 115px 0;
+
+    .branddetailspagetitle {
+        padding-top: 192px;
+        display: flex;
+        flex-direction: column;
+        gap: 96px;
+        align-items: center;
+        justify-content: center;
+        mix-blend-mode: difference;
+
+        h1 {
+            overflow: hidden;
+
+            p {
+                @include font144;   
+                color: var(--white);
+                font-family: var(--primary-font);
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .brandbannerimage {
+        padding: 76px 0;
+    }
+
+    .branddetailsmain {
+        padding: 115px 0;
+        max-width: 672px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 76px;
+    }
+}

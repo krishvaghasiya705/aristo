@@ -20,6 +20,8 @@ import Meridianiicon from "@/assets/icon/meridianiicon";
 import Fiamicon from "@/assets/icon/fiamicon";
 import Frigerioicon from "@/assets/icon/frigerioicon";
 import Sangiagomoicon from "@/assets/icon/sangiagomoicon";
+import { Branddata } from "../branddatajs/branddata";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -38,37 +40,9 @@ export default function Brandslider({ category = 'all' }) {
         setCurrentCategory(category);
     }, [category]);
 
-    const Brandsliderdata = [
-      {
-        id: 'kitchen',
-        sliderimage: brandsliderimage1,
-        sliderlogo: <Modulnovaicon />
-      },
-      {
-        id: 'furniture',
-        sliderimage: brandsliderimage2,
-        sliderlogo: <Meridianiicon />
-      },
-      {
-        id: 'furniture',
-        sliderimage: brandsliderimage3,
-        sliderlogo: <Fiamicon />
-      },
-      {
-        id: 'furniture',
-        sliderimage: brandsliderimage4,
-        sliderlogo: <Frigerioicon />
-      },
-      {
-        id: 'wardrobes',
-        sliderimage: brandsliderimage5,
-        sliderlogo: <Sangiagomoicon />
-      },
-    ];
-
     const filteredData = currentCategory === 'all' 
-      ? Brandsliderdata 
-      : Brandsliderdata.filter(item => item.id === currentCategory);
+      ? Branddata 
+      : Branddata.filter(item => item.id === currentCategory);
 
     const handleCategoryChange = (newCategory) => {
       setCurrentCategory(newCategory);
@@ -135,7 +109,7 @@ export default function Brandslider({ category = 'all' }) {
             });
 
             tl.to(slider, {
-                x: -(sliderWidth - viewportWidth),
+                x: -(sliderWidth - viewportWidth + 250),
                 ease: "none",
                 duration: 1
             });
@@ -170,14 +144,16 @@ export default function Brandslider({ category = 'all' }) {
               ref={sliderRef}
             >
               {filteredData.map((i, index) => (
-                <div className={styles.brandsliderboxmain} key={index}>
-                  <div className={styles.brandsliderimage}>
-                    <Image src={i.sliderimage} alt={i.sliderimage} />
+                <Link href={`/brands/${i.details.Title.toLowerCase()}`} key={index}>
+                  <div className={styles.brandsliderboxmain}>
+                    <div className={styles.brandsliderimage}>
+                      <Image src={i.sliderimage} alt={i.details.Title} />
+                    </div>
+                    <div className={styles.brandsliderlogo}>
+                      {i.sliderlogo}
+                    </div>
                   </div>
-                  <div className={styles.brandsliderlogo}>
-                    {i.sliderlogo}
-                  </div>
-                </div>
+                </Link>
               ))}
             </div>
             {filteredData.length === 0 && (

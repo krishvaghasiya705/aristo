@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
   }, []);
 
   useEffect(() => {
-    if (pathname === '/brands' || pathname === '/catalog' || pathname.startsWith('/catalog/')) {
+    if (pathname === '/brands' || pathname.startsWith('/brands/') || pathname === '/catalog' || pathname.startsWith('/catalog/')) {
       document.body.style.backgroundColor = 'var(--white)';
     } else {
       document.body.style.backgroundColor = 'var(--black)';
