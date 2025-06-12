@@ -10,8 +10,10 @@ import yearsliderimage3 from "@/assets/images/yearsliderimage3.webp"
 import yearsliderimage4 from "@/assets/images/yearsliderimage4.webp"
 import yearsliderimage5 from "@/assets/images/yearsliderimage5.webp"
 import yearsliderimage6 from "@/assets/images/yearsliderimage6.webp"
+import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function Yearssection() {
+    const { t } = useLanguage();
     const spansRef = useRef([]);
     const sectionRef = useRef(null);
 
@@ -23,8 +25,8 @@ export default function Yearssection() {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: sectionRef.current,
-                    start: "top 80%",
-                    end: "bottom 20%",
+                    start: "top 30%",
+                    end: "top 20%",
                     scrub: 1,
                     toggleActions: "play none none reverse",
                     markers: false
@@ -78,16 +80,16 @@ export default function Yearssection() {
             <div className={styles.yearssection}>
                 <h3>
                     <p>
-                        <span ref={(el) => (spansRef.current[0] = el)}>30+</span>
-                        <span ref={(el) => (spansRef.current[1] = el)}>years</span>
+                        <span ref={(el) => (spansRef.current[0] = el)}>{t('aboutSection.years.title.line1')}</span>
+                        <span ref={(el) => (spansRef.current[1] = el)}>{t('aboutSection.years.title.line2')}</span>
                     </p>
                 </h3>
                 <p className={styles.yearssectionparagraph}>
                     <span>
-                        <span ref={(el) => (spansRef.current[2] = el)}>of bringing high-end interior</span>
+                        <span ref={(el) => (spansRef.current[2] = el)}>{t('aboutSection.years.subtitle.line1')}</span>
                     </span>
                     <span>
-                        <span ref={(el) => (spansRef.current[3] = el)}>products to your home.</span>
+                        <span ref={(el) => (spansRef.current[3] = el)}>{t('aboutSection.years.subtitle.line2')}</span>
                     </span>
                 </p>
             </div>

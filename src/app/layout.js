@@ -121,7 +121,7 @@ export default function RootLayout({ children }) {
               <div className="blankspace"></div>
               {children}
               <LanguageSwitcher />
-              {!isCatalogCardPage || !isBrandsPage && <Footer />}
+              {!isCatalogCardPage && !isBrandsPage && <Footer />}
             </LanguageProvider>
           </main>
         )}

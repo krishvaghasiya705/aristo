@@ -147,5 +147,44 @@
       },
       "send": "send"
     }
+  },
+  "aboutSection": {
+    "heroBanner": {
+      "title": "360°",
+      "subtitle": "approach"
+    },
+    "experience": {
+      "title": {
+        "line1": "The",
+        "line2": "experience",
+        "line3": "begins with",
+        "line4": "Modulnova"
+      },
+      "paragraph": "Aristo group was established in 1992 with the inspiration of offering better products for homeowners in Israel. The group's basic philosophical concept is a holistic approach, which produces quality solutions, with an exceptional design statement, which differentiates each and every project, and produces individual solutions, which are different from each other."
+    },
+    "explore": {
+      "design": {
+        "title": "design",
+        "paragraph": "Great visions begin with a single step, and we are dedicated to guiding you toward impeccable decisions for your home. In a world of boundless possibilities, our expert team of architects and interior designers will accompany you every step of the way. From selecting exquisite colors, styles, and materials to curating the perfect appliances and accessories, we craft spaces that reflect your unique elegance and sophistication."
+      },
+      "delivery": {
+        "title": "delivery",
+        "paragraph": "Every piece and module is meticulously designed and crafted on demand at our premier partner facilities in Italy, embodying the essence of bespoke artistry. Our in-house logistics team expertly manages international shipping and domestic delivery, ensuring seamless coordination while keeping you informed with tailored updates on timelines and delivery status, all aligned with your exacting requirements."
+      },
+      "assembly": {
+        "title": "assembly",
+        "paragraph": "We strive for unparalleled perfection and utmost client satisfaction. Our comprehensive, end-to-end services feature an expert assembly team dedicated to seamlessly bringing every element together. With meticulous care, we ensure your cherished possessions are flawlessly assembled and elegantly integrated into your home, reflecting the epitome of luxury and precision."
+      }
+    },
+    "years": {
+      "title": {
+        "line1": "30+",
+        "line2": "years"
+      },
+      "subtitle": {
+        "line1": "of bringing high-end interior",
+        "line2": "products to your home."
+      }
+    }
   }
 } 

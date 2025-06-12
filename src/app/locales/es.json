@@ -147,5 +147,44 @@
       },
       "send": "enviar"
     }
+  },
+  "aboutSection": {
+    "heroBanner": {
+      "title": "360°",
+      "subtitle": "enfoque"
+    },
+    "experience": {
+      "title": {
+        "line1": "La",
+        "line2": "experiencia",
+        "line3": "comienza con",
+        "line4": "Modulnova"
+      },
+      "paragraph": "El grupo Aristo se estableció en 1992 con la inspiración de ofrecer mejores productos para propietarios en Israel. El concepto filosófico básico del grupo es un enfoque holístico, que produce soluciones de calidad, con una declaración de diseño excepcional, que diferencia cada proyecto y produce soluciones individuales, que son diferentes entre sí."
+    },
+    "explore": {
+      "design": {
+        "title": "diseño",
+        "paragraph": "Las grandes visiones comienzan con un solo paso, y estamos dedicados a guiarlo hacia decisiones impecables para su hogar. En un mundo de posibilidades ilimitadas, nuestro equipo experto de arquitectos y diseñadores de interiores lo acompañará en cada paso del camino. Desde la selección de colores, estilos y materiales exquisitos hasta la selección de los electrodomésticos y accesorios perfectos, creamos espacios que reflejan su elegancia y sofisticación únicas."
+      },
+      "delivery": {
+        "title": "entrega",
+        "paragraph": "Cada pieza y módulo está meticulosamente diseñado y elaborado bajo demanda en nuestras instalaciones de socios principales en Italia, encarnando la esencia del arte personalizado. Nuestro equipo de logística interna gestiona expertamente el envío internacional y la entrega nacional, asegurando una coordinación perfecta mientras lo mantiene informado con actualizaciones personalizadas sobre plazos y estado de entrega, todo alineado con sus exigentes requisitos."
+      },
+      "assembly": {
+        "title": "ensamblaje",
+        "paragraph": "Nos esforzamos por una perfección sin igual y la máxima satisfacción del cliente. Nuestros servicios integrales de principio a fin cuentan con un equipo experto de ensamblaje dedicado a unir perfectamente cada elemento. Con un cuidado meticuloso, nos aseguramos de que sus posesiones más preciadas estén perfectamente ensambladas y elegantemente integradas en su hogar, reflejando el epítome del lujo y la precisión."
+      }
+    },
+    "years": {
+      "title": {
+        "line1": "30+",
+        "line2": "años"
+      },
+      "subtitle": {
+        "line1": "de llevar productos de interior",
+        "line2": "de alta gama a su hogar."
+      }
+    }
   }
 } 

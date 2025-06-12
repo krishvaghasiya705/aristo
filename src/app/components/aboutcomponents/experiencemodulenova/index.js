@@ -11,8 +11,10 @@ import journeyimage3 from "@/assets/images/journeyimage3.webp"
 import journeyimage4 from "@/assets/images/journeyimage4.webp"
 import journeyimage5 from "@/assets/images/journeyimage5.webp"
 import Modulenovaicon from '@/assets/icon/modulenovaicon';
+import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function Experiencemodulenova() {
+    const { t } = useLanguage();
     const spansRef = useRef([]);
     const sectionRef = useRef(null);
 
@@ -83,24 +85,20 @@ export default function Experiencemodulenova() {
                 <div className={styles.experiencemodulenovatitle}>
                     <h2>
                         <p>
-                            <span ref={(el) => (spansRef.current[0] = el)}>The</span>
+                            <span ref={(el) => (spansRef.current[0] = el)}>{t('aboutSection.experience.title.line1')}</span>
                         </p>
                         <p>
-                            <span ref={(el) => (spansRef.current[1] = el)}>experience</span>
+                            <span ref={(el) => (spansRef.current[1] = el)}>{t('aboutSection.experience.title.line2')}</span>
                         </p>
                         <p>
-                            <span ref={(el) => (spansRef.current[2] = el)}>begins with</span>
+                            <span ref={(el) => (spansRef.current[2] = el)}>{t('aboutSection.experience.title.line3')}</span>
                         </p>
                         <p>
-                            <span ref={(el) => (spansRef.current[3] = el)}>Modulnova</span>
+                            <span ref={(el) => (spansRef.current[3] = el)}>{t('aboutSection.experience.title.line4')}</span>
                         </p>
                     </h2>
                     <p className={styles.experiencetitleparagraph}>
-                        Aristo group was established in 1992 with the inspiration of offering better products
-                        for homeowners in Israel. The group's basic philosophical concept is a holistic
-                        approach, which produces quality solutions, with an exceptional design statement,
-                        which differentiates each and every project, and produces individual solutions, which
-                        are different from each other.
+                        {t('aboutSection.experience.paragraph')}
                     </p>
                 </div>
                 <div className={styles.experiencemodulenovajourneymain}>

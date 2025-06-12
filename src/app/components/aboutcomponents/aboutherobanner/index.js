@@ -43,11 +43,11 @@ export default function Aboutherobanner() {
             <h1>
               <p>
                 <span ref={(el) => (spansRef.current[0] = el)}>
-                  360°
+                  {t('aboutSection.heroBanner.title')}
                 </span>
               </p>
               <p>
-                <span ref={(el) => (spansRef.current[1] = el)}>APPROCH</span>
+                <span ref={(el) => (spansRef.current[1] = el)}>{t('aboutSection.heroBanner.subtitle')}</span>
               </p>
             </h1>
           </div>

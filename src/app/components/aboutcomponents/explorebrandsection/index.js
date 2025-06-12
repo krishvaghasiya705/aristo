@@ -9,8 +9,10 @@ import exploresectionimage2 from "@/assets/images/exploresectionimage2.webp"
 import exploresectionimage3 from "@/assets/images/exploresectionimage3.webp"
 import Arrowicon from "@/assets/icon/arrowicon";
 import Commonbutton from "../../commonbutton/button";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function Explorebrandsection() {
+    const { t } = useLanguage();
     const spansRef = useRef([]);
     const sectionRef = useRef(null);
 
@@ -87,9 +89,9 @@ export default function Explorebrandsection() {
                     </div>
                     <div className={styles.explorebrandscontent}>
                         <h4>
-                            <span ref={(el) => (spansRef.current[0] = el)}>design</span>
+                            <span ref={(el) => (spansRef.current[0] = el)}>{t('aboutSection.explore.design.title')}</span>
                         </h4>
-                        <p>Great visions begin with a single step, and we are dedicated to guiding  you toward impeccable decisions for your home. In a world of boundless possibilities, our expert team of architects and interior designers will accompany you every step of the way. From selecting exquisite colors, styles, and materials to curating the perfect appliances and accessories, we craft spaces that reflect your unique elegance and sophistication.</p>
+                        <p>{t('aboutSection.explore.design.paragraph')}</p>
                     </div>
                 </div>
             </div>
@@ -97,9 +99,9 @@ export default function Explorebrandsection() {
                 <div className={styles.explorebrandsectionflx}>
                     <div className={styles.explorebrandscontent}>
                         <h4>
-                            <span ref={(el) => (spansRef.current[1] = el)}>delivery</span>
+                            <span ref={(el) => (spansRef.current[1] = el)}>{t('aboutSection.explore.delivery.title')}</span>
                         </h4>
-                        <p>Every piece and module is meticulously designed and crafted on demand at our premier partner facilities in Italy, embodying the essence of bespoke artistry. Our in-house logistics team expertly manages international shipping and domestic delivery, ensuring seamless coordination while keeping you informed with tailored updates on timelines and delivery status, all aligned with your exacting requirements.</p>
+                        <p>{t('aboutSection.explore.delivery.paragraph')}</p>
                     </div>
                     <div className={styles.exploreimagemain}>
                         <div className={styles.exploreimage}>
@@ -117,12 +119,12 @@ export default function Explorebrandsection() {
                     </div>
                     <div className={styles.explorebrandscontent}>
                         <h4>
-                            <span ref={(el) => (spansRef.current[2] = el)}>assembly</span>
+                            <span ref={(el) => (spansRef.current[2] = el)}>{t('aboutSection.explore.assembly.title')}</span>
                         </h4>
-                        <p>We strive for unparalleled perfection and utmost client satisfaction. Our comprehensive, end-to-end services feature an expert assembly team dedicated to seamlessly bringing every element together. With meticulous care, we ensure your cherished possessions are flawlessly assembled and elegantly integrated into your home, reflecting the epitome of luxury and precision.</p>
+                        <p>{t('aboutSection.explore.assembly.paragraph')}</p>
                     </div>
                 </div>
-                <Commonbutton Buttonlink="/brands?category=all" Buttontext="explore our brands" ButtonIcon={<Arrowicon />} />
+                <Commonbutton Buttonlink="/brands?category=all" Buttontext={t('exclusiveBrands.button')} ButtonIcon={<Arrowicon />} />
             </div>
         </div>
     </div>
