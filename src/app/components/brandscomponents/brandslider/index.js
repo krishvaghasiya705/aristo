@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./brandslider.module.scss";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useLanguage } from "@/app/context/LanguageContext";
 import brandsliderimage1 from "@/assets/images/brandsliderimage1.jpg"
 import brandsliderimage2 from "@/assets/images/brandsliderimage2.jpg"
 import brandsliderimage3 from "@/assets/images/brandsliderimage3.jpeg"
@@ -23,6 +24,7 @@ import Sangiagomoicon from "@/assets/icon/sangiagomoicon";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Brandslider({ category = 'all' }) {
+    const { t } = useLanguage();
     const router = useRouter();
     const sectionRef = useRef(null);
     const titleRefs = useRef([]);
@@ -157,7 +159,7 @@ export default function Brandslider({ category = 'all' }) {
             <div className={styles.brandslidertitle}>
               <h1>
                 <p>
-                  <span ref={el => titleRefs.current[0] = el}>our brands</span>
+                  <span ref={el => titleRefs.current[0] = el}>{t('brandSlider.title')}</span>
                 </p>
               </h1>
             </div>
@@ -181,7 +183,7 @@ export default function Brandslider({ category = 'all' }) {
             {filteredData.length === 0 && (
               <div className={styles.brandsliderboxmain}>
                 <div className={styles.nodata}>
-                  <p>No brands available in this category</p>
+                  <p>{t('brandSlider.noData')}</p>
                 </div>
               </div>
             )}
@@ -193,7 +195,7 @@ export default function Brandslider({ category = 'all' }) {
                 className={`${styles.brandsliderbutton} ${currentCategory === 'all'}`}
                 onClick={() => handleCategoryChange('all')}
               >
-                <span>all</span>
+                <span>{t('brandSlider.categories.all')}</span>
               </button>
               <button 
                 type="button" 
@@ -201,7 +203,7 @@ export default function Brandslider({ category = 'all' }) {
                 onClick={() => handleCategoryChange('wardrobes')}
               >
                 <Wardrobes />
-                <span>wardrobes</span>
+                <span>{t('brandSlider.categories.wardrobes')}</span>
               </button>
               <button 
                 type="button" 
@@ -209,7 +211,7 @@ export default function Brandslider({ category = 'all' }) {
                 onClick={() => handleCategoryChange('furniture')}
               >
                 <Furniture />
-                <span>furniture</span>
+                <span>{t('brandSlider.categories.furniture')}</span>
               </button>
               <button 
                 type="button" 
@@ -217,7 +219,7 @@ export default function Brandslider({ category = 'all' }) {
                 onClick={() => handleCategoryChange('appliences')}
               >
                 <Appliences />
-                <span>appliences</span>
+                <span>{t('brandSlider.categories.appliences')}</span>
               </button>
               <button 
                 type="button" 
@@ -225,7 +227,7 @@ export default function Brandslider({ category = 'all' }) {
                 onClick={() => handleCategoryChange('kitchen')}
               >
                 <Kitchensystems />
-                <span>kitchen & systems</span>
+                <span>{t('brandSlider.categories.kitchen')}</span>
               </button>
             </div>
           </div>

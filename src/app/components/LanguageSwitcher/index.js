@@ -16,11 +16,18 @@ export default function LanguageSwitcher() {
         <span lang='en'>EN</span>
       </button>
       <button
-        className={`${styles.languageButton} ${currentLanguage === 'es' ? styles.active : ''}`}
-        onClick={() => changeLanguage('es')}
+        className={`${styles.languageButton} ${currentLanguage === 'it' ? styles.active : ''}`}
+        onClick={() => changeLanguage('it')}
         data-cursor-hover
-        >
-        <span lang='es'>ES</span>
+      >
+        <span lang='it'>IT</span>
+      </button>
+      <button
+        className={`${styles.languageButton} ${currentLanguage === 'he' ? styles.active : ''}`}
+        onClick={() => changeLanguage('he')}
+        data-cursor-hover
+      >
+        <span lang='he'>HE</span>
       </button>
     </div>
   );

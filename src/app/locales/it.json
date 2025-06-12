@@ -1,0 +1,201 @@
+{
+  "header": {
+    "navigation": {
+      "home": "casa",
+      "about": "chi siamo",
+      "brands": "marchi",
+      "contact": "contatto",
+      "catalog": "catalogo"
+    }
+  },
+  "sidebar": {
+    "navigation": {
+      "home": "casa",
+      "about": "chi siamo",
+      "brands": "marchi",
+      "contact": "contatto",
+      "catalog": "catalogo"
+    }
+  },
+  "heroBanner": {
+    "titlel1": "vivere",
+    "titlel2": "esperienza",
+    "scrollDown": "scorri giù"
+  },
+  "buttonSection": {
+    "categories": {
+      "kitchens": "Cucine",
+      "furniture": "Mobili",
+      "appliances": "Elettrodomestici",
+      "closets": "Armadi",
+      "bathrooms": "Bagni",
+      "sound": "Audio",
+      "surfaces": "Superfici",
+      "decoration": "Decorazione",
+      "art": "Arte",
+      "lighting": "Illuminazione",
+      "carpets": "Tappeti",
+      "faucets": "Rubinetti",
+      "outdoor": "Esterno"
+    }
+  },
+  "highEndSection": {
+    "title": {
+      "line1": "HIGH-END",
+      "line2": "INTERIOR",
+      "line3": "DAL",
+      "line4": "92'"
+    },
+    "content": {
+      "title": "ARISTO GROUP",
+      "paragraph": [
+        "Aristo Group, fondata nel 1992, è stata ispirata dalla visione di",
+        "portare prodotti superiori e qualità ineguagliabile ai",
+        "proprietari di case in Israele. Nel suo nucleo, il gruppo incarna una",
+        "filosofia olistica, offrendo soluzioni eccezionali con una",
+        "firma di design distintiva, garantendo che ogni progetto si distingua",
+        "e sia unico per ogni cliente."
+      ],
+      "button": "più su di noi"
+    }
+  },
+  "exclusiveBrands": {
+    "title": {
+      "line1": "i nostri",
+      "line2": "marchi",
+      "line3": "esclusivi"
+    },
+    "button": "esplora i nostri marchi"
+  },
+  "ourPartners": {
+    "title": {
+      "line1": "i nostri",
+      "line2": "partner"
+    }
+  },
+  "catalogSection": {
+    "title": "catalogo",
+    "button": "vedi tutti i prodotti",
+    "brand": "marca",
+    "all": "tutti",
+    "categories": {
+      "all": "tutti",
+      "furnitures": "mobili",
+      "appliances": "elettrodomestici",
+      "sinkFaucet": "lavello e rubinetto",
+      "bathroom": "bagno",
+      "worktop": "piano di lavoro",
+      "outdoorKitchen": "cucina esterna",
+      "indoorKitchen": "cucina interna"
+    },
+    "subcategories": {
+      "all": "tutti",
+      "sofa": "divano",
+      "armchair": "poltrona",
+      "bench": "panca",
+      "lowTable": "tavolino basso",
+      "complements": "complementi",
+      "tables": "tavoli",
+      "mirror": "specchio",
+      "chairs": "sedie",
+      "cupboard": "armadio",
+      "decorative": "decorativo",
+      "induction": "induzione",
+      "refrigerator": "frigorifero",
+      "oven": "forno"
+    },
+    "contactUs": "contattaci",
+    "moreInfo": "più informazioni"
+  },
+  "metadata": {
+    "title": "Gruppo Aristo",
+    "description": "Gruppo Aristo - Il tuo partner di fiducia nelle soluzioni aziendali",
+    "keywords": ["Gruppo Aristo", "soluzioni aziendali", "consulenza"],
+    "authors": [{ "name": "Gruppo Aristo" }]
+  },
+  "showroomSection": {
+    "title": "showroom",
+    "navigate": "naviga",
+    "contactUs": "contattaci",
+    "showrooms": [
+      {
+        "name": "ARISTO MODULNOVA",
+        "location": "Herzliya",
+        "address": "Ha-Menofim St 11, Haifa",
+        "phone": "073-2366566",
+        "email": "info@aristos.co.il"
+      },
+      {
+        "name": "ARISTO MODULNOVA",
+        "location": "haifa",
+        "address": "Ha'Amelim St 34, Haifa",
+        "phone": "073-2366566",
+        "email": "info@aristos.co.il"
+      }
+    ]
+  },
+  "contactFormSection": {
+    "title": "contatto",
+    "form": {
+      "fullName": "nome completo:",
+      "emailAddress": "indirizzo email:",
+      "phoneNumber": "numero di telefono:",
+      "interestedIn": "sono interessato a",
+      "options": {
+        "businessCollaboration": "collaborazione aziendale",
+        "buyingProducts": "acquisto prodotti"
+      },
+      "send": "invia"
+    }
+  },
+  "aboutSection": {
+    "heroBanner": {
+      "title": "360°",
+      "subtitle": "approccio"
+    },
+    "experience": {
+      "title": {
+        "line1": "L'",
+        "line2": "esperienza",
+        "line3": "inizia con",
+        "line4": "Modulnova"
+      },
+      "paragraph": "Il gruppo Aristo è stato fondato nel 1992 con l'ispirazione di offrire prodotti migliori per i proprietari di case in Israele. Il concetto filosofico di base del gruppo è un approccio olistico, che produce soluzioni di qualità, con una dichiarazione di design eccezionale, che differenzia ogni progetto e produce soluzioni individuali, che sono diverse l'una dall'altra."
+    },
+    "explore": {
+      "design": {
+        "title": "design",
+        "paragraph": "Le grandi visioni iniziano con un singolo passo, e siamo dedicati a guidarti verso decisioni impeccabili per la tua casa. In un mondo di possibilità illimitate, il nostro team esperto di architetti e designer d'interni ti accompagnerà in ogni fase del percorso. Dalla selezione di colori, stili e materiali squisiti alla cura degli elettrodomestici e accessori perfetti, creiamo spazi che riflettono la tua eleganza e sofisticatezza uniche."
+      },
+      "delivery": {
+        "title": "consegna",
+        "paragraph": "Ogni pezzo e modulo è meticolosamente progettato e realizzato su richiesta nelle nostre strutture partner principali in Italia, incarnando l'essenza dell'arte su misura. Il nostro team logistico interno gestisce con competenza la spedizione internazionale e la consegna nazionale, garantendo una coordinazione perfetta mentre ti mantiene informato con aggiornamenti personalizzati su tempistiche e stato di consegna, tutto allineato con i tuoi requisiti esigenti."
+      },
+      "assembly": {
+        "title": "assemblaggio",
+        "paragraph": "Ci sforziamo per una perfezione senza pari e la massima soddisfazione del cliente. I nostri servizi completi end-to-end includono un team esperto di assemblaggio dedicato a unire perfettamente ogni elemento. Con cura meticolosa, ci assicuriamo che i tuoi beni più preziosi siano assemblati perfettamente e integrati elegantemente nella tua casa, riflettendo l'epitome del lusso e della precisione."
+      }
+    },
+    "years": {
+      "title": {
+        "line1": "30+",
+        "line2": "anni"
+      },
+      "subtitle": {
+        "line1": "di portare prodotti di arredamento",
+        "line2": "di alta gamma nella tua casa."
+      }
+    }
+  },
+  "brandSlider": {
+    "title": "i nostri marchi",
+    "categories": {
+      "all": "tutti",
+      "wardrobes": "armadi",
+      "furniture": "mobili",
+      "appliences": "elettrodomestici",
+      "kitchen": "cucina e sistemi"
+    },
+    "noData": "Nessun marchio disponibile in questa categoria"
+  }
+} 

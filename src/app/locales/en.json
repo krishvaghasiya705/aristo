@@ -186,5 +186,16 @@
         "line2": "products to your home."
       }
     }
+  },
+  "brandSlider": {
+    "title": "our brands",
+    "categories": {
+      "all": "all",
+      "wardrobes": "wardrobes",
+      "furniture": "furniture",
+      "appliences": "appliences",
+      "kitchen": "kitchen & systems"
+    },
+    "noData": "No brands available in this category"
   }
 } 

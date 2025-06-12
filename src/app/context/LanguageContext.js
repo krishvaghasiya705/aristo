@@ -2,11 +2,13 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import enTranslations from '../locales/en.json';
-import esTranslations from '../locales/es.json';
+import itTranslations from '../locales/it.json';
+import heTranslations from '../locales/he.json';
 
 const availableTranslations = {
   en: enTranslations,
-  es: esTranslations,
+  it: itTranslations,
+  he: heTranslations,
 };
 
 const LanguageContext = createContext();
