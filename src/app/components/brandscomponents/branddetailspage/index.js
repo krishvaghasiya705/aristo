@@ -69,11 +69,9 @@ export default function Branddetailspage({ params }) {
             images.forEach((image, index) => {
                 gsap.fromTo(
                     image,
-                    { y: 100, opacity: 0, scale: 0.95 },
+                    { height: "0%", },
                     {
-                        y: 0,
-                        opacity: 1,
-                        scale: 1,
+                        height: "100%",
                         duration: 1,
                         scrollTrigger: {
                             trigger: image,
@@ -138,35 +136,49 @@ export default function Branddetailspage({ params }) {
                     </div>
                 </div>
                 <div className={styles.brandimagesmainsection}>
-                    <div className={styles.gridimage1} ref={(el) => (imagesRef.current[0] = el)}>
-                        <Image
-                            src={brand.details.BrandImages[0]}
-                            alt={`${brand.details.Title} - Image 1`}
-                        />
+                    <div className={styles.gridimage1main}>
+                        <div className={styles.gridimage1} ref={(el) => (imagesRef.current[0] = el)}>
+                            <Image
+                                src={brand.details.BrandImages[0]}
+                                alt={`${brand.details.Title} - Image 1`}
+                            />
+                        </div>
                     </div>
-                    <div className={styles.gridimage2} ref={(el) => (imagesRef.current[1] = el)}>
-                        <Image
-                            src={brand.details.BrandImages[1]}
-                            alt={`${brand.details.Title} - Image 2`}
-                        />
+                    <div className={styles.gridimage2main}>
+                        <div className={styles.gridimage2} ref={(el) => (imagesRef.current[1] = el)}>
+                            <Image
+                                src={brand.details.BrandImages[1]}
+                                alt={`${brand.details.Title} - Image 2`}
+                                
+                            />
+                        </div>
                     </div>
-                    <div className={styles.gridimage3} ref={(el) => (imagesRef.current[2] = el)}>
-                        <Image
-                            src={brand.details.BrandImages[2]}
-                            alt={`${brand.details.Title} - Image 3`}
-                        />
+                    <div className={styles.gridimage3main}>
+                        <div className={styles.gridimage3} ref={(el) => (imagesRef.current[2] = el)}>
+                            <Image
+                                src={brand.details.BrandImages[2]}
+                                alt={`${brand.details.Title} - Image 3`}
+
+                            />
+                        </div>
                     </div>
-                    <div className={styles.gridimage4} ref={(el) => (imagesRef.current[3] = el)}>
-                        <Image
-                            src={brand.details.BrandImages[3]}
-                            alt={`${brand.details.Title} - Image 4`}
-                        />
+                    <div className={styles.gridimage4main}>
+                        <div className={styles.gridimage4} ref={(el) => (imagesRef.current[3] = el)}>
+                            <Image
+                                src={brand.details.BrandImages[3]}
+                                alt={`${brand.details.Title} - Image 4`}
+                                
+                            />
+                        </div>
                     </div>
-                    <div className={styles.gridimage5} ref={(el) => (imagesRef.current[4] = el)}>
-                        <Image
-                            src={brand.details.BrandImages[4]}
-                            alt={`${brand.details.Title} - Image 5`}
-                        />
+                    <div className={styles.gridimage5main}>
+                        <div className={styles.gridimage5} ref={(el) => (imagesRef.current[4] = el)}>
+                            <Image
+                                src={brand.details.BrandImages[4]}
+                                alt={`${brand.details.Title} - Image 5`}
+                                
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
