@@ -29,6 +29,7 @@
     }
 
     .branddetailsmain {
+        mix-blend-mode: difference;
         padding: 115px 0;
         max-width: 672px;
         margin: 0 auto;
@@ -36,5 +37,125 @@
         flex-direction: column;
         align-items: center;
         gap: 76px;
+    
+        .branddetailspan {
+            @include font11;
+            letter-spacing: 2px;
+            color: var(--white);
+            text-transform: uppercase;
+            font-family: var(--primary-font);
+        }
+        
+        .brandlogo {
+            width: 384px;
+            height: 76px;
+
+            svg {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .brandparagraph {
+            p {
+                @include font17;
+                line-height: 31px;
+                color: var(--textgrey);
+                font-family: var(--paragraph-font);
+                text-align: center;
+            }
+        }
+
+        .brandexploremain {
+            a {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                height: 19px;
+                overflow: hidden;
+                cursor: pointer;
+                transition: .2s ease-in-out;
+
+                span {
+                    @include font19;
+                    color: var(--white);
+                    text-transform: uppercase;
+                    font-family: var(--primary-font);
+                    transition: .2s ease-in-out;
+                }
+
+                &:hover {
+                    span {
+                        transform: translateY(-19px);
+                    }
+                }
+            }
+        }
+    }
+
+    .brandimagesmainsection {
+        padding-top: 115px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-auto-columns: 1fr;
+
+        .gridimage1, .gridimage2, .gridimage3, .gridimage4, .gridimage5 {
+            position: relative;
+            will-change: transform, opacity;
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+            
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease-out;
+            }
+        }
+
+        .gridimage1 {
+            grid-area: 1 / 4 / 2 / 9;
+            max-width: 551px;
+            width: 100%;
+            height: 503px;
+            overflow: hidden;
+        }
+
+        .gridimage2 {
+            grid-area: 2 / 10 / 3 / 15;
+            max-width: 551px;
+            width: 100%;
+            height: 473px;
+            overflow: hidden;
+            margin-top: -134px;
+        }
+        
+        .gridimage3 {
+            grid-area: 2 / 1 / 3 / 9;
+            max-width: 908px;
+            width: 100%;
+            height: 624px;
+            overflow: hidden;
+            margin-top: 134px;
+        }
+        
+        .gridimage4 {
+            grid-area: 3 / 10 / 4 / 16;
+            max-width: 670px;
+            width: 100%;
+            height: 633px;
+            overflow: hidden;
+            margin-top: -278px;
+        }
+        
+        .gridimage5 {
+            grid-area: 3 / 4 / 4 / 9;
+            max-width: 432px;
+            width: 100%;
+            height: 456px;
+            overflow: hidden;
+            margin-top: 134px;
+            margin-left: 124px;
+        }
     }
 }
