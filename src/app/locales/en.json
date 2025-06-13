@@ -196,6 +196,11 @@
       "appliences": "appliences",
       "kitchen": "kitchen & systems"
     },
-    "noData": "No brands available in this category"
+    "noData": "No brands available in this category",
+    "brandDetails": {
+      "aboutBrand": "about the brand",
+      "exploreWebsite": "explore their website",
+      "downloadCatalog": "download pdf catalog"
+    }
   }
 } 

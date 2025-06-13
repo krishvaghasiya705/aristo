@@ -186,5 +186,21 @@
         "line2": "de alta gama a su hogar."
       }
     }
+  },
+  "brandSlider": {
+    "title": "nuestras marcas",
+    "categories": {
+      "all": "todos",
+      "wardrobes": "armarios",
+      "furniture": "muebles",
+      "appliences": "electrodomésticos",
+      "kitchen": "cocina y sistemas"
+    },
+    "noData": "No hay marcas disponibles en esta categoría",
+    "brandDetails": {
+      "aboutBrand": "sobre la marca",
+      "exploreWebsite": "explorar su sitio web",
+      "downloadCatalog": "descargar catálogo pdf"
+    }
   }
 } 

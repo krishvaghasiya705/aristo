@@ -7,8 +7,10 @@ import { Branddata } from "../branddatajs/branddata"
 import Image from "next/image"
 import Downloadicon from '@/assets/icon/downloadicon'
 import Commonbutton from '../../commonbutton/button'
+import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function Branddetailspage({ params }) {
+    const { t } = useLanguage();
     const sectionRef = useRef(null);
     const spansRef = useRef([]);
     const imagesRef = useRef([]);
@@ -106,7 +108,7 @@ export default function Branddetailspage({ params }) {
                     >
                         <Commonbutton
                             Buttonlink="no"
-                            Buttontext="download pdf catalog"
+                            Buttontext={t('brandSlider.brandDetails.downloadCatalog')}
                             ButtonIcon={<Downloadicon />}
                         />
                     </a>
@@ -115,7 +117,7 @@ export default function Branddetailspage({ params }) {
                     <Image src={brand.details.Bannerimage} alt="brand.details.Bannerimage" />
                 </div>
                 <div className={styles.branddetailsmain}>
-                    <span className={styles.branddetailspan} ref={(el) => (spansRef.current[1] = el)}>about the brand</span>
+                    <span className={styles.branddetailspan} ref={(el) => (spansRef.current[1] = el)}>{t('brandSlider.brandDetails.aboutBrand')}</span>
                     <div className={styles.brandlogo} ref={(el) => (spansRef.current[2] = el)}>
                         {brand.details.Brandlogo}
                     </div>
@@ -130,8 +132,8 @@ export default function Branddetailspage({ params }) {
                             rel="noopener noreferrer"
                             className={styles.explorelink}
                         >
-                            <span ref={(el) => (spansRef.current[4] = el)}>explore their website</span>
-                            <span ref={(el) => (spansRef.current[5] = el)}>explore their website</span>
+                            <span ref={(el) => (spansRef.current[4] = el)}>{t('brandSlider.brandDetails.exploreWebsite')}</span>
+                            <span ref={(el) => (spansRef.current[5] = el)}>{t('brandSlider.brandDetails.exploreWebsite')}</span>
                         </a>
                     </div>
                 </div>

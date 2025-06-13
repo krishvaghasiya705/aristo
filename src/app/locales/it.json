@@ -196,6 +196,11 @@
       "appliences": "elettrodomestici",
       "kitchen": "cucina e sistemi"
     },
-    "noData": "Nessun marchio disponibile in questa categoria"
+    "noData": "Nessun marchio disponibile in questa categoria",
+    "brandDetails": {
+      "aboutBrand": "sul marchio",
+      "exploreWebsite": "esplora il loro sito web",
+      "downloadCatalog": "scarica catalogo pdf"
+    }
   }
 } 

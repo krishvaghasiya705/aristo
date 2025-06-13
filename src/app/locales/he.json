@@ -193,9 +193,14 @@
       "all": "הכל",
       "wardrobes": "ארונות",
       "furniture": "ריהוט",
-      "appliences": "מוצרי חשמל",
+      "appliences": "מכשירי חשמל",
       "kitchen": "מטבח ומערכות"
     },
-    "noData": "אין מותגים זמינים בקטגוריה זו"
+    "noData": "אין מותגים זמינים בקטגוריה זו",
+    "brandDetails": {
+      "aboutBrand": "על המותג",
+      "exploreWebsite": "בקר באתר שלהם",
+      "downloadCatalog": "הורד קטלוג pdf"
+    }
   }
 } 
